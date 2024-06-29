@@ -11,6 +11,25 @@ GRANT UNLIMITED TABLESPACE TO ADMIN;
 GRANT CREATE SESSION, CREATE ANY CONTEXT, CREATE PROCEDURE, CREATE TRIGGER, ADMINISTER DATABASE TRIGGER TO ADMIN;
 GRANT EXEMPT ACCESS POLICY TO ADMIN;
 
+DROP TABLE ADMIN.ChiTietHoSo;
+DROP TABLE ADMIN.HoSoUngTuyen;
+DROP TABLE ADMIN.PhieuUngTuyen;
+DROP TABLE ADMIN.UngVien;
+DROP TABLE ADMIN.PhieuDangKyDN;
+DROP TABLE ADMIN.HoaDon;
+DROP TABLE ADMIN.PhieuDangKyQuangCao;
+DROP TABLE ADMIN.HinhThuc;
+DROP TABLE ADMIN.PhieuDangTuyen;
+DROP TABLE ADMIN.NhanVien;
+DROP TABLE ADMIN.ChiTietGiaHan;
+DROP TABLE ADMIN.DanhSachGiaHan;
+DROP TABLE ADMIN.ChienLuocUuDai;
+DROP TABLE ADMIN.DoanhNghiep;
+DROP TABLE ADMIN.BanLanhDao;
+
+
+
+
 --Tạo bảng với các khóa chính và khóa ngoại
 -- Bảng UngVien
 CREATE TABLE ADMIN.UngVien (
@@ -20,16 +39,26 @@ CREATE TABLE ADMIN.UngVien (
     Email VARCHAR2(50),
     DiaChi NVARCHAR2(100)
 );
-
+/
+-- Bảng NhanVien
+CREATE TABLE ADMIN.NhanVien (
+    MaNhanVien VARCHAR2(10) PRIMARY KEY,
+    TenNhanVien nVARCHAR2(50),
+    SDT NUMBER(10),
+    Email VARCHAR2(50)
+);
+/
 -- Bảng PhieuUngTuyen
 CREATE TABLE ADMIN.PhieuUngTuyen (
     MaPhieuUngTuyen VARCHAR2(10) PRIMARY KEY,
     ViTriUngTuyen NVARCHAR2(50),
     TinhTrangPhieu NVARCHAR2(50),
     MaUngVien VARCHAR2(10),
-    FOREIGN KEY (MaUngVien) REFERENCES ADMIN.UngVien(MaUngVien)
+    MaNhanVien VARCHAR2(10),
+    FOREIGN KEY (MaUngVien) REFERENCES ADMIN.UngVien(MaUngVien),
+    FOREIGN KEY (MaNhanVien) REFERENCES ADMIN.NhanVien(MaNhanVien)
 );
-
+/
 -- Bảng HoSoUngTuyen
 CREATE TABLE ADMIN.HoSoUngTuyen (
     MaHoSo VARCHAR2(10) PRIMARY KEY,
@@ -38,7 +67,7 @@ CREATE TABLE ADMIN.HoSoUngTuyen (
     MaPhieuUngTuyen VARCHAR2(10),
     FOREIGN KEY (MaPhieuUngTuyen) REFERENCES ADMIN.PhieuUngTuyen(MaPhieuUngTuyen)
 );
-
+/
 -- Bảng ChiTietHoSo
 CREATE TABLE ADMIN.ChiTietHoSo (
     STT NUMBER,
@@ -48,14 +77,7 @@ CREATE TABLE ADMIN.ChiTietHoSo (
     FOREIGN KEY (MaHoSo) REFERENCES ADMIN.HoSoUngTuyen(MaHoSo),
     PRIMARY KEY (STT,MaHoSo)
 );
-
--- Bảng NhanVien
-CREATE TABLE ADMIN.NhanVien (
-    MaNhanVien VARCHAR2(10) PRIMARY KEY,
-    TenNhanVien nVARCHAR2(50),
-    SDT NUMBER(10),
-    Email VARCHAR2(50)
-);
+/
 -- Bảng DoanhNghiep
 CREATE TABLE ADMIN.DoanhNghiep (
     MaCongTy VARCHAR2(10) PRIMARY KEY,
@@ -65,7 +87,6 @@ CREATE TABLE ADMIN.DoanhNghiep (
     DiaChi VARCHAR2(100),
     Email VARCHAR2(50)
 );
-
 -- Bảng PhieuDangKyDN
 CREATE TABLE ADMIN.PhieuDangKyDN (
     MaPhieu VARCHAR2(10) PRIMARY KEY,
@@ -76,7 +97,7 @@ CREATE TABLE ADMIN.PhieuDangKyDN (
     FOREIGN KEY (MaNhanVien) REFERENCES ADMIN.NhanVien(MaNhanVien),
     FOREIGN KEY(MaCongTy) REFERENCES ADMIN.DoanhNghiep(MaCongTy)
 );
-
+/
 -- Bảng PhieuDangTuyen
 CREATE TABLE ADMIN.PhieuDangTuyen (
     MaPhieuDangTuyen VARCHAR2(10) PRIMARY KEY,
@@ -90,7 +111,7 @@ CREATE TABLE ADMIN.PhieuDangTuyen (
     FOREIGN KEY (MaNhanVien) REFERENCES ADMIN.NhanVien(MaNhanVien),
     FOREIGN KEY (MaCongTy) REFERENCES ADMIN.DoanhNghiep(MaCongTy)
 );
-
+/
 -- Bảng HoaDon
 CREATE TABLE ADMIN.HoaDon (
     MaHoaDon VARCHAR2(10) PRIMARY KEY,
@@ -100,19 +121,20 @@ CREATE TABLE ADMIN.HoaDon (
     MaPhieuDangTuyen VARCHAR2(10),
     FOREIGN KEY (MaPhieuDangTuyen) REFERENCES ADMIN.PhieuDangTuyen(MaPhieuDangTuyen)
 );
-
+/
 -- Bảng ChienLuocUuDai
 CREATE TABLE ADMIN.ChienLuocUuDai (
     MaChienLuoc VARCHAR2(10) PRIMARY KEY,
-    TenChienLuoc VARCHAR2(100),
-    ChiTietUuDai VARCHAR2(200)
+    TenChienLuoc NVARCHAR2(100),
+    ChiTietUuDai NVARCHAR2(200)
 );
+/
 -- Bảng BanLanhDao
 CREATE TABLE ADMIN.BanLanhDao (
     MaBLD VARCHAR2(10) PRIMARY KEY,
     TenBLD NVARCHAR2(50)
 );
-
+/
 -- Bảng DanhSachGiaHan
 CREATE TABLE ADMIN.DanhSachGiaHan (
     MaDS VARCHAR2(10) PRIMARY KEY,
@@ -120,10 +142,10 @@ CREATE TABLE ADMIN.DanhSachGiaHan (
     MaBLD VARCHAR2(10),
     FOREIGN KEY (MaBLD) REFERENCES ADMIN.BanLanhDao(MaBLD)
 );
-
+/
 -- Bảng ChiTietGiaHan
 CREATE TABLE ADMIN.ChiTietGiaHan (
-    TenNangLon VARCHAR2(50),
+    TiemNangLon NUMBER(1),
     MaChienLuoc VARCHAR2(10),
     MaDS VARCHAR2(10),
     MaCongTy VARCHAR2(10),
@@ -132,14 +154,14 @@ CREATE TABLE ADMIN.ChiTietGiaHan (
     FOREIGN KEY (MaChienLuoc) REFERENCES ADMIN.ChienLuocUuDai(MaChienLuoc),
     PRIMARY KEY(MaChienLuoc,MaDS,MaCongTy)
 );
-
+/
 -- Bảng HinhThuc
 CREATE TABLE ADMIN.HinhThuc (
     MaHinhThuc VARCHAR2(10) PRIMARY KEY,
     TenHinhThuc VARCHAR2(50),
     DonGia NUMBER
 );
-
+/
 -- Bảng PhieuDangKyQuangCao
 CREATE TABLE ADMIN.PhieuDangKyQuangCao (
     MaPhieuQC VARCHAR2(10) PRIMARY KEY,
@@ -150,5 +172,5 @@ CREATE TABLE ADMIN.PhieuDangKyQuangCao (
     FOREIGN KEY (MaPhieuDangTuyen) REFERENCES ADMIN.PhieuDangTuyen(MaPhieuDangTuyen),
     FOREIGN KEY (MaHinhThuc) REFERENCES ADMIN.HinhThuc(MaHinhThuc)
 );
-
+/
 
