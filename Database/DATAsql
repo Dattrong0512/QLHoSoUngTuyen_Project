@@ -16,28 +16,28 @@ SELECT * FROM ADMIN.BanLanhDao;
 
 
 -- Chèn dữ liệu vào bảng UngVien
-INSERT INTO ADMIN.UngVien (MaUngVien, HoTen, SDT, Email, DiaChi) VALUES ('UV001', 'Nguyễn Văn A', 1234567890, 'a.nguyen@example.com', '123 Đường ABC');
-INSERT INTO ADMIN.UngVien (MaUngVien, HoTen, SDT, Email, DiaChi) VALUES ('UV002', 'Lê Thị B', 2345678901, 'b.le@example.com', '456 Phố DEF');
-INSERT INTO ADMIN.UngVien (MaUngVien, HoTen, SDT, Email, DiaChi) VALUES ('UV003', 'Trần Văn C', 3456789012, 'c.tran@example.com', '789 Đường GHI');
-INSERT INTO ADMIN.UngVien (MaUngVien, HoTen, SDT, Email, DiaChi) VALUES ('UV004', 'Phạm Thị D', 4567890123, 'd.pham@example.com', '101 Phố JKL');
-INSERT INTO ADMIN.UngVien (MaUngVien, HoTen, SDT, Email, DiaChi) VALUES ('UV005', 'Hoàng Văn E', 5678901234, 'e.hoang@example.com', '202 Đường MNO');
-INSERT INTO ADMIN.UngVien (MaUngVien, HoTen, SDT, Email, DiaChi) VALUES ('UV006', 'Vũ Thị F', 6789012345, 'f.vu@example.com', '303 Phố PQR');
-INSERT INTO ADMIN.UngVien (MaUngVien, HoTen, SDT, Email, DiaChi) VALUES ('UV007', 'Nguyễn Văn G', 7890123456, 'g.nguyen@example.com', '404 Đường STU');
-INSERT INTO ADMIN.UngVien (MaUngVien, HoTen, SDT, Email, DiaChi) VALUES ('UV008', 'Lê Thị H', 8901234567, 'h.le@example.com', '505 Phố VWX');
-INSERT INTO ADMIN.UngVien (MaUngVien, HoTen, SDT, Email, DiaChi) VALUES ('UV009', 'Trần Văn I', 9012345678, 'i.tran@example.com', '606 Đường YZ');
-INSERT INTO ADMIN.UngVien (MaUngVien, HoTen, SDT, Email, DiaChi) VALUES ('UV010', 'Phạm Thị J', 1234509876, 'j.pham@example.com', '707 Phố ABC');
+INSERT INTO ADMIN.UngVien (MaUngVien, HoTen, SDT, Email, DiaChi,MatKhau) VALUES ('UV001', 'Nguyễn Văn A', 1234567890, 'a.nguyen@example.com', '123 Đường ABC','UV123');
+INSERT INTO ADMIN.UngVien (MaUngVien, HoTen, SDT, Email, DiaChi,MatKhau) VALUES ('UV002', 'Lê Thị B', 2345678901, 'b.le@example.com', '456 Phố DEF','UV123');
+INSERT INTO ADMIN.UngVien (MaUngVien, HoTen, SDT, Email, DiaChi,MatKhau) VALUES ('UV003', 'Trần Văn C', 3456789012, 'c.tran@example.com', '789 Đường GHI','UV123');
+INSERT INTO ADMIN.UngVien (MaUngVien, HoTen, SDT, Email, DiaChi,MatKhau) VALUES ('UV004', 'Phạm Thị D', 4567890123, 'd.pham@example.com', '101 Phố JKL','UV123');
+INSERT INTO ADMIN.UngVien (MaUngVien, HoTen, SDT, Email, DiaChi,MatKhau) VALUES ('UV005', 'Hoàng Văn E', 5678901234, 'e.hoang@example.com', '202 Đường MNO','UV123');
+INSERT INTO ADMIN.UngVien (MaUngVien, HoTen, SDT, Email, DiaChi,MatKhau) VALUES ('UV006', 'Vũ Thị F', 6789012345, 'f.vu@example.com', '303 Phố PQR','UV123');
+INSERT INTO ADMIN.UngVien (MaUngVien, HoTen, SDT, Email, DiaChi,MatKhau) VALUES ('UV007', 'Nguyễn Văn G', 7890123456, 'g.nguyen@example.com', '404 Đường STU','UV123');
+INSERT INTO ADMIN.UngVien (MaUngVien, HoTen, SDT, Email, DiaChi,MatKhau) VALUES ('UV008', 'Lê Thị H', 8901234567, 'h.le@example.com', '505 Phố VWX','UV123');
+INSERT INTO ADMIN.UngVien (MaUngVien, HoTen, SDT, Email, DiaChi,MatKhau) VALUES ('UV009', 'Trần Văn I', 9012345678, 'i.tran@example.com', '606 Đường YZ','UV123');
+INSERT INTO ADMIN.UngVien (MaUngVien, HoTen, SDT, Email, DiaChi,MatKhau) VALUES ('UV010', 'Phạm Thị J', 1234509876, 'j.pham@example.com', '707 Phố ABC','UV123');
 
 -- Chèn dữ liệu vào bảng NhanVien
-INSERT INTO ADMIN.NhanVien (MaNhanVien, TenNhanVien, SDT, Email) VALUES ('NV001', 'Nguyễn Văn K', 2345678901, 'k.nguyen@example.com');
-INSERT INTO ADMIN.NhanVien (MaNhanVien, TenNhanVien, SDT, Email) VALUES ('NV002', 'Lê Thị L', 3456789012, 'l.le@example.com');
-INSERT INTO ADMIN.NhanVien (MaNhanVien, TenNhanVien, SDT, Email) VALUES ('NV003', 'Trần Văn M', 4567890123, 'm.tran@example.com');
-INSERT INTO ADMIN.NhanVien (MaNhanVien, TenNhanVien, SDT, Email) VALUES ('NV004', 'Phạm Thị N', 5678901234, 'n.pham@example.com');
-INSERT INTO ADMIN.NhanVien (MaNhanVien, TenNhanVien, SDT, Email) VALUES ('NV005', 'Hoàng Văn O', 6789012345, 'o.hoang@example.com');
-INSERT INTO ADMIN.NhanVien (MaNhanVien, TenNhanVien, SDT, Email) VALUES ('NV006', 'Vũ Thị P', 7890123456, 'p.vu@example.com');
-INSERT INTO ADMIN.NhanVien (MaNhanVien, TenNhanVien, SDT, Email) VALUES ('NV007', 'Nguyễn Văn Q', 8901234567, 'q.nguyen@example.com');
-INSERT INTO ADMIN.NhanVien (MaNhanVien, TenNhanVien, SDT, Email) VALUES ('NV008', 'Lê Thị R', 9012345678, 'r.le@example.com');
-INSERT INTO ADMIN.NhanVien (MaNhanVien, TenNhanVien, SDT, Email) VALUES ('NV009', 'Trần Văn S', 1234509876, 's.tran@example.com');
-INSERT INTO ADMIN.NhanVien (MaNhanVien, TenNhanVien, SDT, Email) VALUES ('NV010', 'Phạm Thị T', 2345609876, 't.pham@example.com');
+INSERT INTO ADMIN.NhanVien (MaNhanVien, TenNhanVien, SDT, Email,MatKhau) VALUES ('NV001', 'Nguyễn Văn K', 2345678901, 'k.nguyen@example.com','NV456');
+INSERT INTO ADMIN.NhanVien (MaNhanVien, TenNhanVien, SDT, Email,MatKhau) VALUES ('NV002', 'Lê Thị L', 3456789012, 'l.le@example.com','NV456');
+INSERT INTO ADMIN.NhanVien (MaNhanVien, TenNhanVien, SDT, Email,MatKhau) VALUES ('NV003', 'Trần Văn M', 4567890123, 'm.tran@example.com','NV456');
+INSERT INTO ADMIN.NhanVien (MaNhanVien, TenNhanVien, SDT, Email,MatKhau) VALUES ('NV004', 'Phạm Thị N', 5678901234, 'n.pham@example.com','NV456');
+INSERT INTO ADMIN.NhanVien (MaNhanVien, TenNhanVien, SDT, Email,MatKhau) VALUES ('NV005', 'Hoàng Văn O', 6789012345, 'o.hoang@example.com','NV456');
+INSERT INTO ADMIN.NhanVien (MaNhanVien, TenNhanVien, SDT, Email,MatKhau) VALUES ('NV006', 'Vũ Thị P', 7890123456, 'p.vu@example.com','NV456');
+INSERT INTO ADMIN.NhanVien (MaNhanVien, TenNhanVien, SDT, Email,MatKhau) VALUES ('NV007', 'Nguyễn Văn Q', 8901234567, 'q.nguyen@example.com','NV456');
+INSERT INTO ADMIN.NhanVien (MaNhanVien, TenNhanVien, SDT, Email,MatKhau) VALUES ('NV008', 'Lê Thị R', 9012345678, 'r.le@example.com','NV456');
+INSERT INTO ADMIN.NhanVien (MaNhanVien, TenNhanVien, SDT, Email,MatKhau) VALUES ('NV009', 'Trần Văn S', 1234509876, 's.tran@example.com','NV456');
+INSERT INTO ADMIN.NhanVien (MaNhanVien, TenNhanVien, SDT, Email,MatKhau) VALUES ('NV010', 'Phạm Thị T', 2345609876, 't.pham@example.com','NV456');
 
 -- Chèn dữ liệu vào bảng PhieuUngTuyen
 INSERT INTO ADMIN.PhieuUngTuyen (MaPhieuUngTuyen, ViTriUngTuyen, TinhTrangPhieu, MaUngVien, MaNhanVien) VALUES ('PUT001', 'Lập trình viên', 'Mới nộp', 'UV001', 'NV001');
@@ -86,16 +86,17 @@ INSERT INTO ADMIN.ChiTietHoSo (STT, LoaiHoSo, TenHoSo, MaHoSo) VALUES (1, 'Bằn
 INSERT INTO ADMIN.ChiTietHoSo (STT, LoaiHoSo, TenHoSo, MaHoSo) VALUES (2, 'Chứng chỉ', 'Chứng chỉ pháp lý', 'HS010');
 
 -- Chèn dữ liệu vào bảng DoanhNghiep
-INSERT INTO ADMIN.DoanhNghiep (MaCongTy, TenCongTy, MaSoThue, NguoiDaiDien, DiaChi, Email) VALUES ('CTY001', 'Công Ty A', '123456789', 'Nguyễn Văn U', '789 Đường GHI', 'u.nguyen@company.com');
-INSERT INTO ADMIN.DoanhNghiep (MaCongTy, TenCongTy, MaSoThue, NguoiDaiDien, DiaChi, Email) VALUES ('CTY002', 'Công Ty B', '987654321', 'Lê Thị V', '101 Phố JKL', 'v.le@company.com');
-INSERT INTO ADMIN.DoanhNghiep (MaCongTy, TenCongTy, MaSoThue, NguoiDaiDien, DiaChi, Email) VALUES ('CTY003', 'Công Ty C', '234567890', 'Trần Văn W', '202 Đường MNO', 'w.tran@company.com');
-INSERT INTO ADMIN.DoanhNghiep (MaCongTy, TenCongTy, MaSoThue, NguoiDaiDien, DiaChi, Email) VALUES ('CTY004', 'Công Ty D', '345678901', 'Phạm Thị X', '303 Phố PQR', 'x.pham@company.com');
-INSERT INTO ADMIN.DoanhNghiep (MaCongTy, TenCongTy, MaSoThue, NguoiDaiDien, DiaChi, Email) VALUES ('CTY005', 'Công Ty E', '456789012', 'Hoàng Văn Y', '404 Đường STU', 'y.hoang@company.com');
-INSERT INTO ADMIN.DoanhNghiep (MaCongTy, TenCongTy, MaSoThue, NguoiDaiDien, DiaChi, Email) VALUES ('CTY006', 'Công Ty F', '567890123', 'Vũ Thị Z', '505 Phố VWX', 'z.vu@company.com');
-INSERT INTO ADMIN.DoanhNghiep (MaCongTy, TenCongTy, MaSoThue, NguoiDaiDien, DiaChi, Email) VALUES ('CTY007', 'Công Ty G', '678901234', 'Nguyễn Văn A', '606 Đường YZ', 'a.nguyen@company.com');
-INSERT INTO ADMIN.DoanhNghiep (MaCongTy, TenCongTy, MaSoThue, NguoiDaiDien, DiaChi, Email) VALUES ('CTY008', 'Công Ty H', '789012345', 'Lê Thị B', '707 Phố ABC', 'b.le@company.com');
-INSERT INTO ADMIN.DoanhNghiep (MaCongTy, TenCongTy, MaSoThue, NguoiDaiDien, DiaChi, Email) VALUES ('CTY009', 'Công Ty I', '890123456', 'Trần Văn C', '808 Đường DEF', 'c.tran@company.com');
-INSERT INTO ADMIN.DoanhNghiep (MaCongTy, TenCongTy, MaSoThue, NguoiDaiDien, DiaChi, Email) VALUES ('CTY010', 'Công Ty J', '901234567', 'Phạm Thị D', '909 Phố GHI', 'd.pham@company.com');
+SELECT * FROM ADMIN.DoanhNghiep WHERE MaCongTy = 'CTY001' AND MatKhau = 'DN789';
+INSERT INTO ADMIN.DoanhNghiep (MaCongTy, TenCongTy, MaSoThue, NguoiDaiDien, DiaChi, Email,MatKhau) VALUES ('CTY001', 'Công Ty A', '123456789', 'Nguyễn Văn U', '789 Đường GHI', 'u.nguyen@company.com','DN789');
+INSERT INTO ADMIN.DoanhNghiep (MaCongTy, TenCongTy, MaSoThue, NguoiDaiDien, DiaChi, Email,MatKhau) VALUES ('CTY002', 'Công Ty B', '987654321', 'Lê Thị V', '101 Phố JKL', 'v.le@company.com','DN789');
+INSERT INTO ADMIN.DoanhNghiep (MaCongTy, TenCongTy, MaSoThue, NguoiDaiDien, DiaChi, Email,MatKhau) VALUES ('CTY003', 'Công Ty C', '234567890', 'Trần Văn W', '202 Đường MNO', 'w.tran@company.com','DN789');
+INSERT INTO ADMIN.DoanhNghiep (MaCongTy, TenCongTy, MaSoThue, NguoiDaiDien, DiaChi, Email,MatKhau) VALUES ('CTY004', 'Công Ty D', '345678901', 'Phạm Thị X', '303 Phố PQR', 'x.pham@company.com','DN789');
+INSERT INTO ADMIN.DoanhNghiep (MaCongTy, TenCongTy, MaSoThue, NguoiDaiDien, DiaChi, Email,MatKhau) VALUES ('CTY005', 'Công Ty E', '456789012', 'Hoàng Văn Y', '404 Đường STU', 'y.hoang@company.com','DN789');
+INSERT INTO ADMIN.DoanhNghiep (MaCongTy, TenCongTy, MaSoThue, NguoiDaiDien, DiaChi, Email,MatKhau) VALUES ('CTY006', 'Công Ty F', '567890123', 'Vũ Thị Z', '505 Phố VWX', 'z.vu@company.com','DN789');
+INSERT INTO ADMIN.DoanhNghiep (MaCongTy, TenCongTy, MaSoThue, NguoiDaiDien, DiaChi, Email,MatKhau) VALUES ('CTY007', 'Công Ty G', '678901234', 'Nguyễn Văn A', '606 Đường YZ', 'a.nguyen@company.com','DN789');
+INSERT INTO ADMIN.DoanhNghiep (MaCongTy, TenCongTy, MaSoThue, NguoiDaiDien, DiaChi, Email,MatKhau) VALUES ('CTY008', 'Công Ty H', '789012345', 'Lê Thị B', '707 Phố ABC', 'b.le@company.com','DN789');
+INSERT INTO ADMIN.DoanhNghiep (MaCongTy, TenCongTy, MaSoThue, NguoiDaiDien, DiaChi, Email,MatKhau) VALUES ('CTY009', 'Công Ty I', '890123456', 'Trần Văn C', '808 Đường DEF', 'c.tran@company.com','DN789');
+INSERT INTO ADMIN.DoanhNghiep (MaCongTy, TenCongTy, MaSoThue, NguoiDaiDien, DiaChi, Email,MatKhau) VALUES ('CTY010', 'Công Ty J', '901234567', 'Phạm Thị D', '909 Phố GHI', 'd.pham@company.com','DN789');
 
 -- Chèn dữ liệu vào bảng PhieuDangKyDN
 INSERT INTO ADMIN.PhieuDangKyDN (MaPhieu, NgayTaoPhieu, TinhTrang, MaNhanVien, MaCongTy) VALUES ('PDK001', TO_DATE('2024-06-01', 'YYYY-MM-DD'), 'Mới đăng ký', 'NV001', 'CTY001');
