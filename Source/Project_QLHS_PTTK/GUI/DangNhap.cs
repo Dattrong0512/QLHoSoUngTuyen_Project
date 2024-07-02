@@ -64,7 +64,7 @@ namespace GUI
                     var userConnection = new Connection(TextBoxUSN.Text, TextBoxPSW.Text);
                     TKNV.TKconn = userConnection.conn;
                     this.Hide();
-                    NhanVienForm FormNV = new NhanVienForm();
+                    NhanVienForm FormNV = new NhanVienForm(TKNV);
                     FormNV.Show();
                 }    
                 

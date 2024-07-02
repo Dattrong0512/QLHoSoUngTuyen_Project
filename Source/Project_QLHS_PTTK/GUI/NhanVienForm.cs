@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +13,11 @@ namespace GUI
 {
     public partial class NhanVienForm : Form
     {
-        public NhanVienForm()
+        private TaiKhoanNV taikhoanNV { get; set; }
+        public NhanVienForm(TaiKhoanNV taikhoan)
         {
             InitializeComponent();
-         
+            taikhoanNV = taikhoan;
         }
 
         private void NhanVienForm_Load(object sender, EventArgs e)
@@ -56,7 +58,7 @@ namespace GUI
 
         private void ButtonTraCuuDN_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new TraCuuDoanhNghiepForm());
+            OpenChildForm(new TraCuuDoanhNghiepForm(taikhoanNV.TKconn));
             LabelTitle.Text = "Tra cứu doanh nghiệp";
             LabelTitle.Show();
         }

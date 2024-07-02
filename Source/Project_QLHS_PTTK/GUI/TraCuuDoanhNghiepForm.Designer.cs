@@ -39,7 +39,7 @@
             // 
             this.btnSearchDN.BackColor = System.Drawing.Color.MediumPurple;
             this.btnSearchDN.FlatAppearance.BorderSize = 0;
-            this.btnSearchDN.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.btnSearchDN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnSearchDN.ForeColor = System.Drawing.SystemColors.Window;
             this.btnSearchDN.Location = new System.Drawing.Point(388, 30);
             this.btnSearchDN.Name = "btnSearchDN";
@@ -61,6 +61,7 @@
             this.cbbSearchFilterDN.Name = "cbbSearchFilterDN";
             this.cbbSearchFilterDN.Size = new System.Drawing.Size(241, 34);
             this.cbbSearchFilterDN.TabIndex = 6;
+            this.cbbSearchFilterDN.SelectedIndexChanged += new System.EventHandler(this.cbbSearchFilterDN_SelectedIndexChanged);
             // 
             // gvDSDN
             // 
@@ -72,6 +73,7 @@
             this.gvDSDN.RowTemplate.Height = 24;
             this.gvDSDN.Size = new System.Drawing.Size(821, 354);
             this.gvDSDN.TabIndex = 5;
+            this.gvDSDN.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvDSDN_CellContentClick);
             // 
             // txtSearchDN
             // 
@@ -80,6 +82,7 @@
             this.txtSearchDN.Name = "txtSearchDN";
             this.txtSearchDN.Size = new System.Drawing.Size(332, 32);
             this.txtSearchDN.TabIndex = 4;
+            this.txtSearchDN.TextChanged += new System.EventHandler(this.txtSearchDN_TextChanged);
             // 
             // TraCuuDoanhNghiepForm
             // 
