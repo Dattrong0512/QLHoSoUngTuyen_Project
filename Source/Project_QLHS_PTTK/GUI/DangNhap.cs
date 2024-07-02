@@ -31,7 +31,6 @@ namespace GUI
         }
         private void ButtonDN_Click(object sender, EventArgs e)
         {
-           
             if (string.IsNullOrWhiteSpace(TextBoxUSN.Text))
             {
                 MessageBox.Show("Tên đăng nhập không được bỏ trống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
