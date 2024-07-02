@@ -56,7 +56,9 @@ namespace GUI
 
         private void ButtonTraCuuDN_Click(object sender, EventArgs e)
         {
-
+            OpenChildForm(new TraCuuDoanhNghiepForm());
+            LabelTitle.Text = "Tra cứu doanh nghiệp";
+            LabelTitle.Show();
         }
 
         private void ButtonTraCuuUV_Click(object sender, EventArgs e)

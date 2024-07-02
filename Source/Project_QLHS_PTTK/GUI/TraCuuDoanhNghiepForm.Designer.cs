@@ -28,20 +28,83 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.btnSearchDN = new System.Windows.Forms.Button();
+            this.cbbSearchFilterDN = new System.Windows.Forms.ComboBox();
+            this.gvDSDN = new System.Windows.Forms.DataGridView();
+            this.txtSearchDN = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.gvDSDN)).BeginInit();
             this.SuspendLayout();
+            // 
+            // btnSearchDN
+            // 
+            this.btnSearchDN.BackColor = System.Drawing.Color.MediumPurple;
+            this.btnSearchDN.FlatAppearance.BorderSize = 0;
+            this.btnSearchDN.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.btnSearchDN.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnSearchDN.Location = new System.Drawing.Point(388, 30);
+            this.btnSearchDN.Name = "btnSearchDN";
+            this.btnSearchDN.Size = new System.Drawing.Size(112, 35);
+            this.btnSearchDN.TabIndex = 7;
+            this.btnSearchDN.Text = "Tìm ";
+            this.btnSearchDN.UseVisualStyleBackColor = false;
+            // 
+            // cbbSearchFilterDN
+            // 
+            this.cbbSearchFilterDN.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.cbbSearchFilterDN.FormattingEnabled = true;
+            this.cbbSearchFilterDN.Items.AddRange(new object[] {
+            "Mã Doanh Nghiệp",
+            "Tên Doanh Nghiệp",
+            "Mã số thuế",
+            "Địa chỉ"});
+            this.cbbSearchFilterDN.Location = new System.Drawing.Point(506, 31);
+            this.cbbSearchFilterDN.Name = "cbbSearchFilterDN";
+            this.cbbSearchFilterDN.Size = new System.Drawing.Size(241, 34);
+            this.cbbSearchFilterDN.TabIndex = 6;
+            // 
+            // gvDSDN
+            // 
+            this.gvDSDN.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.gvDSDN.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvDSDN.Location = new System.Drawing.Point(50, 89);
+            this.gvDSDN.Name = "gvDSDN";
+            this.gvDSDN.RowHeadersWidth = 51;
+            this.gvDSDN.RowTemplate.Height = 24;
+            this.gvDSDN.Size = new System.Drawing.Size(821, 354);
+            this.gvDSDN.TabIndex = 5;
+            // 
+            // txtSearchDN
+            // 
+            this.txtSearchDN.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.txtSearchDN.Location = new System.Drawing.Point(50, 30);
+            this.txtSearchDN.Name = "txtSearchDN";
+            this.txtSearchDN.Size = new System.Drawing.Size(332, 32);
+            this.txtSearchDN.TabIndex = 4;
             // 
             // TraCuuDoanhNghiepForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.SystemColors.Window;
+            this.ClientSize = new System.Drawing.Size(930, 478);
+            this.Controls.Add(this.btnSearchDN);
+            this.Controls.Add(this.cbbSearchFilterDN);
+            this.Controls.Add(this.gvDSDN);
+            this.Controls.Add(this.txtSearchDN);
             this.Name = "TraCuuDoanhNghiepForm";
             this.Text = "TraCuuDoanhNghiep";
             this.Load += new System.EventHandler(this.TraCuuDoanhNghiepForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.gvDSDN)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Button btnSearchDN;
+        private System.Windows.Forms.ComboBox cbbSearchFilterDN;
+        private System.Windows.Forms.DataGridView gvDSDN;
+        private System.Windows.Forms.TextBox txtSearchDN;
     }
 }

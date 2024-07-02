@@ -31,15 +31,15 @@
             this.TitleLabel = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.panelLeft = new System.Windows.Forms.Panel();
+            this.buttonTraCuuPDT = new System.Windows.Forms.Button();
+            this.buttonTraCuuHS = new System.Windows.Forms.Button();
             this.ButtonTraCuuDN = new System.Windows.Forms.Button();
             this.ButtonTraCuuUV = new System.Windows.Forms.Button();
             this.panelTop = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.LabelTitle = new System.Windows.Forms.Label();
             this.buttonLogout = new System.Windows.Forms.Button();
             this.panelBody = new System.Windows.Forms.Panel();
-            this.LabelTitle = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.buttonTraCuuHS = new System.Windows.Forms.Button();
-            this.buttonTraCuuPDT = new System.Windows.Forms.Button();
             this.panelLeft.SuspendLayout();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -83,6 +83,34 @@
             this.panelLeft.Size = new System.Drawing.Size(190, 504);
             this.panelLeft.TabIndex = 3;
             this.panelLeft.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // buttonTraCuuPDT
+            // 
+            this.buttonTraCuuPDT.BackColor = System.Drawing.Color.LightCyan;
+            this.buttonTraCuuPDT.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonTraCuuPDT.FlatAppearance.BorderSize = 0;
+            this.buttonTraCuuPDT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTraCuuPDT.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.buttonTraCuuPDT.Location = new System.Drawing.Point(0, 213);
+            this.buttonTraCuuPDT.Name = "buttonTraCuuPDT";
+            this.buttonTraCuuPDT.Size = new System.Drawing.Size(190, 70);
+            this.buttonTraCuuPDT.TabIndex = 3;
+            this.buttonTraCuuPDT.Text = "Tra cứu phiếu đăng tuyền";
+            this.buttonTraCuuPDT.UseVisualStyleBackColor = false;
+            // 
+            // buttonTraCuuHS
+            // 
+            this.buttonTraCuuHS.BackColor = System.Drawing.Color.LightCyan;
+            this.buttonTraCuuHS.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonTraCuuHS.FlatAppearance.BorderSize = 0;
+            this.buttonTraCuuHS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTraCuuHS.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.buttonTraCuuHS.Location = new System.Drawing.Point(0, 143);
+            this.buttonTraCuuHS.Name = "buttonTraCuuHS";
+            this.buttonTraCuuHS.Size = new System.Drawing.Size(190, 70);
+            this.buttonTraCuuHS.TabIndex = 2;
+            this.buttonTraCuuHS.Text = "Tra cứu hồ sơ";
+            this.buttonTraCuuHS.UseVisualStyleBackColor = false;
             // 
             // ButtonTraCuuDN
             // 
@@ -128,6 +156,27 @@
             this.panelTop.Size = new System.Drawing.Size(1104, 101);
             this.panelTop.TabIndex = 4;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.pictureBox1.Image = global::GUI.Properties.Resources.Company_Logo;
+            this.pictureBox1.Location = new System.Drawing.Point(-3, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(193, 101);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
+            // LabelTitle
+            // 
+            this.LabelTitle.AutoSize = true;
+            this.LabelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.LabelTitle.Location = new System.Drawing.Point(196, 27);
+            this.LabelTitle.Name = "LabelTitle";
+            this.LabelTitle.Size = new System.Drawing.Size(331, 46);
+            this.LabelTitle.TabIndex = 2;
+            this.LabelTitle.Text = "Tra cứu ứng viên";
+            // 
             // buttonLogout
             // 
             this.buttonLogout.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -153,55 +202,6 @@
             this.panelBody.Size = new System.Drawing.Size(914, 504);
             this.panelBody.TabIndex = 5;
             this.panelBody.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBody_Paint_1);
-            // 
-            // LabelTitle
-            // 
-            this.LabelTitle.AutoSize = true;
-            this.LabelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.LabelTitle.Location = new System.Drawing.Point(403, 33);
-            this.LabelTitle.Name = "LabelTitle";
-            this.LabelTitle.Size = new System.Drawing.Size(331, 46);
-            this.LabelTitle.TabIndex = 2;
-            this.LabelTitle.Text = "Tra cứu ứng viên";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.pictureBox1.Image = global::GUI.Properties.Resources.Company_Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(-3, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(193, 101);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            // 
-            // buttonTraCuuHS
-            // 
-            this.buttonTraCuuHS.BackColor = System.Drawing.Color.LightCyan;
-            this.buttonTraCuuHS.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonTraCuuHS.FlatAppearance.BorderSize = 0;
-            this.buttonTraCuuHS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonTraCuuHS.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.buttonTraCuuHS.Location = new System.Drawing.Point(0, 143);
-            this.buttonTraCuuHS.Name = "buttonTraCuuHS";
-            this.buttonTraCuuHS.Size = new System.Drawing.Size(190, 70);
-            this.buttonTraCuuHS.TabIndex = 2;
-            this.buttonTraCuuHS.Text = "Tra cứu hồ sơ";
-            this.buttonTraCuuHS.UseVisualStyleBackColor = false;
-            // 
-            // buttonTraCuuPDT
-            // 
-            this.buttonTraCuuPDT.BackColor = System.Drawing.Color.LightCyan;
-            this.buttonTraCuuPDT.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonTraCuuPDT.FlatAppearance.BorderSize = 0;
-            this.buttonTraCuuPDT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonTraCuuPDT.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.buttonTraCuuPDT.Location = new System.Drawing.Point(0, 213);
-            this.buttonTraCuuPDT.Name = "buttonTraCuuPDT";
-            this.buttonTraCuuPDT.Size = new System.Drawing.Size(190, 70);
-            this.buttonTraCuuPDT.TabIndex = 3;
-            this.buttonTraCuuPDT.Text = "Tra cứu phiếu đăng tuyền";
-            this.buttonTraCuuPDT.UseVisualStyleBackColor = false;
             // 
             // NhanVienForm
             // 
