@@ -10,15 +10,21 @@ namespace DAL
 {
     public static class DoanhNghiepDB
     {
-        public static DataTable TraCuuDn(OracleConnection connnv)
+        public static DataTable TraCuuDn(OracleConnection connnv, string condition)
         {
             // Khởi tạo DataTable
             DataTable dtdn = new DataTable();
-
             // Mở kết nối
             try
             {
-                using (OracleCommand cmd = new OracleCommand("SELECT * FROM ADMIN.DoanhNghiep", connnv))
+                // Xây dựng câu lệnh SQL với điều kiện
+                string query = "SELECT * FROM ADMIN.DoanhNghiep";
+                if (!string.IsNullOrEmpty(condition))
+                {
+                    query += " WHERE " + condition;
+                }
+
+                using (OracleCommand cmd = new OracleCommand(query, connnv))
                 {
                     using (OracleDataAdapter da = new OracleDataAdapter(cmd))
                     {

@@ -17,6 +17,8 @@ namespace GUI
         {
             InitializeComponent();
             connect = conn;
+            cbbSearchFilterDN.Enabled = true;
+            cbbSearchFilterDN.SelectedIndex = 0;
         }
 
         private void TraCuuDoanhNghiepForm_Load(object sender, EventArgs e)
@@ -39,5 +41,14 @@ namespace GUI
 
         }
 
+        private void btnSearchDN_Click(object sender, EventArgs e)
+        {
+            gvDSDN.DataSource = BLL.DoanhNghiep.TraCuuDoanhNghiep(connect, cbbSearchFilterDN.Text, txtSearchDN.Text);
+        }
+
+        private void pictureRefresh_Click(object sender, EventArgs e)
+        {
+            gvDSDN.DataSource = BLL.DoanhNghiep.HienThiDoanhNghiep(connect);
+        }
     }
 }

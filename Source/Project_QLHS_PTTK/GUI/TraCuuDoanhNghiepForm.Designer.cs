@@ -32,7 +32,9 @@
             this.cbbSearchFilterDN = new System.Windows.Forms.ComboBox();
             this.gvDSDN = new System.Windows.Forms.DataGridView();
             this.txtSearchDN = new System.Windows.Forms.TextBox();
+            this.pictureRefresh = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.gvDSDN)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureRefresh)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSearchDN
@@ -41,12 +43,13 @@
             this.btnSearchDN.FlatAppearance.BorderSize = 0;
             this.btnSearchDN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnSearchDN.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnSearchDN.Location = new System.Drawing.Point(388, 30);
+            this.btnSearchDN.Location = new System.Drawing.Point(498, 29);
             this.btnSearchDN.Name = "btnSearchDN";
             this.btnSearchDN.Size = new System.Drawing.Size(112, 35);
             this.btnSearchDN.TabIndex = 7;
             this.btnSearchDN.Text = "Tìm ";
             this.btnSearchDN.UseVisualStyleBackColor = false;
+            this.btnSearchDN.Click += new System.EventHandler(this.btnSearchDN_Click);
             // 
             // cbbSearchFilterDN
             // 
@@ -57,7 +60,7 @@
             "Tên Doanh Nghiệp",
             "Mã số thuế",
             "Địa chỉ"});
-            this.cbbSearchFilterDN.Location = new System.Drawing.Point(506, 31);
+            this.cbbSearchFilterDN.Location = new System.Drawing.Point(630, 31);
             this.cbbSearchFilterDN.Name = "cbbSearchFilterDN";
             this.cbbSearchFilterDN.Size = new System.Drawing.Size(241, 34);
             this.cbbSearchFilterDN.TabIndex = 6;
@@ -78,11 +81,22 @@
             // txtSearchDN
             // 
             this.txtSearchDN.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.txtSearchDN.Location = new System.Drawing.Point(50, 30);
+            this.txtSearchDN.Location = new System.Drawing.Point(137, 31);
             this.txtSearchDN.Name = "txtSearchDN";
             this.txtSearchDN.Size = new System.Drawing.Size(332, 32);
             this.txtSearchDN.TabIndex = 4;
             this.txtSearchDN.TextChanged += new System.EventHandler(this.txtSearchDN_TextChanged);
+            // 
+            // pictureRefresh
+            // 
+            this.pictureRefresh.Image = global::GUI.Properties.Resources.refresh;
+            this.pictureRefresh.Location = new System.Drawing.Point(47, 26);
+            this.pictureRefresh.Name = "pictureRefresh";
+            this.pictureRefresh.Size = new System.Drawing.Size(68, 50);
+            this.pictureRefresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureRefresh.TabIndex = 8;
+            this.pictureRefresh.TabStop = false;
+            this.pictureRefresh.Click += new System.EventHandler(this.pictureRefresh_Click);
             // 
             // TraCuuDoanhNghiepForm
             // 
@@ -90,6 +104,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(930, 478);
+            this.Controls.Add(this.pictureRefresh);
             this.Controls.Add(this.btnSearchDN);
             this.Controls.Add(this.cbbSearchFilterDN);
             this.Controls.Add(this.gvDSDN);
@@ -98,6 +113,7 @@
             this.Text = "TraCuuDoanhNghiep";
             this.Load += new System.EventHandler(this.TraCuuDoanhNghiepForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvDSDN)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureRefresh)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -109,5 +125,6 @@
         private System.Windows.Forms.ComboBox cbbSearchFilterDN;
         private System.Windows.Forms.DataGridView gvDSDN;
         private System.Windows.Forms.TextBox txtSearchDN;
+        private System.Windows.Forms.PictureBox pictureRefresh;
     }
 }

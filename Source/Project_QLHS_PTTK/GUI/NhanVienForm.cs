@@ -18,6 +18,26 @@ namespace GUI
         {
             InitializeComponent();
             taikhoanNV = taikhoan;
+            string originalText = "Xin chào " + BLL.NhanVien.HienThiTenNhanVien(taikhoan.TKconn, taikhoan.MaTK);
+
+            // Thiết lập chuỗi cho TitleLabel
+            TitleLabel.Text = originalText;
+
+            // Canh lề từ bên phải
+            TitleLabel.TextAlign = ContentAlignment.MiddleRight;
+
+            // Điều chỉnh kích thước của Label để vừa đủ độ dài của chuỗi
+            using (Graphics g = TitleLabel.CreateGraphics())
+            {
+                SizeF size = g.MeasureString(originalText, TitleLabel.Font);
+                TitleLabel.Width = (int)Math.Ceiling(size.Width);
+                TitleLabel.Height = (int)Math.Ceiling(size.Height);
+            }
+
+            // Đặt vị trí của Label ở góc trên cùng bên phải của form hoặc container, trừ 5 pixel
+            TitleLabel.Location = new Point(this.ClientSize.Width - TitleLabel.Width - 5, 5);
+            TitleLabel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+
         }
 
         private void NhanVienForm_Load(object sender, EventArgs e)
