@@ -6,19 +6,17 @@ using System.Text;
 using System.Threading.Tasks;
 using DTO;
 using Oracle.ManagedDataAccess.Client;
+
 namespace DAL
 {
-    public static class DoanhNghiepDB
+    public static class UngVienDB
     {
-        public static DataTable TraCuuDn(OracleConnection connnv, string condition)
+        public static DataTable TraCuuUv(OracleConnection connnv, string condition)
         {
-            // Khởi tạo DataTable
-            DataTable dtdn = new DataTable();
-            // Mở kết nối
+            DataTable dtuv = new DataTable();
             try
             {
-                // Xây dựng câu lệnh SQL với điều kiện
-                string query = "SELECT MACONGTY, TENCONGTY, MASOTHUE, NGUOIDAIDIEN, DIACHI, EMAIl FROM ADMIN.DoanhNghiep";
+                string query = "SELECT MAUNGVIEN, HOTEN, SDT, EMAIL, DIACHI FROM ADMIN.UngVien";
                 if (!string.IsNullOrEmpty(condition))
                 {
                     query += " WHERE " + condition;
@@ -28,23 +26,18 @@ namespace DAL
                 {
                     using (OracleDataAdapter da = new OracleDataAdapter(cmd))
                     {
-                        // Điền dữ liệu vào DataTable
-                        da.Fill(dtdn);
+                        da.Fill(dtuv);
                     }
                 }
             }
             finally
             {
-                // Đảm bảo rằng kết nối được đóng
                 if (connnv != null && connnv.State == System.Data.ConnectionState.Open)
                 {
                     connnv.Close();
                 }
             }
-
-            // Trả về DataTable chứa dữ liệu
-            return dtdn;
+            return dtuv;
         }
     }
-    
 }

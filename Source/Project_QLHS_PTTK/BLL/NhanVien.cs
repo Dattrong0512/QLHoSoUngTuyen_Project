@@ -17,7 +17,6 @@ namespace BLL
             string Condition = "";
             string condition = "MANHANVIEN = '" + manv + "'";
             return DAL.NhanVienDB.TraCuuHoTenNV(connect, Condition);
-
         }
 
 

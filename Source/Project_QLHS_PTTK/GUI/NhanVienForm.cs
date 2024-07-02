@@ -45,7 +45,7 @@ namespace GUI
             dateTimePicker1.ShowUpDown = false;
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.CustomFormat = "HH:mm tt";
-            OpenChildForm(new TraCuuUngVienForm());
+            OpenChildForm(new TraCuuUngVienForm(taikhoanNV.TKconn));
             LabelTitle.Text = "Tra cứu ứng viên";
             LabelTitle.Show();
         }
@@ -85,7 +85,7 @@ namespace GUI
 
         private void ButtonTraCuuUV_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new TraCuuUngVienForm());
+            OpenChildForm(new TraCuuUngVienForm(taikhoanNV.TKconn));
             LabelTitle.Text = "Tra cứu ứng viên";
             LabelTitle.Show();
         }

@@ -17,7 +17,7 @@ namespace GUI
         {
             InitializeComponent();
             connect = conn;
-            cbbSearchFilterDN.Enabled = true;
+            cbbSearchFilterDN.DropDownStyle = ComboBoxStyle.DropDownList;
             cbbSearchFilterDN.SelectedIndex = 0;
         }
 

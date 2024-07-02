@@ -43,7 +43,7 @@
             this.btnSearchDN.FlatAppearance.BorderSize = 0;
             this.btnSearchDN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnSearchDN.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnSearchDN.Location = new System.Drawing.Point(498, 29);
+            this.btnSearchDN.Location = new System.Drawing.Point(460, 30);
             this.btnSearchDN.Name = "btnSearchDN";
             this.btnSearchDN.Size = new System.Drawing.Size(112, 35);
             this.btnSearchDN.TabIndex = 7;
@@ -53,6 +53,7 @@
             // 
             // cbbSearchFilterDN
             // 
+            this.cbbSearchFilterDN.BackColor = System.Drawing.Color.White;
             this.cbbSearchFilterDN.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.cbbSearchFilterDN.FormattingEnabled = true;
             this.cbbSearchFilterDN.Items.AddRange(new object[] {
@@ -60,7 +61,7 @@
             "Tên Doanh Nghiệp",
             "Mã số thuế",
             "Địa chỉ"});
-            this.cbbSearchFilterDN.Location = new System.Drawing.Point(630, 31);
+            this.cbbSearchFilterDN.Location = new System.Drawing.Point(638, 31);
             this.cbbSearchFilterDN.Name = "cbbSearchFilterDN";
             this.cbbSearchFilterDN.Size = new System.Drawing.Size(241, 34);
             this.cbbSearchFilterDN.TabIndex = 6;
@@ -74,14 +75,14 @@
             this.gvDSDN.Name = "gvDSDN";
             this.gvDSDN.RowHeadersWidth = 51;
             this.gvDSDN.RowTemplate.Height = 24;
-            this.gvDSDN.Size = new System.Drawing.Size(821, 354);
+            this.gvDSDN.Size = new System.Drawing.Size(829, 354);
             this.gvDSDN.TabIndex = 5;
             this.gvDSDN.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvDSDN_CellContentClick);
             // 
             // txtSearchDN
             // 
             this.txtSearchDN.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.txtSearchDN.Location = new System.Drawing.Point(137, 31);
+            this.txtSearchDN.Location = new System.Drawing.Point(105, 31);
             this.txtSearchDN.Name = "txtSearchDN";
             this.txtSearchDN.Size = new System.Drawing.Size(332, 32);
             this.txtSearchDN.TabIndex = 4;
@@ -89,10 +90,11 @@
             // 
             // pictureRefresh
             // 
+            this.pictureRefresh.BackColor = System.Drawing.Color.White;
             this.pictureRefresh.Image = global::GUI.Properties.Resources.refresh;
-            this.pictureRefresh.Location = new System.Drawing.Point(47, 26);
+            this.pictureRefresh.Location = new System.Drawing.Point(50, 29);
             this.pictureRefresh.Name = "pictureRefresh";
-            this.pictureRefresh.Size = new System.Drawing.Size(68, 50);
+            this.pictureRefresh.Size = new System.Drawing.Size(49, 34);
             this.pictureRefresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureRefresh.TabIndex = 8;
             this.pictureRefresh.TabStop = false;

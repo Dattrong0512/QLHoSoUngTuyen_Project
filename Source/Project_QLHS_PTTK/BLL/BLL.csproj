@@ -83,6 +83,7 @@
     <Compile Include="DoanhNghiep.cs" />
     <Compile Include="NhanVien.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UngVien.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">
