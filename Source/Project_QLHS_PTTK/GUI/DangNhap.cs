@@ -51,15 +51,23 @@ namespace GUI
                 DAL.DataBaseAccess.CheckLogic(TKDN);
                 string result = DAL.DataBaseAccess.CheckLogic(TKDN);
                 MessageBox.Show(result, "Kết quả đăng nhập");
+                
             }
             else if (TextBoxUSN.Text.Contains("NV"))
             {
-                DTO.TaiKhoanNV TKNV = new TaiKhoanNV(TextBoxUSN.Text, TextBoxPSW.Text, "NV"); // Gán "VaiTroNV" hoặc vai trò tương ứng
-                var userConnection = new Connection(TextBoxUSN.Text, TextBoxPSW.Text);
-                TKNV.TKconn = userConnection.conn;
+                DTO.TaiKhoanNV TKNV = new TaiKhoanNV(TextBoxUSN.Text, TextBoxPSW.Text, "NV"); // Gán "VaiTroNV" hoặc vai trò tương ứng             
                 DAL.DataBaseAccess.CheckLogic(TKNV);
                 string result = DAL.DataBaseAccess.CheckLogic(TKNV);
                 MessageBox.Show(result, "Kết quả đăng nhập");
+                if(result=="Thành công")
+                {
+                    var userConnection = new Connection(TextBoxUSN.Text, TextBoxPSW.Text);
+                    TKNV.TKconn = userConnection.conn;
+                    this.Hide();
+                    NhanVienForm FormNV = new NhanVienForm();
+                    FormNV.Show();
+                }    
+                
             }
             else
             {

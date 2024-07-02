@@ -77,15 +77,13 @@ namespace DAL
                     cmd.Parameters.Add(new OracleParameter("password", taikhoan.MatKhau));
                     using (OracleDataReader reader = cmd.ExecuteReader())
                     {
-                        if (reader.HasRows)
+
+                        if (reader.Read())
                         {
-                            if (reader.Read())
-                            {
-                                user = reader.GetString(0); // Lấy giá trị từ cột đầu tiên của hàng
-                                return "Thành công";
-                            }
-                            
+                            user = reader.GetString(0); // Lấy giá trị từ cột đầu tiên của hàng
+                            return "Thành công";
                         }
+                            
                         else
                         {
                             return "Tài khoản hoặc mật khẩu không chính xác";

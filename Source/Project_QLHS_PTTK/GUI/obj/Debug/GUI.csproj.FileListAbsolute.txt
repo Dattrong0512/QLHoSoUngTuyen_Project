@@ -85,3 +85,5 @@ C:\Users\DAT TRONG\OneDrive - VNU-HCMUS\Desktop\PTTK_DOAN\QLHoSoUngTuyen_Project
 C:\Users\DAT TRONG\OneDrive - VNU-HCMUS\Desktop\PTTK_DOAN\QLHoSoUngTuyen_Project\Source\Project_QLHS_PTTK\GUI\obj\Debug\GUI.exe
 C:\Users\DAT TRONG\OneDrive - VNU-HCMUS\Desktop\PTTK_DOAN\QLHoSoUngTuyen_Project\Source\Project_QLHS_PTTK\GUI\obj\Debug\GUI.pdb
 C:\Users\DAT TRONG\OneDrive - VNU-HCMUS\Desktop\PTTK_DOAN\QLHoSoUngTuyen_Project\Source\Project_QLHS_PTTK\GUI\obj\Debug\GUI.NhanVienForm.resources
+C:\Users\DAT TRONG\OneDrive - VNU-HCMUS\Desktop\PTTK_DOAN\QLHoSoUngTuyen_Project\Source\Project_QLHS_PTTK\GUI\obj\Debug\GUI.TraCuuUngVienForm.resources
+C:\Users\DAT TRONG\OneDrive - VNU-HCMUS\Desktop\PTTK_DOAN\QLHoSoUngTuyen_Project\Source\Project_QLHS_PTTK\GUI\obj\Debug\GUI.TraCuuDoanhNghiepForm.resources
