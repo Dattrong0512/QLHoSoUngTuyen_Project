@@ -120,6 +120,14 @@ namespace GUI
             DangNhap formDN= new DangNhap();
             formDN.Show();
         }
+
+        private void buttonTraCuuPUT_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new TraCuuTTPhieuDangKyUngTuyenForm(taikhoanNV.TKconn));
+            LabelTitle.Text = "Tra cứu phiếu ứng tuyển";
+
+            LabelTitle.Show();
+        }
     }
  
 }

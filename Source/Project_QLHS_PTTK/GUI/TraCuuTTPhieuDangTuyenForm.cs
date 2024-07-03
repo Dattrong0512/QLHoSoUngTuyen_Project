@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class TraCuuTTPhieuDangKyUngTuyen : Form
+    public partial class TraCuuTTPhieuDangTuyenForm : Form
     {
-        public TraCuuTTPhieuDangKyUngTuyen()
+        public TraCuuTTPhieuDangTuyenForm()
         {
             InitializeComponent();
         }

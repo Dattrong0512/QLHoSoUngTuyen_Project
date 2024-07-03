@@ -36,10 +36,11 @@
             this.ButtonTraCuuDN = new System.Windows.Forms.Button();
             this.ButtonTraCuuUV = new System.Windows.Forms.Button();
             this.panelTop = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.LabelTitle = new System.Windows.Forms.Label();
             this.buttonLogout = new System.Windows.Forms.Button();
             this.panelBody = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.buttonTraCuuPUT = new System.Windows.Forms.Button();
             this.panelLeft.SuspendLayout();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -73,6 +74,7 @@
             // panelLeft
             // 
             this.panelLeft.BackColor = System.Drawing.Color.AliceBlue;
+            this.panelLeft.Controls.Add(this.buttonTraCuuPUT);
             this.panelLeft.Controls.Add(this.buttonTraCuuPDT);
             this.panelLeft.Controls.Add(this.buttonTraCuuHS);
             this.panelLeft.Controls.Add(this.ButtonTraCuuDN);
@@ -95,7 +97,7 @@
             this.buttonTraCuuPDT.Name = "buttonTraCuuPDT";
             this.buttonTraCuuPDT.Size = new System.Drawing.Size(190, 70);
             this.buttonTraCuuPDT.TabIndex = 3;
-            this.buttonTraCuuPDT.Text = "Tra cứu phiếu đăng tuyền";
+            this.buttonTraCuuPDT.Text = "Tra cứu phiếu đăng tuyển";
             this.buttonTraCuuPDT.UseVisualStyleBackColor = false;
             // 
             // buttonTraCuuHS
@@ -156,17 +158,6 @@
             this.panelTop.Size = new System.Drawing.Size(1104, 101);
             this.panelTop.TabIndex = 4;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.pictureBox1.Image = global::GUI.Properties.Resources.Company_Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(-3, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(193, 101);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            // 
             // LabelTitle
             // 
             this.LabelTitle.AutoSize = true;
@@ -203,6 +194,32 @@
             this.panelBody.TabIndex = 5;
             this.panelBody.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBody_Paint_1);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.pictureBox1.Image = global::GUI.Properties.Resources.Company_Logo;
+            this.pictureBox1.Location = new System.Drawing.Point(-3, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(193, 101);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
+            // buttonTraCuuPUT
+            // 
+            this.buttonTraCuuPUT.BackColor = System.Drawing.Color.LightCyan;
+            this.buttonTraCuuPUT.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonTraCuuPUT.FlatAppearance.BorderSize = 0;
+            this.buttonTraCuuPUT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTraCuuPUT.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.buttonTraCuuPUT.Location = new System.Drawing.Point(0, 283);
+            this.buttonTraCuuPUT.Name = "buttonTraCuuPUT";
+            this.buttonTraCuuPUT.Size = new System.Drawing.Size(190, 70);
+            this.buttonTraCuuPUT.TabIndex = 4;
+            this.buttonTraCuuPUT.Text = "Tra cứu phiếu ứng tuyển";
+            this.buttonTraCuuPUT.UseVisualStyleBackColor = false;
+            this.buttonTraCuuPUT.Click += new System.EventHandler(this.buttonTraCuuPUT_Click);
+            // 
             // NhanVienForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -236,5 +253,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button buttonTraCuuPDT;
         private System.Windows.Forms.Button buttonTraCuuHS;
+        private System.Windows.Forms.Button buttonTraCuuPUT;
     }
 }

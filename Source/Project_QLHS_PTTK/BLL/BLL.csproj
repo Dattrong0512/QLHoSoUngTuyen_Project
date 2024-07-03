@@ -82,6 +82,7 @@
   <ItemGroup>
     <Compile Include="DoanhNghiep.cs" />
     <Compile Include="NhanVien.cs" />
+    <Compile Include="PDKUT.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UngVien.cs" />
   </ItemGroup>
