@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\class_homework\\PTTKHTTT\\QLHoSoUngTuyen_Project\\Source\\Project_QLHS_PTTK\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{60199301-6A48-4718-8EAA-967267E250A7}|GUI\\GUI.csproj|C:\\Users\\user\\Desktop\\class_homework\\PTTKHTTT\\QLHoSoUngTuyen_Project\\Source\\Project_QLHS_PTTK\\gui\\nhanvienform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{60199301-6A48-4718-8EAA-967267E250A7}|GUI\\GUI.csproj|solutionrelative:gui\\nhanvienform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{60199301-6A48-4718-8EAA-967267E250A7}|GUI\\GUI.csproj|C:\\Users\\user\\Desktop\\class_homework\\PTTKHTTT\\QLHoSoUngTuyen_Project\\Source\\Project_QLHS_PTTK\\gui\\nhanvienform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{60199301-6A48-4718-8EAA-967267E250A7}|GUI\\GUI.csproj|solutionrelative:gui\\nhanvienform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{60199301-6A48-4718-8EAA-967267E250A7}|GUI\\GUI.csproj|C:\\Users\\user\\Desktop\\class_homework\\PTTKHTTT\\QLHoSoUngTuyen_Project\\Source\\Project_QLHS_PTTK\\gui\\dangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{60199301-6A48-4718-8EAA-967267E250A7}|GUI\\GUI.csproj|solutionrelative:gui\\dangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{60199301-6A48-4718-8EAA-967267E250A7}|GUI\\GUI.csproj|c:\\users\\user\\desktop\\class_homework\\pttkhttt\\qlhosoungtuyen_project\\source\\project_qlhs_pttk\\gui\\tracuuttphieudangkyungtuyenform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{60199301-6A48-4718-8EAA-967267E250A7}|GUI\\GUI.csproj|solutionrelative:gui\\tracuuttphieudangkyungtuyenform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{60199301-6A48-4718-8EAA-967267E250A7}|GUI\\GUI.csproj|C:\\Users\\user\\Desktop\\class_homework\\PTTKHTTT\\QLHoSoUngTuyen_Project\\Source\\Project_QLHS_PTTK\\gui\\tracuudoanhnghiepform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{60199301-6A48-4718-8EAA-967267E250A7}|GUI\\GUI.csproj|solutionrelative:gui\\tracuudoanhnghiepform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{60199301-6A48-4718-8EAA-967267E250A7}|GUI\\GUI.csproj|c:\\users\\user\\desktop\\class_homework\\pttkhttt\\qlhosoungtuyen_project\\source\\project_qlhs_pttk\\gui\\tracuuttphieudangkyungtuyenform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{60199301-6A48-4718-8EAA-967267E250A7}|GUI\\GUI.csproj|solutionrelative:gui\\tracuuttphieudangkyungtuyenform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{60199301-6A48-4718-8EAA-967267E250A7}|GUI\\GUI.csproj|C:\\Users\\user\\Desktop\\class_homework\\PTTKHTTT\\QLHoSoUngTuyen_Project\\Source\\Project_QLHS_PTTK\\gui\\nhanvienform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{60199301-6A48-4718-8EAA-967267E250A7}|GUI\\GUI.csproj|solutionrelative:gui\\nhanvienform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{60199301-6A48-4718-8EAA-967267E250A7}|GUI\\GUI.csproj|C:\\Users\\user\\Desktop\\class_homework\\PTTKHTTT\\QLHoSoUngTuyen_Project\\Source\\Project_QLHS_PTTK\\gui\\nhanvienform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60199301-6A48-4718-8EAA-967267E250A7}|GUI\\GUI.csproj|solutionrelative:gui\\nhanvienform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{60199301-6A48-4718-8EAA-967267E250A7}|GUI\\GUI.csproj|C:\\Users\\user\\Desktop\\class_homework\\PTTKHTTT\\QLHoSoUngTuyen_Project\\Source\\Project_QLHS_PTTK\\gui\\dangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{60199301-6A48-4718-8EAA-967267E250A7}|GUI\\GUI.csproj|solutionrelative:gui\\dangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{60199301-6A48-4718-8EAA-967267E250A7}|GUI\\GUI.csproj|c:\\users\\user\\desktop\\class_homework\\pttkhttt\\qlhosoungtuyen_project\\source\\project_qlhs_pttk\\gui\\tracuuttphieudangkyungtuyenform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -142,11 +142,11 @@
       "DocumentGroups": [
         {
           "DockedHeight": 346,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "NhanVienForm.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\class_homework\\PTTKHTTT\\QLHoSoUngTuyen_Project\\Source\\Project_QLHS_PTTK\\GUI\\NhanVienForm.cs",
               "RelativeDocumentMoniker": "GUI\\NhanVienForm.cs",
@@ -160,7 +160,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "NhanVienForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\class_homework\\PTTKHTTT\\QLHoSoUngTuyen_Project\\Source\\Project_QLHS_PTTK\\GUI\\NhanVienForm.cs",
               "RelativeDocumentMoniker": "GUI\\NhanVienForm.cs",
@@ -177,7 +177,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "TraCuuTTPhieuDangKyUngTuyenForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\class_homework\\PTTKHTTT\\QLHoSoUngTuyen_Project\\Source\\Project_QLHS_PTTK\\GUI\\TraCuuTTPhieuDangKyUngTuyenForm.cs",
               "RelativeDocumentMoniker": "GUI\\TraCuuTTPhieuDangKyUngTuyenForm.cs",
@@ -189,7 +189,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "TraCuuDoanhNghiepForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\class_homework\\PTTKHTTT\\QLHoSoUngTuyen_Project\\Source\\Project_QLHS_PTTK\\GUI\\TraCuuDoanhNghiepForm.cs",
               "RelativeDocumentMoniker": "GUI\\TraCuuDoanhNghiepForm.cs",
@@ -214,7 +214,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "DangNhap.cs [Design]",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\class_homework\\PTTKHTTT\\QLHoSoUngTuyen_Project\\Source\\Project_QLHS_PTTK\\GUI\\DangNhap.cs",
               "RelativeDocumentMoniker": "GUI\\DangNhap.cs",
