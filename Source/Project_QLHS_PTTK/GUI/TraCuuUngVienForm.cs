@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Oracle.ManagedDataAccess.Client;
-
+using BLL;
 namespace GUI
 {
     public partial class TraCuuUngVienForm : Form
@@ -30,12 +30,34 @@ namespace GUI
 
         private void btnSearchUV_Click(object sender, EventArgs e)
         {
-            gvDSUV.DataSource = BLL.UngVien.TraCuuUngVien(connect, cbbSearchFilterUV.Text, txtSearchUV.Text);
+            
         }
 
         private void uvRefresh_Click(object sender, EventArgs e)
         {
-            gvDSUV.DataSource = BLL.UngVien.HienThiUngVien(connect);
+            //gvDSUV.DataSource = BLL.UngVien.HienThiUngVien(connect);
+        }
+
+        private void txtSearchUV_TextChanged(object sender, EventArgs e)
+        {
+            lblNoData.Visible = false;
+            DataResult result = BLL.UngVien.TraCuuUngVien(connect, cbbSearchFilterUV.Text, txtSearchUV.Text);
+            if(!result.HasData)
+            {
+                lblNoData.Visible = true;
+            }
+            gvDSUV.DataSource = result.DataTable;
+        }
+
+        private void cbbSearchFilterUV_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblNoData.Visible = false;
+            DataResult result = BLL.UngVien.TraCuuUngVien(connect, cbbSearchFilterUV.Text, txtSearchUV.Text);
+            if (!result.HasData)
+            {
+                lblNoData.Visible = true;
+            }
+            gvDSUV.DataSource = result.DataTable;
         }
     }
 }

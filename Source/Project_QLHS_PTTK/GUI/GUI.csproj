@@ -104,6 +104,18 @@
     <Compile Include="TraCuuDoanhNghiepForm.Designer.cs">
       <DependentUpon>TraCuuDoanhNghiepForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="TraCuuTTPhieuDangKyUngTuyenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TraCuuTTPhieuDangKyUngTuyenForm.Designer.cs">
+      <DependentUpon>TraCuuTTPhieuDangKyUngTuyenForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TraCuuTTPhieuDangTuyenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TraCuuTTPhieuDangTuyenForm.Designer.cs">
+      <DependentUpon>TraCuuTTPhieuDangTuyenForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="TraCuuUngVienForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +140,12 @@
     </Compile>
     <EmbeddedResource Include="TraCuuDoanhNghiepForm.resx">
       <DependentUpon>TraCuuDoanhNghiepForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TraCuuTTPhieuDangKyUngTuyenForm.resx">
+      <DependentUpon>TraCuuTTPhieuDangKyUngTuyenForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TraCuuTTPhieuDangTuyenForm.resx">
+      <DependentUpon>TraCuuTTPhieuDangTuyenForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TraCuuUngVienForm.resx">
       <DependentUpon>TraCuuUngVienForm.cs</DependentUpon>

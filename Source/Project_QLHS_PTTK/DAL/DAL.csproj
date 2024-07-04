@@ -82,6 +82,8 @@
     <Compile Include="DataBaseAccess.cs" />
     <Compile Include="DoanhNghiepDB.cs" />
     <Compile Include="NhanVien.cs" />
+    <Compile Include="PDKUTDB.cs" />
+    <Compile Include="PDTDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>

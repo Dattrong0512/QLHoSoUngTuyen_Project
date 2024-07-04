@@ -9,6 +9,11 @@ using System.Windows.Forms;
 
 namespace BLL
 {
+    public class DataResult
+    {
+        public DataTable DataTable { get; set; }
+        public bool HasData { get; set; }
+    }
     public static class UngVien
     {
         public static DataTable HienThiUngVien(OracleConnection connect)
@@ -18,11 +23,10 @@ namespace BLL
             return dt;
         }
 
-        public static DataTable TraCuuUngVien(OracleConnection connect, string ValueCBB, string valueText)
+        public static DataResult TraCuuUngVien(OracleConnection connect, string ValueCBB, string valueText)
         {
             DataTable dt = new DataTable();
             string value = "";
-
             switch (ValueCBB)
             {
                 case "Họ Tên Ứng Viên":
@@ -44,11 +48,16 @@ namespace BLL
                     dt = DAL.UngVienDB.TraCuuUv(connect, value);
                     break;
             }
-            if (dt.Rows.Count == 0)
+            //if (dt.Rows.Count == 0)
+            //{
+            //    lblNoData.Visible
+            //    MessageBox.Show("Không có thông tin về ứng viên bạn tìm.");
+            //}
+            return new DataResult
             {
-                MessageBox.Show("Không có thông tin về ứng viên bạn tìm.");
-            }
-            return dt;
+                DataTable = dt,
+                HasData = dt.Rows.Count > 0
+            };
         }
     }
 }
