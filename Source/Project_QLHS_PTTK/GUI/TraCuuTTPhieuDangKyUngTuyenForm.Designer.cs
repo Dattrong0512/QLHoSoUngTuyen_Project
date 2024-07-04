@@ -54,7 +54,7 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Mã phiếu ứng tuyển",
-            "Vị trí trúng tuyển",
+            "Vị trí ứng tuyển",
             "Tình trạng phiếu",
             "Mã ứng viên"});
             this.comboBox1.Location = new System.Drawing.Point(78, 48);

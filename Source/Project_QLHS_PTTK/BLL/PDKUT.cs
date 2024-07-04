@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace BLL
 {
@@ -13,6 +14,7 @@ namespace BLL
         public static DataTable traCuuPUT(OracleConnection connnv, string filter, string context)
         {
             string condition = "";
+            DataTable dataTable = new DataTable();
 
             switch (filter)
             {
@@ -36,10 +38,17 @@ namespace BLL
 
             if (filter != "")
             {
-                condition = $" WHERE {filter} LIKE '%{context}%' " ;
-            }     
+                condition = $" WHERE {filter} LIKE N'%{context}%' " ;
+            }   
             
-            return DAL.PDKUTDB.traCuuPUTDB(connnv, condition);
+            dataTable = DAL.PDKUTDB.traCuuPUTDB(connnv, condition);
+
+            if(dataTable.Rows.Count == 0)
+            {
+                MessageBox.Show("Không có thông tin về phiếu ứng tuyển bạn tìm.");
+            }
+
+            return dataTable;
         }
     }
 }

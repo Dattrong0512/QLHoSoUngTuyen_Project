@@ -1,21 +1,23 @@
-﻿using System;
-using System.Collections;
+﻿using Oracle.ManagedDataAccess.Client;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Oracle.ManagedDataAccess.Client;
 
 namespace DAL
 {
-    public static class PDKUTDB
+    public static class PDTDB
     {
-        public static DataTable traCuuPUTDB(OracleConnection connnv, string condition)
+        public static DataTable traCuuPDTDB(OracleConnection connnv, string condition)
         {
-            string sql = "select * from ADMIN.PhieuUngTuyen " + condition;
-            //Debug.WriteLine(sql);
+            string sql = "select pdt.MAPHIEUDANGTUYEN, pdt.MACONGTY, TENCONGTY, VITRIUNGTUYEN," +
+                " SOLUONGTUYENDUNG, KHOANGTHOIGIANDANGTUYEN, TIEUCHI, hd.TONGTIENDATHANHTOAN" +
+                " from admin.PhieuDangTuyen pdt join admin.DoanhNghiep dn on pdt.macongty = dn.macongty" +
+                " join admin.HoaDon hd on hd.maphieudangtuyen = pdt.maphieudangtuyen " + condition;
+            Debug.WriteLine(sql);
             DataTable dataTable = new DataTable();
             try
             {
@@ -30,7 +32,7 @@ namespace DAL
             }
             catch (Exception ex)
             {
-               throw ex;
+                throw ex;
             }
             finally
             {

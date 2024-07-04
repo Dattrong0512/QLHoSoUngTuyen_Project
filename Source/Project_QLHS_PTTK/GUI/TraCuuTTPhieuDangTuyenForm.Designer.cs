@@ -28,82 +28,109 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.uvRefresh = new System.Windows.Forms.PictureBox();
+            this.filterCBB = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.TraCuuPDT = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.uvRefresh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TraCuuPDT)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // uvRefresh
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(34, 115);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(728, 280);
-            this.dataGridView1.TabIndex = 9;
+            this.uvRefresh.Image = global::GUI.Properties.Resources.refresh;
+            this.uvRefresh.Location = new System.Drawing.Point(791, 39);
+            this.uvRefresh.Name = "uvRefresh";
+            this.uvRefresh.Size = new System.Drawing.Size(49, 34);
+            this.uvRefresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.uvRefresh.TabIndex = 22;
+            this.uvRefresh.TabStop = false;
+            this.uvRefresh.Click += new System.EventHandler(this.uvRefresh_Click);
             // 
-            // button1
+            // filterCBB
             // 
-            this.button1.Location = new System.Drawing.Point(533, 78);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Tìm Kiếm";
-            this.button1.UseVisualStyleBackColor = true;
+            this.filterCBB.FormattingEnabled = true;
+            this.filterCBB.Items.AddRange(new object[] {
+            "Mã phiếu đăng tuyển",
+            "Mã công ty",
+            "Tên công ty",
+            "Vị trí ứng tuyển",
+            "Số lượng tuyển dụng",
+            "Khoảng thời gian đăng tuyển",
+            "Tiêu chí",
+            "Tổng tiền đã thanh toán"});
+            this.filterCBB.Location = new System.Drawing.Point(77, 43);
+            this.filterCBB.Name = "filterCBB";
+            this.filterCBB.Size = new System.Drawing.Size(224, 24);
+            this.filterCBB.TabIndex = 21;
             // 
-            // textBox1
+            // label1
             // 
-            this.textBox1.Location = new System.Drawing.Point(330, 78);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(197, 22);
-            this.textBox1.TabIndex = 7;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(35, 46);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(36, 16);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Filter";
             // 
-            // label3
+            // button2
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(161, 81);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(36, 16);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Filter";
+            this.button2.Location = new System.Drawing.Point(648, 39);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(85, 37);
+            this.button2.TabIndex = 19;
+            this.button2.Text = "Tìm Kiếm";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // comboBox1
+            // textBox2
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(203, 77);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 11;
+            this.textBox2.Location = new System.Drawing.Point(307, 46);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(323, 22);
+            this.textBox2.TabIndex = 18;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // TraCuuPDT
+            // 
+            this.TraCuuPDT.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.TraCuuPDT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TraCuuPDT.Location = new System.Drawing.Point(38, 96);
+            this.TraCuuPDT.Name = "TraCuuPDT";
+            this.TraCuuPDT.RowHeadersWidth = 51;
+            this.TraCuuPDT.RowTemplate.Height = 24;
+            this.TraCuuPDT.Size = new System.Drawing.Size(822, 342);
+            this.TraCuuPDT.TabIndex = 17;
             // 
             // TraCuuTTPhieuDangTuyenForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(902, 478);
+            this.Controls.Add(this.uvRefresh);
+            this.Controls.Add(this.filterCBB);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.TraCuuPDT);
             this.Name = "TraCuuTTPhieuDangTuyenForm";
             this.Text = "TraCuuTTPhieuDangTuyen";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.TraCuuTTPhieuDangTuyenForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.uvRefresh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TraCuuPDT)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.PictureBox uvRefresh;
+        private System.Windows.Forms.ComboBox filterCBB;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.DataGridView TraCuuPDT;
     }
 }

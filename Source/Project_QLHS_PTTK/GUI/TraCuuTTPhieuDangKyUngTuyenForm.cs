@@ -30,7 +30,9 @@ namespace GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            TraCuuPUT.DataSource = BLL.PDKUT.traCuuPUT(connect, comboBox1.SelectedItem.ToString(), textBox1.Text);
+            TraCuuPUT.DataSource = BLL.PDKUT.traCuuPUT(connect,
+            comboBox1.SelectedItem == null ? "" : comboBox1.SelectedItem.ToString(), textBox1.Text);
+
 
         }
 
@@ -41,14 +43,17 @@ namespace GUI
 
         private void TraCuuTTPhieuDangKyUngTuyenForm_Load(object sender, EventArgs e)
         {
-            TraCuuPUT.DataSource = BLL.PDKUT.traCuuPUT(connect, "", textBox1.Text);
+            TraCuuPUT.DataSource = BLL.PDKUT.traCuuPUT(connect,
+            comboBox1.SelectedItem == null ? "" : comboBox1.SelectedItem.ToString(), textBox1.Text);
         }
 
         private void uvRefresh_Click(object sender, EventArgs e)
         {
             comboBox1.SelectedItem = null;
             textBox1.Text = "";
-            TraCuuPUT.DataSource = BLL.PDKUT.traCuuPUT(connect, "", textBox1.Text);
+
+            TraCuuPUT.DataSource = BLL.PDKUT.traCuuPUT(connect,
+            comboBox1.SelectedItem == null ? "" : comboBox1.SelectedItem.ToString(), textBox1.Text);
         }
     }
 }

@@ -128,6 +128,14 @@ namespace GUI
 
             LabelTitle.Show();
         }
+
+        private void buttonTraCuuPDT_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new TraCuuTTPhieuDangTuyenForm(taikhoanNV.TKconn));
+            LabelTitle.Text = "Tra cứu phiếu đăng tuyển";
+
+            LabelTitle.Show();
+        }
     }
  
 }
