@@ -45,6 +45,31 @@ namespace DAL
             // Trả về DataTable chứa dữ liệu
             return dtdn;
         }
+
+        public static bool KiemTraDNTonTai(OracleConnection connnv, string masothue)
+        {
+            bool exists = false;
+            try
+            {
+                string query = "SELECT COUNT(*) FROM ADMIN.DoanhNghiep WHERE MASOTHUE = :masothue";
+                using (OracleCommand cmd = new OracleCommand(query, connnv))
+                {
+                    cmd.Parameters.Add(new OracleParameter("masothue", masothue));
+
+                    connnv.Open();
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+                    exists = (count > 0);
+                }
+            }
+            finally
+            {
+                if (connnv != null && connnv.State == ConnectionState.Open)
+                {
+                    connnv.Close();
+                }
+            }
+            return exists;
+        }
     }
     
 }
