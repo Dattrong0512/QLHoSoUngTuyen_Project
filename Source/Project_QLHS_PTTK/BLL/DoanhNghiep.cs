@@ -57,5 +57,11 @@ namespace BLL
             }
             return dt;
         }
+
+        public static bool KiemTraDoanhNghiepTonTai(OracleConnection connect, string masothue)
+        {
+            return DAL.DoanhNghiepDB.KiemTraDNTonTai(connect, masothue);
+        }
+        
     }
 }
