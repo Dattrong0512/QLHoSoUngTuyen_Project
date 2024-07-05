@@ -11,7 +11,7 @@ namespace DAL
 {
     public static class UngVienDB
     {
-        public static DataTable TraCuuUv(OracleConnection connnv, string condition)
+        public static DataTable DocTTUV(OracleConnection connnv, string condition)
         {
             DataTable dtuv = new DataTable();
             try

@@ -105,7 +105,7 @@
             this.Controls.Add(this.txtSearchUV);
             this.Name = "TraCuuUngVienForm";
             this.Text = "TraCuuUngVien";
-            this.Load += new System.EventHandler(this.TraCuuUngVienForm_Load);
+            this.Load += new System.EventHandler(this.TraCuuUngVienForm_HienThi);
             ((System.ComponentModel.ISupportInitialize)(this.gvDSUV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

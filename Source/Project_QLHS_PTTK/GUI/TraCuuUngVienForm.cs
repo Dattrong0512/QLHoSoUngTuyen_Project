@@ -23,20 +23,9 @@ namespace GUI
             cbbSearchFilterUV.SelectedIndex = 0;
         }
 
-        private void TraCuuUngVienForm_Load(object sender, EventArgs e)
-        {
-            gvDSUV.DataSource = BLL.UngVien.HienThiUngVien(connect);
-        }
+        
 
-        private void btnSearchUV_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void uvRefresh_Click(object sender, EventArgs e)
-        {
-            //gvDSUV.DataSource = BLL.UngVien.HienThiUngVien(connect);
-        }
+    
 
         private void txtSearchUV_TextChanged(object sender, EventArgs e)
         {
@@ -58,6 +47,11 @@ namespace GUI
                 lblNoData.Visible = true;
             }
             gvDSUV.DataSource = result.DataTable;
+        }
+
+        private void TraCuuUngVienForm_HienThi(object sender, EventArgs e)
+        {
+            gvDSUV.DataSource = BLL.UngVien.HienThiUngVien(connect);
         }
     }
 }

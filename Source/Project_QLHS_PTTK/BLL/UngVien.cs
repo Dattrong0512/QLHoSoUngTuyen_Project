@@ -19,7 +19,7 @@ namespace BLL
         public static DataTable HienThiUngVien(OracleConnection connect)
         {
             DataTable dt = new DataTable();
-            dt = DAL.UngVienDB.TraCuuUv(connect, "");
+            dt = DAL.UngVienDB.DocTTUV(connect, "");
             return dt;
         }
 
@@ -33,26 +33,21 @@ namespace BLL
                     value += "HOTEN LIKE '%";
                     value += valueText;
                     value += "%'";
-                    dt = DAL.UngVienDB.TraCuuUv(connect, value);
+                    dt = DAL.UngVienDB.DocTTUV(connect, value);
                     break;
                 case "Mã Ứng Viên":
                     value += "MAUNGVIEN LIKE '%";
                     value += valueText;
                     value += "%'";
-                    dt = DAL.UngVienDB.TraCuuUv(connect, value);
+                    dt = DAL.UngVienDB.DocTTUV(connect, value);
                     break;
                 case "Địa chỉ":
                     value += "DIACHI LIKE '%";
                     value += valueText;
                     value += "%'";
-                    dt = DAL.UngVienDB.TraCuuUv(connect, value);
+                    dt = DAL.UngVienDB.DocTTUV(connect, value);
                     break;
             }
-            //if (dt.Rows.Count == 0)
-            //{
-            //    lblNoData.Visible
-            //    MessageBox.Show("Không có thông tin về ứng viên bạn tìm.");
-            //}
             return new DataResult
             {
                 DataTable = dt,
