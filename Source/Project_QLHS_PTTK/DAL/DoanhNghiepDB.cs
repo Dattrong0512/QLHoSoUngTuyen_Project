@@ -92,7 +92,7 @@ namespace DAL
             }
         }
 
-        public static bool ThemDoanhNghiepDB(OracleConnection connnv, string tenCongTy, string maSoThue, string nguoiDaiDien, string diaChi, string email)
+        public static bool ThemDoanhNghiepDB(OracleConnection connnv, string tenCongTy, string maSoThue, string nguoiDaiDien, string diaChi, string email, string matkhau)
         {
             try
             {
@@ -106,7 +106,7 @@ namespace DAL
                     isUnique = !MaCongTyExists(connnv, maCongTy);
                 } while (!isUnique);
 
-                string query = "INSERT INTO ADMIN.DoanhNghiep (MACONGTY, TENCONGTY, MASOTHUE, NGUOIDAIDIEN, DIACHI, EMAIL) VALUES (:maCongTy, :tenCongTy, :maSoThue, :nguoiDaiDien, :diaChi, :email)";
+                string query = "INSERT INTO ADMIN.DoanhNghiep (MACONGTY, TENCONGTY, MASOTHUE, NGUOIDAIDIEN, DIACHI, EMAIL, MATKHAU) VALUES (:maCongTy, :tenCongTy, :maSoThue, :nguoiDaiDien, :diaChi, :email, :matKhau)";
 
                 using (OracleCommand cmd = new OracleCommand(query, connnv))
                 {
@@ -116,6 +116,8 @@ namespace DAL
                     cmd.Parameters.Add(new OracleParameter("nguoiDaiDien", nguoiDaiDien));
                     cmd.Parameters.Add(new OracleParameter("diaChi", diaChi));
                     cmd.Parameters.Add(new OracleParameter("email", email));
+                    cmd.Parameters.Add(new OracleParameter("matKhau", matkhau));
+
 
                     int rowsAffected = cmd.ExecuteNonQuery();
                     return rowsAffected > 0;

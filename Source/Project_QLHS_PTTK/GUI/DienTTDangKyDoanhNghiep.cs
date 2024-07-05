@@ -159,15 +159,19 @@ namespace GUI
                 }
                 else
                 {
+                    // Tạo mật khẩu ngẫu nhiên
+                    string matKhau = BLL.DoanhNghiep.GenerateRandomPassword(20);
+
                     bool success = DoanhNghiep.ThemDoanhNghiep(connect, tbTenCongTy.Text.Trim(),
-                                                                        tbMaSoThue.Text.Trim(),
-                                                                        tbNguoiDaiDien.Text.Trim(),
-                                                                        tbDiaChi.Text.Trim(),
-                                                                        tbEmail.Text.Trim()
-                                                              ); 
+                                                               tbMaSoThue.Text.Trim(),
+                                                               tbNguoiDaiDien.Text.Trim(),
+                                                               tbDiaChi.Text.Trim(),
+                                                               tbEmail.Text.Trim(),
+                                                               matKhau
+                                                             );
                     if (success)
                     {
-                        MessageBox.Show("Đăng ký thành công.");
+                        MessageBox.Show($"Đăng ký thành công.\nMật khẩu tạm thời: {matKhau}");
                     }
                     else
                     {
