@@ -3,11 +3,23 @@
   "WorkspaceRootPath": "I:\\pttk87\\QLHoSoUngTuyen_Project\\Source\\Project_QLHS_PTTK\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{60199301-6A48-4718-8EAA-967267E250A7}|GUI\\GUI.csproj|I:\\pttk87\\QLHoSoUngTuyen_Project\\Source\\Project_QLHS_PTTK\\gui\\nhanvienform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{737DF67E-110B-443D-A94F-BA9CF963A6CE}|BLL\\BLL.csproj|I:\\pttk87\\QLHoSoUngTuyen_Project\\Source\\Project_QLHS_PTTK\\bll\\ungvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{737DF67E-110B-443D-A94F-BA9CF963A6CE}|BLL\\BLL.csproj|solutionrelative:bll\\ungvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E306C6D-FAB9-4AAF-BB5A-91A496FD59D7}|DAL\\DAL.csproj|I:\\pttk87\\QLHoSoUngTuyen_Project\\Source\\Project_QLHS_PTTK\\dal\\ungviendb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E306C6D-FAB9-4AAF-BB5A-91A496FD59D7}|DAL\\DAL.csproj|solutionrelative:dal\\ungviendb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E306C6D-FAB9-4AAF-BB5A-91A496FD59D7}|DAL\\DAL.csproj|I:\\pttk87\\QLHoSoUngTuyen_Project\\Source\\Project_QLHS_PTTK\\dal\\doanhnghiepdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E306C6D-FAB9-4AAF-BB5A-91A496FD59D7}|DAL\\DAL.csproj|solutionrelative:dal\\doanhnghiepdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{60199301-6A48-4718-8EAA-967267E250A7}|GUI\\GUI.csproj|i:\\pttk87\\qlhosoungtuyen_project\\source\\project_qlhs_pttk\\gui\\nhanvienform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{60199301-6A48-4718-8EAA-967267E250A7}|GUI\\GUI.csproj|solutionrelative:gui\\nhanvienform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{60199301-6A48-4718-8EAA-967267E250A7}|GUI\\GUI.csproj|i:\\pttk87\\qlhosoungtuyen_project\\source\\project_qlhs_pttk\\gui\\tracuuungvienform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{60199301-6A48-4718-8EAA-967267E250A7}|GUI\\GUI.csproj|I:\\pttk87\\QLHoSoUngTuyen_Project\\Source\\Project_QLHS_PTTK\\gui\\tracuuungvienform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{60199301-6A48-4718-8EAA-967267E250A7}|GUI\\GUI.csproj|solutionrelative:gui\\tracuuungvienform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -19,20 +31,8 @@
       "RelativeMoniker": "D:0:0:{60199301-6A48-4718-8EAA-967267E250A7}|GUI\\GUI.csproj|solutionrelative:gui\\tracuuungvienform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{60199301-6A48-4718-8EAA-967267E250A7}|GUI\\GUI.csproj|i:\\pttk87\\qlhosoungtuyen_project\\source\\project_qlhs_pttk\\gui\\tracuuttphieudangkyungtuyenform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{60199301-6A48-4718-8EAA-967267E250A7}|GUI\\GUI.csproj|I:\\pttk87\\QLHoSoUngTuyen_Project\\Source\\Project_QLHS_PTTK\\gui\\tracuuttphieudangkyungtuyenform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{60199301-6A48-4718-8EAA-967267E250A7}|GUI\\GUI.csproj|solutionrelative:gui\\tracuuttphieudangkyungtuyenform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6E306C6D-FAB9-4AAF-BB5A-91A496FD59D7}|DAL\\DAL.csproj|I:\\pttk87\\QLHoSoUngTuyen_Project\\Source\\Project_QLHS_PTTK\\dal\\doanhnghiepdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6E306C6D-FAB9-4AAF-BB5A-91A496FD59D7}|DAL\\DAL.csproj|solutionrelative:dal\\doanhnghiepdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{737DF67E-110B-443D-A94F-BA9CF963A6CE}|BLL\\BLL.csproj|I:\\pttk87\\QLHoSoUngTuyen_Project\\Source\\Project_QLHS_PTTK\\bll\\ungvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{737DF67E-110B-443D-A94F-BA9CF963A6CE}|BLL\\BLL.csproj|solutionrelative:bll\\ungvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6E306C6D-FAB9-4AAF-BB5A-91A496FD59D7}|DAL\\DAL.csproj|I:\\pttk87\\QLHoSoUngTuyen_Project\\Source\\Project_QLHS_PTTK\\dal\\ungviendb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6E306C6D-FAB9-4AAF-BB5A-91A496FD59D7}|DAL\\DAL.csproj|solutionrelative:dal\\ungviendb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{737DF67E-110B-443D-A94F-BA9CF963A6CE}|BLL\\BLL.csproj|I:\\pttk87\\QLHoSoUngTuyen_Project\\Source\\Project_QLHS_PTTK\\bll\\nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -154,7 +154,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 346,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
@@ -172,7 +172,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "NhanVienForm.cs [Design]",
               "DocumentMoniker": "I:\\pttk87\\QLHoSoUngTuyen_Project\\Source\\Project_QLHS_PTTK\\GUI\\NhanVienForm.cs",
               "RelativeDocumentMoniker": "GUI\\NhanVienForm.cs",
@@ -185,31 +185,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TraCuuUngVienForm.cs [Design]",
-              "DocumentMoniker": "I:\\pttk87\\QLHoSoUngTuyen_Project\\Source\\Project_QLHS_PTTK\\GUI\\TraCuuUngVienForm.cs",
-              "RelativeDocumentMoniker": "GUI\\TraCuuUngVienForm.cs",
-              "ToolTip": "I:\\pttk87\\QLHoSoUngTuyen_Project\\Source\\Project_QLHS_PTTK\\GUI\\TraCuuUngVienForm.cs [Design]",
-              "RelativeToolTip": "GUI\\TraCuuUngVienForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-02T03:50:09.977Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "TraCuuDoanhNghiepForm.cs [Design]",
-              "DocumentMoniker": "I:\\pttk87\\QLHoSoUngTuyen_Project\\Source\\Project_QLHS_PTTK\\GUI\\TraCuuDoanhNghiepForm.cs",
-              "RelativeDocumentMoniker": "GUI\\TraCuuDoanhNghiepForm.cs",
-              "ToolTip": "I:\\pttk87\\QLHoSoUngTuyen_Project\\Source\\Project_QLHS_PTTK\\GUI\\TraCuuDoanhNghiepForm.cs [Design]",
-              "RelativeToolTip": "GUI\\TraCuuDoanhNghiepForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-02T03:50:51.803Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "TraCuuUngVienForm.cs",
               "DocumentMoniker": "I:\\pttk87\\QLHoSoUngTuyen_Project\\Source\\Project_QLHS_PTTK\\GUI\\TraCuuUngVienForm.cs",
               "RelativeDocumentMoniker": "GUI\\TraCuuUngVienForm.cs",
@@ -217,50 +193,24 @@
               "RelativeToolTip": "GUI\\TraCuuUngVienForm.cs",
               "ViewState": "AQIAABsAAAAAAAAAAAAYwCgAAAA7AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-02T10:29:14.179Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-02T10:29:14.179Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "TraCuuTTPhieuDangKyUngTuyenForm.cs [Design]",
-              "DocumentMoniker": "I:\\pttk87\\QLHoSoUngTuyen_Project\\Source\\Project_QLHS_PTTK\\GUI\\TraCuuTTPhieuDangKyUngTuyenForm.cs",
-              "RelativeDocumentMoniker": "GUI\\TraCuuTTPhieuDangKyUngTuyenForm.cs",
-              "ToolTip": "I:\\pttk87\\QLHoSoUngTuyen_Project\\Source\\Project_QLHS_PTTK\\GUI\\TraCuuTTPhieuDangKyUngTuyenForm.cs [Design]",
-              "RelativeToolTip": "GUI\\TraCuuTTPhieuDangKyUngTuyenForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-05T06:23:19.836Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "DoanhNghiepDB.cs",
               "DocumentMoniker": "I:\\pttk87\\QLHoSoUngTuyen_Project\\Source\\Project_QLHS_PTTK\\DAL\\DoanhNghiepDB.cs",
               "RelativeDocumentMoniker": "DAL\\DoanhNghiepDB.cs",
               "ToolTip": "I:\\pttk87\\QLHoSoUngTuyen_Project\\Source\\Project_QLHS_PTTK\\DAL\\DoanhNghiepDB.cs",
               "RelativeToolTip": "DAL\\DoanhNghiepDB.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAAAB4AAAA1AAAA",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAAAEsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-02T07:05:01.442Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "UngVien.cs",
-              "DocumentMoniker": "I:\\pttk87\\QLHoSoUngTuyen_Project\\Source\\Project_QLHS_PTTK\\BLL\\UngVien.cs",
-              "RelativeDocumentMoniker": "BLL\\UngVien.cs",
-              "ToolTip": "I:\\pttk87\\QLHoSoUngTuyen_Project\\Source\\Project_QLHS_PTTK\\BLL\\UngVien.cs",
-              "RelativeToolTip": "BLL\\UngVien.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAAkwBEAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-02T11:10:05.354Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 1,
               "Title": "UngVienDB.cs",
               "DocumentMoniker": "I:\\pttk87\\QLHoSoUngTuyen_Project\\Source\\Project_QLHS_PTTK\\DAL\\UngVienDB.cs",
               "RelativeDocumentMoniker": "DAL\\UngVienDB.cs",
@@ -273,6 +223,52 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UngVien.cs",
+              "DocumentMoniker": "I:\\pttk87\\QLHoSoUngTuyen_Project\\Source\\Project_QLHS_PTTK\\BLL\\UngVien.cs",
+              "RelativeDocumentMoniker": "BLL\\UngVien.cs",
+              "ToolTip": "I:\\pttk87\\QLHoSoUngTuyen_Project\\Source\\Project_QLHS_PTTK\\BLL\\UngVien.cs",
+              "RelativeToolTip": "BLL\\UngVien.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABEAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-02T11:10:05.354Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TraCuuDoanhNghiepForm.cs [Design]",
+              "DocumentMoniker": "I:\\pttk87\\QLHoSoUngTuyen_Project\\Source\\Project_QLHS_PTTK\\GUI\\TraCuuDoanhNghiepForm.cs",
+              "RelativeDocumentMoniker": "GUI\\TraCuuDoanhNghiepForm.cs",
+              "ToolTip": "I:\\pttk87\\QLHoSoUngTuyen_Project\\Source\\Project_QLHS_PTTK\\GUI\\TraCuuDoanhNghiepForm.cs [Design]",
+              "RelativeToolTip": "GUI\\TraCuuDoanhNghiepForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-02T03:50:51.803Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TraCuuUngVienForm.cs [Design]",
+              "DocumentMoniker": "I:\\pttk87\\QLHoSoUngTuyen_Project\\Source\\Project_QLHS_PTTK\\GUI\\TraCuuUngVienForm.cs",
+              "RelativeDocumentMoniker": "GUI\\TraCuuUngVienForm.cs",
+              "ToolTip": "I:\\pttk87\\QLHoSoUngTuyen_Project\\Source\\Project_QLHS_PTTK\\GUI\\TraCuuUngVienForm.cs [Design]",
+              "RelativeToolTip": "GUI\\TraCuuUngVienForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-02T03:50:09.977Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "TraCuuTTPhieuDangKyUngTuyenForm.cs [Design]",
+              "DocumentMoniker": "I:\\pttk87\\QLHoSoUngTuyen_Project\\Source\\Project_QLHS_PTTK\\GUI\\TraCuuTTPhieuDangKyUngTuyenForm.cs",
+              "RelativeDocumentMoniker": "GUI\\TraCuuTTPhieuDangKyUngTuyenForm.cs",
+              "ToolTip": "I:\\pttk87\\QLHoSoUngTuyen_Project\\Source\\Project_QLHS_PTTK\\GUI\\TraCuuTTPhieuDangKyUngTuyenForm.cs [Design]",
+              "RelativeToolTip": "GUI\\TraCuuTTPhieuDangKyUngTuyenForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-05T06:23:19.836Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 8,
               "Title": "NhanVien.cs",
               "DocumentMoniker": "I:\\pttk87\\QLHoSoUngTuyen_Project\\Source\\Project_QLHS_PTTK\\BLL\\NhanVien.cs",
@@ -281,8 +277,7 @@
               "RelativeToolTip": "BLL\\NhanVien.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-02T09:05:26.04Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-02T09:05:26.04Z"
             },
             {
               "$type": "Document",
@@ -294,8 +289,7 @@
               "RelativeToolTip": "BLL\\DoanhNghiep.cs",
               "ViewState": "AQIAAAsAAAAAAAAAAAAAABMAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-02T06:50:50.547Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-02T06:50:50.547Z"
             },
             {
               "$type": "Document",
@@ -378,8 +372,7 @@
               "RelativeToolTip": "GUI\\TraCuuTTPhieuDangKyUngTuyenForm.cs",
               "ViewState": "AQIAAA8AAAAAAAAAAAAAACkAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-03T15:42:32.122Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-03T15:42:32.122Z"
             },
             {
               "$type": "Document",
@@ -425,8 +418,7 @@
               "RelativeToolTip": "GUI\\TraCuuDoanhNghiepForm.cs",
               "ViewState": "AQIAABIAAAAAAAAAAAAAADIAAABCAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-02T04:53:02.046Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-02T04:53:02.046Z"
             },
             {
               "$type": "Document",
@@ -450,8 +442,7 @@
               "RelativeToolTip": "GUI\\TraCuuTTPhieuDangKyUngTuyenForm.Designer.cs",
               "ViewState": "AQIAABgAAAAAAAAAAAAAAHQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-03T17:15:49.263Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-03T17:15:49.263Z"
             },
             {
               "$type": "Document",
@@ -463,8 +454,7 @@
               "RelativeToolTip": "GUI\\TraCuuDoanhNghiepForm.Designer.cs",
               "ViewState": "AQIAAAQAAAAAAAAAAADwv34AAAA/AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-02T07:27:42.241Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-02T07:27:42.241Z"
             },
             {
               "$type": "Document",
@@ -476,8 +466,7 @@
               "RelativeToolTip": "GUI\\NhanVienForm.Designer.cs",
               "ViewState": "AQIAAAoAAAAAAAAAAADwv/sAAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-02T05:04:25.194Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-02T05:04:25.194Z"
             },
             {
               "$type": "Document",
