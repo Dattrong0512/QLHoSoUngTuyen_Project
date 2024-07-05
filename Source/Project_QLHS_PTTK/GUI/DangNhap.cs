@@ -95,6 +95,17 @@ namespace GUI
         {
             Application.Exit();
         }
+
+        private void btnSignupUV_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bntSignupDN_Click(object sender, EventArgs e)
+        {
+            DienTTDangKyDoanhNghiep formDKDN = new DienTTDangKyDoanhNghiep(Account.ADconn);
+            formDKDN.ShowDialog();
+        }
     }
 }
 

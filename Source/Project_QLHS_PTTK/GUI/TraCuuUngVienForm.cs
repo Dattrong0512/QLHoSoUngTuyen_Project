@@ -17,6 +17,7 @@ namespace GUI
         public TraCuuUngVienForm(OracleConnection conn)
         {
             InitializeComponent();
+            SetPlaceholder(txtSearchUV, "Nhập thông tin tìm kiếm...");
             connect = conn;
             cbbSearchFilterUV.DropDownStyle = ComboBoxStyle.DropDownList;
             gvDSUV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -52,6 +53,31 @@ namespace GUI
         private void TraCuuUngVienForm_HienThi(object sender, EventArgs e)
         {
             gvDSUV.DataSource = BLL.UngVien.HienThiUngVien(connect);
+        }
+        private void SetPlaceholder(TextBox textBox, string placeholder)
+        {
+            textBox.Text = placeholder;
+            textBox.ForeColor = Color.Gray;
+            textBox.Enter += (sender, e) => RemovePlaceholder(textBox, placeholder);
+            textBox.Leave += (sender, e) => AddPlaceholder(textBox, placeholder);
+        }
+
+        private void RemovePlaceholder(TextBox textBox, string placeholder)
+        {
+            if (textBox.Text == placeholder)
+            {
+                textBox.Text = "";
+                textBox.ForeColor = Color.Black;
+            }
+        }
+
+        private void AddPlaceholder(TextBox textBox, string placeholder)
+        {
+            if (string.IsNullOrWhiteSpace(textBox.Text))
+            {
+                textBox.Text = placeholder;
+                textBox.ForeColor = Color.Gray;
+            }
         }
     }
 }

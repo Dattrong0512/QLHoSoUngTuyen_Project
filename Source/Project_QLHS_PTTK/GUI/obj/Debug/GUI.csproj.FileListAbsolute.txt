@@ -279,3 +279,4 @@ D:\code\QLHoSoUngTuyen_Project\Source\Project_QLHS_PTTK\GUI\bin\Debug\System.Tex
 D:\code\QLHoSoUngTuyen_Project\Source\Project_QLHS_PTTK\GUI\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\code\QLHoSoUngTuyen_Project\Source\Project_QLHS_PTTK\GUI\bin\Debug\System.ValueTuple.xml
 D:\code\QLHoSoUngTuyen_Project\Source\Project_QLHS_PTTK\GUI\obj\Debug\GUI.csproj.CopyComplete
+I:\pttk87\QLHoSoUngTuyen_Project\Source\Project_QLHS_PTTK\GUI\obj\Debug\GUI.DienTTDangKyDoanhNghiep.resources

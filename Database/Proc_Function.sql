@@ -5,13 +5,14 @@ AS
     CURSOR CUR IS (SELECT MaNhanVien
                     FROM ADMIN.NhanVien
                     WHERE MaNhanVien NOT IN (SELECT USERNAME FROM ALL_USERS ));
-    CURSOR CUR2 IS (SELECT MaCongTy
+    CURSOR CUR2 IS (SELECT MaCongTy, MatKhau
                     FROM ADMIN.doanhnghiep
                     WHERE MaCongTy NOT IN (SELECT USERNAME FROM ALL_USERS ));
-    CURSOR CUR3 IS (SELECT MaUngVien
+    CURSOR CUR3 IS (SELECT MaUngVien, MatKhau
                     FROM ADMIN.UngVien
                     WHERE MaUngVien NOT IN (SELECT USERNAME FROM ALL_USERS ));
     STRSQL VARCHAR2(1000);
+    MK Varchar2(20);
     USR VARCHAR2(20);
 BEGIN 
     STRSQL := 'ALTER SESSION SET'||' "_ORACLE_SCRIPT" ='|| 'TRUE';
@@ -31,10 +32,10 @@ BEGIN
     
     OPEN CUR2;
     LOOP
-        FETCH CUR2 INTO USR;
+        FETCH CUR2 INTO USR, MK;
         EXIT WHEN CUR2%NOTFOUND;
                
-        STRSQL := 'CREATE USER ' || USR || ' IDENTIFIED BY DN789';
+        STRSQL := 'CREATE USER ' || USR || ' IDENTIFIED ' || MK;
         EXECUTE IMMEDIATE(STRSQL);
         
         STRSQL := 'GRANT CONNECT TO ' || USR;
@@ -44,10 +45,10 @@ BEGIN
     
     OPEN CUR3;
     LOOP
-        FETCH CUR3 INTO USR;
+        FETCH CUR3 INTO USR,MK;
         EXIT WHEN CUR3%NOTFOUND;
                
-        STRSQL := 'CREATE USER ' || USR || ' IDENTIFIED BY UV123';
+        STRSQL := 'CREATE USER ' || USR || ' IDENTIFIED BY ' || MK;
         EXECUTE IMMEDIATE(STRSQL);
         
         STRSQL := 'GRANT CONNECT TO ' || USR;

@@ -208,5 +208,10 @@ namespace GUI
         {
             return string.IsNullOrWhiteSpace(textBox.Text) || textBox.Text == placeholder;
         }
+
+        private void btnDangKy_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

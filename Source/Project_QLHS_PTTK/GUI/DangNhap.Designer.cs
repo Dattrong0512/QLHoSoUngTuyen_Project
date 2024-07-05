@@ -38,6 +38,8 @@
             this.HinhAnh = new System.Windows.Forms.PictureBox();
             this.TextDN = new System.Windows.Forms.Label();
             this.groupBoxDN = new System.Windows.Forms.GroupBox();
+            this.btnSignupUV = new System.Windows.Forms.Button();
+            this.bntSignupDN = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HinhAnh)).BeginInit();
             this.groupBoxDN.SuspendLayout();
@@ -58,7 +60,7 @@
             // 
             this.TextBoxUSN.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.TextBoxUSN.Location = new System.Drawing.Point(227, 53);
-            this.TextBoxUSN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TextBoxUSN.Margin = new System.Windows.Forms.Padding(4);
             this.TextBoxUSN.Name = "TextBoxUSN";
             this.TextBoxUSN.Size = new System.Drawing.Size(295, 35);
             this.TextBoxUSN.TabIndex = 1;
@@ -67,7 +69,7 @@
             // 
             this.TextBoxPSW.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.TextBoxPSW.Location = new System.Drawing.Point(227, 114);
-            this.TextBoxPSW.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TextBoxPSW.Margin = new System.Windows.Forms.Padding(4);
             this.TextBoxPSW.Name = "TextBoxPSW";
             this.TextBoxPSW.PasswordChar = '*';
             this.TextBoxPSW.Size = new System.Drawing.Size(291, 35);
@@ -92,7 +94,7 @@
             this.ButtonDN.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonDN.ForeColor = System.Drawing.SystemColors.Desktop;
             this.ButtonDN.Location = new System.Drawing.Point(75, 223);
-            this.ButtonDN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ButtonDN.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonDN.Name = "ButtonDN";
             this.ButtonDN.Size = new System.Drawing.Size(216, 63);
             this.ButtonDN.TabIndex = 4;
@@ -106,7 +108,7 @@
             this.ButtonThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonThoat.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.ButtonThoat.Location = new System.Drawing.Point(361, 223);
-            this.ButtonThoat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ButtonThoat.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonThoat.Name = "ButtonThoat";
             this.ButtonThoat.Size = new System.Drawing.Size(144, 63);
             this.ButtonThoat.TabIndex = 5;
@@ -117,11 +119,11 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.HinhAnh);
-            this.groupBox1.Location = new System.Drawing.Point(48, 139);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Location = new System.Drawing.Point(51, 105);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(381, 254);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(381, 200);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             // 
@@ -130,9 +132,9 @@
             this.HinhAnh.Dock = System.Windows.Forms.DockStyle.Fill;
             this.HinhAnh.Image = global::GUI.Properties.Resources.AnhDangNhap;
             this.HinhAnh.Location = new System.Drawing.Point(4, 19);
-            this.HinhAnh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.HinhAnh.Margin = new System.Windows.Forms.Padding(4);
             this.HinhAnh.Name = "HinhAnh";
-            this.HinhAnh.Size = new System.Drawing.Size(373, 231);
+            this.HinhAnh.Size = new System.Drawing.Size(373, 177);
             this.HinhAnh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.HinhAnh.TabIndex = 0;
             this.HinhAnh.TabStop = false;
@@ -159,24 +161,48 @@
             this.groupBoxDN.Controls.Add(this.LabelPW);
             this.groupBoxDN.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.groupBoxDN.Location = new System.Drawing.Point(465, 127);
-            this.groupBoxDN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxDN.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxDN.Name = "groupBoxDN";
-            this.groupBoxDN.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxDN.Padding = new System.Windows.Forms.Padding(4);
             this.groupBoxDN.Size = new System.Drawing.Size(573, 330);
             this.groupBoxDN.TabIndex = 8;
             this.groupBoxDN.TabStop = false;
             this.groupBoxDN.Text = "Thông tin đăng nhập";
             this.groupBoxDN.Enter += new System.EventHandler(this.groupBoxDN_Enter);
             // 
+            // btnSignupUV
+            // 
+            this.btnSignupUV.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.btnSignupUV.Location = new System.Drawing.Point(59, 337);
+            this.btnSignupUV.Name = "btnSignupUV";
+            this.btnSignupUV.Size = new System.Drawing.Size(373, 42);
+            this.btnSignupUV.TabIndex = 6;
+            this.btnSignupUV.Text = "Đăng ký tài khoản ứng viên";
+            this.btnSignupUV.UseVisualStyleBackColor = true;
+            this.btnSignupUV.Click += new System.EventHandler(this.btnSignupUV_Click);
+            // 
+            // bntSignupDN
+            // 
+            this.bntSignupDN.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.bntSignupDN.Location = new System.Drawing.Point(59, 398);
+            this.bntSignupDN.Name = "bntSignupDN";
+            this.bntSignupDN.Size = new System.Drawing.Size(373, 42);
+            this.bntSignupDN.TabIndex = 9;
+            this.bntSignupDN.Text = "Đăng ký tài khoản doanh nghiệp";
+            this.bntSignupDN.UseVisualStyleBackColor = true;
+            this.bntSignupDN.Click += new System.EventHandler(this.bntSignupDN_Click);
+            // 
             // DangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.bntSignupDN);
+            this.Controls.Add(this.btnSignupUV);
             this.Controls.Add(this.groupBoxDN);
             this.Controls.Add(this.TextDN);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "DangNhap";
             this.Text = "DangNhap";
             this.Load += new System.EventHandler(this.DangNhap_Load);
@@ -201,5 +227,7 @@
         private System.Windows.Forms.PictureBox HinhAnh;
         private System.Windows.Forms.Label TextDN;
         private System.Windows.Forms.GroupBox groupBoxDN;
+        private System.Windows.Forms.Button btnSignupUV;
+        private System.Windows.Forms.Button bntSignupDN;
     }
 }
