@@ -70,6 +70,57 @@ namespace DAL
             }
             return exists;
         }
+
+        public static bool ThemDoanhNghiepDB(OracleConnection connnv, string tenCongTy, string maSoThue, string nguoiDaiDien, string diaChi, string email)
+        {
+            try
+            {
+                connnv.Open();
+
+                string maCongTy;
+                bool isUnique;
+
+                do
+                {
+                    maCongTy = Guid.NewGuid().ToString();
+                    isUnique = !MaCongTyExists(connnv, maCongTy);
+                } while (!isUnique);
+
+                string query = "INSERT INTO ADMIN.DoanhNghiep (MACONGTY, TENCONGTY, MASOTHUE, NGUOIDAIDIEN, DIACHI, EMAIL) VALUES (:maCongTy, :tenCongTy, :maSoThue, :nguoiDaiDien, :diaChi, :email)";
+
+                using (OracleCommand cmd = new OracleCommand(query, connnv))
+                {
+                    cmd.Parameters.Add(new OracleParameter("maCongTy", maCongTy));
+                    cmd.Parameters.Add(new OracleParameter("tenCongTy", tenCongTy));
+                    cmd.Parameters.Add(new OracleParameter("maSoThue", maSoThue));
+                    cmd.Parameters.Add(new OracleParameter("nguoiDaiDien", nguoiDaiDien));
+                    cmd.Parameters.Add(new OracleParameter("diaChi", diaChi));
+                    cmd.Parameters.Add(new OracleParameter("email", email));
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    return rowsAffected > 0;
+                }
+            }
+            finally
+            {
+                if (connnv != null && connnv.State == ConnectionState.Open)
+                {
+                    connnv.Close();
+                }
+            }
+        }
+
+        private static bool MaCongTyExists(OracleConnection connnv, string maCongTy)
+        {
+            string query = "SELECT COUNT(*) FROM ADMIN.DoanhNghiep WHERE MACONGTY = :maCongTy";
+
+            using (OracleCommand cmd = new OracleCommand(query, connnv))
+            {
+                cmd.Parameters.Add(new OracleParameter("maCongTy", maCongTy));
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+                return count > 0;
+            }
+        }
     }
-    
+
 }

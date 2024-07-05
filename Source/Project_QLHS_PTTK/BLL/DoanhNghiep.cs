@@ -62,6 +62,11 @@ namespace BLL
         {
             return DAL.DoanhNghiepDB.KiemTraDNTonTai(connect, masothue);
         }
-        
+
+        public static bool ThemDoanhNghiep(OracleConnection connect, string tenCongTy, string maSoThue, string nguoiDaiDien, string diaChi, string email)
+        {
+            return DAL.DoanhNghiepDB.ThemDoanhNghiepDB(connect, tenCongTy, maSoThue, nguoiDaiDien, diaChi, email);
+        }
+
     }
 }
