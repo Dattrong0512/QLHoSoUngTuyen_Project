@@ -1,0 +1,266 @@
+
+ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;  
+CREATE USER ADMIN IDENTIFIED BY ADMIN;
+GRANT CONNECT TO ADMIN;
+GRANT CREATE SESSION TO ADMIN;
+GRANT SYSDBA TO ADMIN ;
+GRANT ALL PRIVILEGES TO ADMIN WITH ADMIN OPTION;
+GRANT EXECUTE ANY PROCEDURE To ADMIN;
+GRANT CREATE SESSION TO ADMIN ;
+GRANT CONNECT, RESOURCE,DBA TO ADMIN;
+GRANT UNLIMITED TABLESPACE TO ADMIN;
+GRANT CREATE SESSION, CREATE ANY CONTEXT, CREATE PROCEDURE, CREATE TRIGGER, ADMINISTER DATABASE TRIGGER TO ADMIN;
+GRANT EXEMPT ACCESS POLICY TO ADMIN;
+GRANT EXECUTE ON DBMS_CRYPTO TO ADMIN;
+
+DROP ROLE NHANVIEN;
+DROP ROLE UNGVIEN;
+DROP ROLE CONGTY;
+
+CREATE ROLE NHANVIEN;
+CREATE ROLE UNGVIEN;
+CREATE ROLE CONGTY;
+
+
+DROP TABLE ADMIN.ChiTietHoSo;
+DROP TABLE ADMIN.HoSoUngTuyen;
+DROP TABLE ADMIN.PhieuUngTuyen;
+DROP TABLE ADMIN.UngVien;
+DROP TABLE ADMIN.PhieuDangKyDN;
+DROP TABLE ADMIN.HoaDon;
+DROP TABLE ADMIN.PhieuDangKyQuangCao;
+DROP TABLE ADMIN.HinhThuc;
+DROP TABLE ADMIN.PhieuDangTuyen;
+DROP TABLE ADMIN.NhanVien;
+DROP TABLE ADMIN.ChiTietGiaHan;
+DROP TABLE ADMIN.DanhSachGiaHan;
+DROP TABLE ADMIN.ChienLuocUuDai;
+DROP TABLE ADMIN.DoanhNghiep;
+DROP TABLE ADMIN.BanLanhDao;
+
+
+
+
+--Tạo bảng với các khóa chính và khóa ngoại
+-- Bảng UngVien
+CREATE TABLE ADMIN.UngVien (
+    MaUngVien VARCHAR2(10) PRIMARY KEY,
+    HoTen NVARCHAR2(100),
+    SDT NUMBER(10),
+    Email VARCHAR2(50),
+    DiaChi NVARCHAR2(100),
+    MatKhau VARCHAR2(20)
+);
+/
+-- Bảng NhanVien
+CREATE TABLE ADMIN.NhanVien (
+    MaNhanVien VARCHAR2(10) PRIMARY KEY,
+    TenNhanVien nVARCHAR2(50),
+    SDT NUMBER(10),
+    Email VARCHAR2(50),
+    MatKhau VARCHAR2(128)
+);
+/
+-- Bảng PhieuUngTuyen
+CREATE TABLE ADMIN.PhieuUngTuyen (
+    MaPhieuUngTuyen VARCHAR2(10) PRIMARY KEY,
+    ViTriUngTuyen NVARCHAR2(50),
+    TinhTrangPhieu NVARCHAR2(50),
+    MaUngVien VARCHAR2(10),
+    MaNhanVien VARCHAR2(10),
+    FOREIGN KEY (MaUngVien) REFERENCES ADMIN.UngVien(MaUngVien),
+    FOREIGN KEY (MaNhanVien) REFERENCES ADMIN.NhanVien(MaNhanVien)
+);
+/
+-- Bảng HoSoUngTuyen
+CREATE TABLE ADMIN.HoSoUngTuyen (
+    MaHoSo VARCHAR2(10) PRIMARY KEY,
+    NgayNopHoSo DATE,
+    TinhTrangHS NVARCHAR2(50),
+    MaPhieuUngTuyen VARCHAR2(10),
+    FOREIGN KEY (MaPhieuUngTuyen) REFERENCES ADMIN.PhieuUngTuyen(MaPhieuUngTuyen)
+);
+/
+-- Bảng ChiTietHoSo
+CREATE TABLE ADMIN.ChiTietHoSo (
+    STT NUMBER,
+    LoaiHoSo NVARCHAR2(50),
+    TenHoSo NVARCHAR2(100),
+    MaHoSo VARCHAR2(10),
+    FOREIGN KEY (MaHoSo) REFERENCES ADMIN.HoSoUngTuyen(MaHoSo),
+    PRIMARY KEY (STT,MaHoSo)
+);
+/
+-- Bảng DoanhNghiep
+CREATE TABLE ADMIN.DoanhNghiep (
+    MaCongTy VARCHAR2(10) PRIMARY KEY,
+    TenCongTy NVARCHAR2(100),
+    MaSoThue VARCHAR2(20),
+    NguoiDaiDien NVARCHAR2(50),
+    DiaChi VARCHAR2(100),
+    Email VARCHAR2(50),
+    MatKhau VARCHAR2(20)
+);
+/
+-- Bảng PhieuDangKyDN
+CREATE TABLE ADMIN.PhieuDangKyDN (
+    MaPhieu VARCHAR2(10) PRIMARY KEY,
+    NgayTaoPhieu DATE,
+    TinhTrang VARCHAR2(20),
+    MaNhanVien VARCHAR2(10),
+    MaCongTy VARCHAR2(10),
+    FOREIGN KEY (MaNhanVien) REFERENCES ADMIN.NhanVien(MaNhanVien),
+    FOREIGN KEY(MaCongTy) REFERENCES ADMIN.DoanhNghiep(MaCongTy)
+);
+/
+-- Bảng PhieuDangTuyen
+CREATE TABLE ADMIN.PhieuDangTuyen (
+    MaPhieuDangTuyen VARCHAR2(10) PRIMARY KEY,
+    ViTriUngTuyen NVARCHAR2(50),
+    SoLuongTuyenDung NUMBER,
+    KhoangThoiGianDangTuyen VARCHAR2(50),
+    TieuChi NVARCHAR2(100),
+    TongTien NUMBER,
+    MaCongTy VARCHAR2(10),
+    MaNhanVien VARCHAR2(10),
+    FOREIGN KEY (MaNhanVien) REFERENCES ADMIN.NhanVien(MaNhanVien),
+    FOREIGN KEY (MaCongTy) REFERENCES ADMIN.DoanhNghiep(MaCongTy)
+);
+/
+-- Bảng HoaDon
+CREATE TABLE ADMIN.HoaDon (
+    MaHoaDon VARCHAR2(10) PRIMARY KEY,
+    HinhThucTT NVARCHAR2(50),
+    ThoiGian DATE,
+    TongTienDaThanhToan NUMBER,
+    MaPhieuDangTuyen VARCHAR2(10),
+    FOREIGN KEY (MaPhieuDangTuyen) REFERENCES ADMIN.PhieuDangTuyen(MaPhieuDangTuyen)
+);
+/
+-- Bảng ChienLuocUuDai
+CREATE TABLE ADMIN.ChienLuocUuDai (
+    MaChienLuoc VARCHAR2(10) PRIMARY KEY,
+    TenChienLuoc NVARCHAR2(100),
+    ChiTietUuDai NVARCHAR2(200)
+);
+/
+-- Bảng BanLanhDao
+CREATE TABLE ADMIN.BanLanhDao (
+    MaBLD VARCHAR2(10) PRIMARY KEY,
+    TenBLD NVARCHAR2(50)
+);
+/
+-- Bảng DanhSachGiaHan
+CREATE TABLE ADMIN.DanhSachGiaHan (
+    MaDS VARCHAR2(10) PRIMARY KEY,
+    NgayLap DATE,
+    MaBLD VARCHAR2(10),
+    FOREIGN KEY (MaBLD) REFERENCES ADMIN.BanLanhDao(MaBLD)
+);
+/
+-- Bảng ChiTietGiaHan
+CREATE TABLE ADMIN.ChiTietGiaHan (
+    TiemNangLon NUMBER(1),
+    MaChienLuoc VARCHAR2(10),
+    MaDS VARCHAR2(10),
+    MaCongTy VARCHAR2(10),
+    FOREIGN KEY (MaDS) REFERENCES ADMIN.DanhSachGiaHan(MaDS),
+    FOREIGN KEY (MaCongTy) REFERENCES ADMIN.DoanhNghiep(MaCongTy),
+    FOREIGN KEY (MaChienLuoc) REFERENCES ADMIN.ChienLuocUuDai(MaChienLuoc),
+    PRIMARY KEY(MaChienLuoc,MaDS,MaCongTy)
+);
+/
+-- Bảng HinhThuc
+CREATE TABLE ADMIN.HinhThuc (
+    MaHinhThuc VARCHAR2(10) PRIMARY KEY,
+    TenHinhThuc VARCHAR2(50),
+    DonGia NUMBER
+);
+/
+-- Bảng PhieuDangKyQuangCao
+CREATE TABLE ADMIN.PhieuDangKyQuangCao (
+    MaPhieuQC VARCHAR2(10) PRIMARY KEY,
+    ThoiGianDT VARCHAR2(50),
+    NgayLapPhieu DATE,
+    MaPhieuDangTuyen VARCHAR2(10),
+    MaHinhThuc VARCHAR2(10),
+    FOREIGN KEY (MaPhieuDangTuyen) REFERENCES ADMIN.PhieuDangTuyen(MaPhieuDangTuyen),
+    FOREIGN KEY (MaHinhThuc) REFERENCES ADMIN.HinhThuc(MaHinhThuc)
+);
+/
+
+--Mã hóa mật khẩu của nhân viên
+CREATE OR REPLACE TRIGGER trg_hash_password
+BEFORE INSERT OR UPDATE ON ADMIN.NhanVien
+FOR EACH ROW
+DECLARE
+  v_salt RAW(32);
+  v_hashed_password RAW(32);
+BEGIN
+  IF INSERTING OR (UPDATING AND :NEW.MATKHAU != :OLD.MATKHAU) THEN
+    -- Tạo salt ngẫu nhiên
+    v_salt := DBMS_CRYPTO.RANDOMBYTES(32);
+    -- Băm mật khẩu với salt
+    v_hashed_password := DBMS_CRYPTO.HASH(UTL_RAW.CAST_TO_RAW(:NEW.MATKHAU) || v_salt, DBMS_CRYPTO.HASH_MD5);
+    -- Lưu trữ salt và giá trị băm (nối chúng lại)
+    :NEW.MATKHAU := RAWTOHEX(v_salt) || RAWTOHEX(v_hashed_password);
+  END IF;
+END;
+/
+
+CREATE OR REPLACE FUNCTION check_password_NV (p_username VARCHAR2, p_password VARCHAR2) RETURN INT IS
+  v_stored_password VARCHAR2(128); 
+  v_salt RAW(32);
+  v_hashed_password RAW(32);
+  v_stored_hashed_password RAW(32); 
+BEGIN
+
+  SELECT MATKHAU INTO v_stored_password
+  FROM ADMIN.NhanVien
+  WHERE MaNhanVien = p_username;
+
+  -- Tách salt và giá trị băm từ chuỗi HEX đã lưu trữ
+  v_salt := HEXTORAW(SUBSTR(v_stored_password, 1, 64));
+  v_stored_hashed_password := HEXTORAW(SUBSTR(v_stored_password, 65));
+
+  -- Băm mật khẩu nhập vào với salt đã lưu trữ
+  v_hashed_password := DBMS_CRYPTO.HASH(UTL_RAW.CAST_TO_RAW(p_password) || v_salt, DBMS_CRYPTO.HASH_MD5);
+
+  -- So sánh giá trị băm của mật khẩu nhập vào với mật khẩu đã lưu trữ
+  IF v_hashed_password = v_stored_hashed_password THEN
+    RETURN 1;
+  ELSE
+    RETURN 0;
+  END IF;
+EXCEPTION
+  WHEN NO_DATA_FOUND THEN
+    RETURN 0; -- Trả về FALSE nếu không tìm thấy người dùng
+END;
+/
+DECLARE
+  v_result INT;
+BEGIN
+  v_result := check_password_NV('NV001', 'NV456');
+  DBMS_OUTPUT.PUT_LINE('Result: ' || v_result);
+END;
+/
+
+--Phân quyền đến nhân viên
+GRANT SELECT ON ADMIN.NhanVien to NHANVIEN;
+GRANT SELECT ON ADMIN.DoanhNghiep to NHANVIEN;
+GRANT SELECT ON ADMIN.PhieuDangKyDN to NHANVIEN;
+GRANT SELECT ON ADMIN.PhieuDangKyQuangCao to NHANVIEN;
+GRANT SELECT ON ADMIN.UngVien to NHANVIEN;
+GRANT SELECT ON ADMIN.PhieuDangKyDN to NHANVIEN;
+GRANT SELECT ON ADMIN.PhieuUngTuyen to NHANVIEN;
+GRANT SELECT ON ADMIN.PhieuDangTuyen to NHANVIEN;
+GRANT SELECT ON ADMIN.HoaDon to NHANVIEN;
+
+
+
+
+
+
+
+
+
