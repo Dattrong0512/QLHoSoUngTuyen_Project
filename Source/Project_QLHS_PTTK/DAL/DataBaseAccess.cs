@@ -1,5 +1,8 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Common;
+using System.Data.OleDb;
 using System.Diagnostics;
 using System.Diagnostics.Eventing.Reader;
 using System.Linq;
@@ -49,44 +52,52 @@ namespace DAL
     {
         public static string CheckLogic(TaiKhoan taikhoan)
         {
-            string user = null;
             OracleConnection mycon = null;
+            string message = "";
             string stringsqlVaiTro;
             if (taikhoan.VaiTro == "DN")
             {
                 stringsqlVaiTro = "SELECT * FROM ADMIN.DoanhNghiep WHERE MaCongTy = :username AND MatKhau = :password";
             }
-            else if(taikhoan.VaiTro == "NV")
+            else if (taikhoan.VaiTro == "NV")
             {
-                stringsqlVaiTro = "SELECT * FROM ADMIN.NhanVien WHERE MaNhanVien = :username AND MatKhau = :password";
-            }    
+                stringsqlVaiTro = "check_password_NV";
+            }
             else
             {
                 stringsqlVaiTro = "SELECT * FROM ADMIN.UngVien WHERE MaUngVien = :username AND MatKhau = :password";
-            }    
+            }
+
             try
             {
                 // Sử dụng kết nối của admin
                 mycon = Account.ADconn;
-                mycon.Open();
-
-                using (OracleCommand cmd = new OracleCommand(stringsqlVaiTro, mycon))
+                if (mycon.State == System.Data.ConnectionState.Closed || mycon.State == System.Data.ConnectionState.Broken)
                 {
-                    // Thêm các tham số vào câu lệnh SQL
-                    cmd.Parameters.Add(new OracleParameter("username", taikhoan.MaTK));
-                    cmd.Parameters.Add(new OracleParameter("password", taikhoan.MatKhau));
-                    using (OracleDataReader reader = cmd.ExecuteReader())
-                    {
+                    mycon.Open();
+                }
 
-                        if (reader.Read())
+                if (taikhoan.VaiTro == "NV")
+                {
+                    using (OracleCommand cmd = new OracleCommand(stringsqlVaiTro, mycon))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        // Thêm các tham số vào câu lệnh SQL
+                        var resultParam = new OracleParameter("result", OracleDbType.Int32);
+                        resultParam.Direction = ParameterDirection.ReturnValue;
+                        cmd.Parameters.Add(resultParam);
+
+                        cmd.Parameters.Add("username", OracleDbType.Varchar2).Value = taikhoan.MaTK;
+                        cmd.Parameters.Add("password", OracleDbType.Varchar2).Value = taikhoan.MatKhau;
+
+                        cmd.ExecuteNonQuery();
+
+                        var returnValue = cmd.Parameters["result"].Value;
+
+                        if (returnValue != null && int.TryParse(returnValue.ToString(), out int result))
                         {
-                            user = reader.GetString(0); // Lấy giá trị từ cột đầu tiên của hàng
-                            return "Thành công";
-                        }
-                            
-                        else
-                        {
-                            return "Tài khoản hoặc mật khẩu không chính xác";
+                            message = (result == 1) ? "Thành công" : "Tài khoản hoặc mật khẩu không chính xác";
                         }
                     }
                 }
@@ -95,27 +106,23 @@ namespace DAL
             {
                 if (ex.Number == 1017)
                 {
-                    return "Tài khoản hoặc mật khẩu sai, bạn vui lòng nhập lại";
+                    message = "Tài khoản hoặc mật khẩu sai, bạn vui lòng nhập lại";
                 }
                 else
                 {
-                    return $"Lỗi kết nối: {ex.Message}";
+                    message = $"Lỗi kết nối: {ex.Message}";
                 }
-            }
-            catch (Exception ex)
-            {
-                return $"Đã xảy ra lỗi: {ex.Message}";
             }
             finally
             {
-                // Đảm bảo rằng kết nối được đóng
-                if (mycon != null)
+                if (mycon != null && mycon.State == System.Data.ConnectionState.Open)
                 {
                     mycon.Close();
                 }
             }
-            return user;
+            return message;
         }
     }
+
 }
 
