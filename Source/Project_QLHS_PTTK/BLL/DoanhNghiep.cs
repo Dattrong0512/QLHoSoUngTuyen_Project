@@ -1,4 +1,4 @@
-﻿using DAL;
+using DAL;
 using DTO;
 using System;
 using System.Collections.Generic;
@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Oracle.ManagedDataAccess.Client;
+using System.Text.RegularExpressions;
+
 namespace BLL
 {
     public static class DoanhNghiep
@@ -69,8 +71,32 @@ namespace BLL
                 return false;
             }
 
+            if (!IsValidTaxId(maSoThue))
+            {
+                MessageBox.Show("Mã số thuế phải là chuỗi 10 ký tự số.");
+                return false;
+            }
+
+            if (!IsValidEmail(email))
+            {
+                MessageBox.Show("Email không hợp lệ.");
+                return false;
+            }
+
             bool exists = KiemTraDoanhNghiepTonTai(connect, maSoThue);
             return !exists;
+        }
+
+        private static bool IsValidTaxId(string taxId)
+        {
+            // Check if the tax ID is a 10-digit number
+            return Regex.IsMatch(taxId, @"^\d{10}$");
+        }
+
+        private static bool IsValidEmail(string email)
+        {
+            // Basic email validation pattern
+            return Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$");
         }
 
         private static bool IsPlaceholderOrEmpty(string text, string placeholder)
@@ -83,27 +109,9 @@ namespace BLL
             return DAL.DoanhNghiepDB.KiemTraDNTonTai(connect, masothue);
         }
 
-        public static bool ThemDoanhNghiep(OracleConnection connect, string tenCongTy, string maSoThue, string nguoiDaiDien, string diaChi, string email, string matkhau, string maCongTy)
+        public static bool ThemDoanhNghiep(OracleConnection connect, string tenCongTy, string maSoThue, string nguoiDaiDien, string diaChi, string email, string matkhau)
         {
-            bool isUnique;
-            do
-            {
-                maCongTy = GenerateRandomString(10);
-                isUnique = !MaCongTyExists(connect, maCongTy);
-            } while (!isUnique);
-            return DAL.DoanhNghiepDB.ThemDoanhNghiepDB(connect, tenCongTy, maSoThue, nguoiDaiDien, diaChi, email, matkhau, maCongTy);
-        }
-
-        private static bool MaCongTyExists(OracleConnection connnv, string maCongTy)
-        {
-            string query = "SELECT COUNT(*) FROM ADMIN.DoanhNghiep WHERE MACONGTY = :maCongTy";
-
-            using (OracleCommand cmd = new OracleCommand(query, connnv))
-            {
-                cmd.Parameters.Add(new OracleParameter("maCongTy", maCongTy));
-                int count = Convert.ToInt32(cmd.ExecuteScalar());
-                return count > 0;
-            }
+            return DAL.DoanhNghiepDB.ThemDoanhNghiepDB(connect, tenCongTy, maSoThue, nguoiDaiDien, diaChi, email, matkhau);
         }
 
         public static string GenerateRandomString(int length)
@@ -113,6 +121,5 @@ namespace BLL
             return new string(Enumerable.Repeat(chars, length)
               .Select(s => s[random.Next(s.Length)]).ToArray());
         }
-
     }
 }
