@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,52 +16,49 @@ namespace GUI
         public DienPhieuDangKyUngVien()
         {
             InitializeComponent();
+            buttonĐK.Click += new EventHandler(ButtonDangKy_Click);
+            buttonthoat.Click += new EventHandler(ButtonThoat_Click);
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void ButtonThoat_Click(object sender, EventArgs e)
         {
-            buttondangky.Click += Buttondangky_Click;
-            buttonthoat.Click += Buttonthoat_Click;
+            this.Close();
         }
 
-        // Hàm kiểm tra tính hợp lệ của thông tin người dùng
-        private bool IsValidInput()
+        private void ButtonDangKy_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(textHovaten.Text) ||
-                string.IsNullOrWhiteSpace(textBoxsodienthoai.Text) ||
-                string.IsNullOrWhiteSpace(textdiachi.Text))
+            if (ValidateForm())
             {
+                MessageBox.Show("Đăng ký thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private bool ValidateForm()
+        {
+            // Kiểm tra các ô không được để trống
+            if (string.IsNullOrWhiteSpace(textBoxhovaten.Text) ||
+                string.IsNullOrWhiteSpace(textĐC.Text) ||
+                string.IsNullOrWhiteSpace(textsdt.Text))
+            {
+                MessageBox.Show("Không được để trống bất kỳ ô nào", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            
+            // Kiểm tra họ và tên phải viết hoa chữ cái đầu
+            if (!Regex.IsMatch(textBoxhovaten.Text, @"^[A-Z][a-z]*"))
+            {
+                MessageBox.Show("Họ và tên phải viết hoa chữ cái đầu", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
-            // Kiểm tra định dạng số điện thoại
-            string phonePattern = @"^[0-9]{10}$"; // Giả sử số điện thoại là 10 chữ số
-            if (!Regex.IsMatch(textBoxsodienthoai.Text, phonePattern))
+            // Kiểm tra số điện thoại phải là 10 chữ số
+            if (!Regex.IsMatch(textsdt.Text, @"^\d{10}$"))
             {
+                MessageBox.Show("Số điện thoại phải là 10 chữ số", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
             return true;
-        }
-
-        // Xử lý sự kiện nhấn nút Đăng ký
-        private void Buttondangky_Click(object sender, EventArgs e)
-        {
-            if (IsValidInput())
-            {
-                MessageBox.Show("Đăng ký thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                // Thêm logic lưu thông tin người dùng ở đây (ví dụ: lưu vào cơ sở dữ liệu hoặc tệp)
-            }
-            else
-            {
-                MessageBox.Show("Thông tin không hợp lệ. Vui lòng kiểm tra lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        // Xử lý sự kiện nhấn nút Thoát
-        private void Buttonthoat_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }
