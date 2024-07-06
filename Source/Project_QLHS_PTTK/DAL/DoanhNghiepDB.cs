@@ -73,39 +73,15 @@ namespace DAL
 
         private static Random random = new Random();
 
-        private static string GenerateMaCongTy()
-        {
-            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-            return new string(Enumerable.Repeat(chars, 10)
-              .Select(s => s[random.Next(s.Length)]).ToArray());
-        }
+        
 
-        private static bool MaCongTyExists(OracleConnection connnv, string maCongTy)
-        {
-            string query = "SELECT COUNT(*) FROM ADMIN.DoanhNghiep WHERE MACONGTY = :maCongTy";
+        
 
-            using (OracleCommand cmd = new OracleCommand(query, connnv))
-            {
-                cmd.Parameters.Add(new OracleParameter("maCongTy", maCongTy));
-                int count = Convert.ToInt32(cmd.ExecuteScalar());
-                return count > 0;
-            }
-        }
-
-        public static bool ThemDoanhNghiepDB(OracleConnection connnv, string tenCongTy, string maSoThue, string nguoiDaiDien, string diaChi, string email, string matkhau)
+        public static bool ThemDoanhNghiepDB(OracleConnection connnv, string tenCongTy, string maSoThue, string nguoiDaiDien, string diaChi, string email, string matkhau, string maCongTy)
         {
             try
             {
                 connnv.Open();
-                string maCongTy;
-                bool isUnique;
-
-                do
-                {
-                    maCongTy = GenerateMaCongTy();
-                    isUnique = !MaCongTyExists(connnv, maCongTy);
-                } while (!isUnique);
-
                 string query = "INSERT INTO ADMIN.DoanhNghiep (MACONGTY, TENCONGTY, MASOTHUE, NGUOIDAIDIEN, DIACHI, EMAIL, MATKHAU) VALUES (:maCongTy, :tenCongTy, :maSoThue, :nguoiDaiDien, :diaChi, :email, :matKhau)";
 
                 using (OracleCommand cmd = new OracleCommand(query, connnv))
@@ -122,11 +98,6 @@ namespace DAL
                     int rowsAffected = cmd.ExecuteNonQuery();
                     return rowsAffected > 0;
                 }
-            }
-            catch (Exception ex)
-            {
-                // Handle exception (logging, rethrowing, etc.)
-                return false;
             }
             finally
             {

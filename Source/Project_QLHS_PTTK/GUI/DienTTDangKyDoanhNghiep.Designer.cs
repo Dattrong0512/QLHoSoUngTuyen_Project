@@ -56,7 +56,7 @@
             this.btnDangKy.TabIndex = 1;
             this.btnDangKy.Text = "Đăng ký";
             this.btnDangKy.UseVisualStyleBackColor = true;
-            this.btnDangKy.Click += new System.EventHandler(this.btnDangKy_Click);
+            this.btnDangKy.Click += new System.EventHandler(this.ButtonDangKy_Click);
             // 
             // tbTenCongTy
             // 

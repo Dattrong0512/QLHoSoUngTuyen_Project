@@ -63,12 +63,30 @@ namespace BLL
             return DAL.DoanhNghiepDB.KiemTraDNTonTai(connect, masothue);
         }
 
-        public static bool ThemDoanhNghiep(OracleConnection connect, string tenCongTy, string maSoThue, string nguoiDaiDien, string diaChi, string email, string matkhau)
+        public static bool ThemDoanhNghiep(OracleConnection connect, string tenCongTy, string maSoThue, string nguoiDaiDien, string diaChi, string email, string matkhau, string maCongTy)
         {
-            return DAL.DoanhNghiepDB.ThemDoanhNghiepDB(connect, tenCongTy, maSoThue, nguoiDaiDien, diaChi, email, matkhau);
+            bool isUnique;
+            do
+            {
+                maCongTy = GenerateRandomString(10);
+                isUnique = !MaCongTyExists(connect, maCongTy);
+            } while (!isUnique);
+            return DAL.DoanhNghiepDB.ThemDoanhNghiepDB(connect, tenCongTy, maSoThue, nguoiDaiDien, diaChi, email, matkhau, maCongTy);
         }
 
-        public static string GenerateRandomPassword(int length)
+        private static bool MaCongTyExists(OracleConnection connnv, string maCongTy)
+        {
+            string query = "SELECT COUNT(*) FROM ADMIN.DoanhNghiep WHERE MACONGTY = :maCongTy";
+
+            using (OracleCommand cmd = new OracleCommand(query, connnv))
+            {
+                cmd.Parameters.Add(new OracleParameter("maCongTy", maCongTy));
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+                return count > 0;
+            }
+        }
+
+        public static string GenerateRandomString(int length)
         {
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
             var random = new Random();

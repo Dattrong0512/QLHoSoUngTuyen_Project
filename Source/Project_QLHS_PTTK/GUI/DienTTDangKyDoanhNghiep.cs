@@ -159,15 +159,16 @@ namespace GUI
                 }
                 else
                 {
-                    // Tạo mật khẩu ngẫu nhiên
-                    string matKhau = BLL.DoanhNghiep.GenerateRandomPassword(20);
+                    // Tạo mã công ty và mật khẩu ngẫu nhiên
+                    string matKhau = BLL.DoanhNghiep.GenerateRandomString(20);
+                    string maCongTy = BLL.DoanhNghiep.GenerateRandomString(10);
 
                     bool success = DoanhNghiep.ThemDoanhNghiep(connect, tbTenCongTy.Text.Trim(),
                                                                tbMaSoThue.Text.Trim(),
                                                                tbNguoiDaiDien.Text.Trim(),
                                                                tbDiaChi.Text.Trim(),
                                                                tbEmail.Text.Trim(),
-                                                               matKhau
+                                                               matKhau, maCongTy
                                                              );
                     if (success)
                     {
@@ -211,11 +212,6 @@ namespace GUI
         private bool IsPlaceholderOrEmpty(TextBox textBox, string placeholder)
         {
             return string.IsNullOrWhiteSpace(textBox.Text) || textBox.Text == placeholder;
-        }
-
-        private void btnDangKy_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
