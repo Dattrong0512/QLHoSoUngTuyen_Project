@@ -46,6 +46,8 @@
             this.btnThoat.TabIndex = 0;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnDangKy.Click += new System.EventHandler(this.ButtonThoat_Click);
+
             // 
             // btnDangKy
             // 
