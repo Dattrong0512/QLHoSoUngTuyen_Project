@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -71,16 +71,15 @@ namespace DAL
             return exists;
         }
 
-        public static bool ThemDoanhNghiepDB(OracleConnection connnv, string tenCongTy, string maSoThue, string nguoiDaiDien, string diaChi, string email, string matkhau, string maCongTy)
+        public static bool ThemDoanhNghiepDB(OracleConnection connnv, string tenCongTy, string maSoThue, string nguoiDaiDien, string diaChi, string email, string matkhau)
         {
             try
             {
                 connnv.Open();
-                string query = "INSERT INTO ADMIN.DoanhNghiep (MACONGTY, TENCONGTY, MASOTHUE, NGUOIDAIDIEN, DIACHI, EMAIL, MATKHAU) VALUES (:maCongTy, :tenCongTy, :maSoThue, :nguoiDaiDien, :diaChi, :email, :matKhau)";
+                string query = "INSERT INTO ADMIN.DoanhNghiep (TENCONGTY, MASOTHUE, NGUOIDAIDIEN, DIACHI, EMAIL, MATKHAU) VALUES (:tenCongTy, :maSoThue, :nguoiDaiDien, :diaChi, :email, :matKhau)";
 
                 using (OracleCommand cmd = new OracleCommand(query, connnv))
                 {
-                    cmd.Parameters.Add(new OracleParameter("maCongTy", maCongTy));
                     cmd.Parameters.Add(new OracleParameter("tenCongTy", tenCongTy));
                     cmd.Parameters.Add(new OracleParameter("maSoThue", maSoThue));
                     cmd.Parameters.Add(new OracleParameter("nguoiDaiDien", nguoiDaiDien));
