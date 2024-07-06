@@ -173,10 +173,9 @@ namespace GUI
                 }
                 else
                 {
-                    // Tạo mã công ty và mật khẩu ngẫu nhiên
+                    // Tạo mật khẩu ngẫu nhiên
                     string matKhau = BLL.DoanhNghiep.GenerateRandomString(20);
-                    string maCongTy = BLL.DoanhNghiep.GenerateRandomString(10);
-
+                    
                     bool success = DoanhNghiep.ThemDoanhNghiep(connect, tbTenCongTy.Text.Trim(),
                                                                tbMaSoThue.Text.Trim(),
                                                                tbNguoiDaiDien.Text.Trim(),
