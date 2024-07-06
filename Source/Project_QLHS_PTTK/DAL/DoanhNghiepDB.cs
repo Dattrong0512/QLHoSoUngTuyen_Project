@@ -71,12 +71,6 @@ namespace DAL
             return exists;
         }
 
-        private static Random random = new Random();
-
-        
-
-        
-
         public static bool ThemDoanhNghiepDB(OracleConnection connnv, string tenCongTy, string maSoThue, string nguoiDaiDien, string diaChi, string email, string matkhau, string maCongTy)
         {
             try
@@ -94,7 +88,6 @@ namespace DAL
                     cmd.Parameters.Add(new OracleParameter("email", email));
                     cmd.Parameters.Add(new OracleParameter("matKhau", matkhau));
 
-
                     int rowsAffected = cmd.ExecuteNonQuery();
                     return rowsAffected > 0;
                 }
@@ -108,5 +101,4 @@ namespace DAL
             }
         }
     }
-
 }
