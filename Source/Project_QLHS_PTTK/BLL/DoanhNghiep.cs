@@ -58,6 +58,26 @@ namespace BLL
             return dt;
         }
 
+        public static bool ValidateInputs(string tenCongTy, string maSoThue, string nguoiDaiDien, string diaChi, string email, OracleConnection connect)
+        {
+            if (IsPlaceholderOrEmpty(tenCongTy, "Tên công ty") ||
+                IsPlaceholderOrEmpty(maSoThue, "Mã số thuế") ||
+                IsPlaceholderOrEmpty(nguoiDaiDien, "Người đại diện") ||
+                IsPlaceholderOrEmpty(diaChi, "Địa chỉ") ||
+                IsPlaceholderOrEmpty(email, "Email"))
+            {
+                return false;
+            }
+
+            bool exists = KiemTraDoanhNghiepTonTai(connect, maSoThue);
+            return !exists;
+        }
+
+        private static bool IsPlaceholderOrEmpty(string text, string placeholder)
+        {
+            return string.IsNullOrWhiteSpace(text) || text == placeholder;
+        }
+
         public static bool KiemTraDoanhNghiepTonTai(OracleConnection connect, string masothue)
         {
             return DAL.DoanhNghiepDB.KiemTraDNTonTai(connect, masothue);

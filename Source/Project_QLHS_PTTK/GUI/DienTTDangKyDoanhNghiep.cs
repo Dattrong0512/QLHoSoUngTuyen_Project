@@ -149,7 +149,7 @@ namespace GUI
 
         private void ButtonDangKy_Click(object sender, EventArgs e)
         {
-            if (ValidateInputs())
+            if (BLL.DoanhNghiep.ValidateInputs(tbTenCongTy.Text.Trim(), tbMaSoThue.Text.Trim(), tbNguoiDaiDien.Text.Trim(), tbDiaChi.Text.Trim(), tbEmail.Text.Trim(), connect))
             {
                 bool exists = DoanhNghiep.KiemTraDoanhNghiepTonTai(connect, tbMaSoThue.Text.Trim());
 
@@ -186,32 +186,6 @@ namespace GUI
             }
         }
 
-        private bool ValidateInputs()
-        {
-            // Check if any TextBox is empty or contains placeholder text
-            if (IsPlaceholderOrEmpty(tbTenCongTy, "Tên công ty") ||
-                    IsPlaceholderOrEmpty(tbMaSoThue, "Mã số thuế") ||
-                    IsPlaceholderOrEmpty(tbNguoiDaiDien, "Người đại diện") ||
-                    IsPlaceholderOrEmpty(tbDiaChi, "Địa chỉ") ||
-                    IsPlaceholderOrEmpty(tbEmail, "Email"))
-            {
-                MessageBox.Show("Thông tin nhập không hợp lệ.");
-                return false;
-            }
-
-            bool exists = DoanhNghiep.KiemTraDoanhNghiepTonTai(connect, tbMaSoThue.Text.Trim());
-            if (exists)
-            {
-                MessageBox.Show("Thông tin doanh nghiệp đã tồn tại.");
-                return false;
-            }
-
-            return true;
-        }
-
-        private bool IsPlaceholderOrEmpty(TextBox textBox, string placeholder)
-        {
-            return string.IsNullOrWhiteSpace(textBox.Text) || textBox.Text == placeholder;
-        }
+        
     }
 }
