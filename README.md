@@ -1,7 +1,7 @@
 # Hệ thống quản lí hồ sơ ứng tuyển công ty ABC
 
 ## Cài đặt
-- Xây dưng ứng dụng **Winform** bằng **Visual Studio 2022**
+- Xây dựng ứng dụng **Winform** bằng **Visual Studio 2022**
 - Cơ sở dữ liệu sử dụng: **Oracle 21g**
 
 ## Chức năng
