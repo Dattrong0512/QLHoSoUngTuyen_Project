@@ -200,3 +200,36 @@ D:\code\QLHoSoUngTuyen_Project\Source\Project_QLHS_PTTK\DTO\obj\Debug\DTO.csproj
 D:\code\QLHoSoUngTuyen_Project\Source\Project_QLHS_PTTK\DTO\obj\Debug\DTO.csproj.CopyComplete
 D:\code\QLHoSoUngTuyen_Project\Source\Project_QLHS_PTTK\DTO\obj\Debug\DTO.dll
 D:\code\QLHoSoUngTuyen_Project\Source\Project_QLHS_PTTK\DTO\obj\Debug\DTO.pdb
+C:\Users\phamt\OneDrive\Tài liệu\GitHub\QLHoSoUngTuyen_Project\Source\Project_QLHS_PTTK\DTO\bin\Debug\DTO.dll.config
+C:\Users\phamt\OneDrive\Tài liệu\GitHub\QLHoSoUngTuyen_Project\Source\Project_QLHS_PTTK\DTO\bin\Debug\DTO.dll
+C:\Users\phamt\OneDrive\Tài liệu\GitHub\QLHoSoUngTuyen_Project\Source\Project_QLHS_PTTK\DTO\bin\Debug\DTO.pdb
+C:\Users\phamt\OneDrive\Tài liệu\GitHub\QLHoSoUngTuyen_Project\Source\Project_QLHS_PTTK\DTO\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\phamt\OneDrive\Tài liệu\GitHub\QLHoSoUngTuyen_Project\Source\Project_QLHS_PTTK\DTO\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\phamt\OneDrive\Tài liệu\GitHub\QLHoSoUngTuyen_Project\Source\Project_QLHS_PTTK\DTO\bin\Debug\System.Buffers.dll
+C:\Users\phamt\OneDrive\Tài liệu\GitHub\QLHoSoUngTuyen_Project\Source\Project_QLHS_PTTK\DTO\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\phamt\OneDrive\Tài liệu\GitHub\QLHoSoUngTuyen_Project\Source\Project_QLHS_PTTK\DTO\bin\Debug\System.Formats.Asn1.dll
+C:\Users\phamt\OneDrive\Tài liệu\GitHub\QLHoSoUngTuyen_Project\Source\Project_QLHS_PTTK\DTO\bin\Debug\System.Memory.dll
+C:\Users\phamt\OneDrive\Tài liệu\GitHub\QLHoSoUngTuyen_Project\Source\Project_QLHS_PTTK\DTO\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\phamt\OneDrive\Tài liệu\GitHub\QLHoSoUngTuyen_Project\Source\Project_QLHS_PTTK\DTO\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\phamt\OneDrive\Tài liệu\GitHub\QLHoSoUngTuyen_Project\Source\Project_QLHS_PTTK\DTO\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\phamt\OneDrive\Tài liệu\GitHub\QLHoSoUngTuyen_Project\Source\Project_QLHS_PTTK\DTO\bin\Debug\System.Text.Json.dll
+C:\Users\phamt\OneDrive\Tài liệu\GitHub\QLHoSoUngTuyen_Project\Source\Project_QLHS_PTTK\DTO\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\phamt\OneDrive\Tài liệu\GitHub\QLHoSoUngTuyen_Project\Source\Project_QLHS_PTTK\DTO\bin\Debug\System.ValueTuple.dll
+C:\Users\phamt\OneDrive\Tài liệu\GitHub\QLHoSoUngTuyen_Project\Source\Project_QLHS_PTTK\DTO\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\phamt\OneDrive\Tài liệu\GitHub\QLHoSoUngTuyen_Project\Source\Project_QLHS_PTTK\DTO\bin\Debug\System.Buffers.xml
+C:\Users\phamt\OneDrive\Tài liệu\GitHub\QLHoSoUngTuyen_Project\Source\Project_QLHS_PTTK\DTO\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\phamt\OneDrive\Tài liệu\GitHub\QLHoSoUngTuyen_Project\Source\Project_QLHS_PTTK\DTO\bin\Debug\System.Formats.Asn1.xml
+C:\Users\phamt\OneDrive\Tài liệu\GitHub\QLHoSoUngTuyen_Project\Source\Project_QLHS_PTTK\DTO\bin\Debug\System.Memory.xml
+C:\Users\phamt\OneDrive\Tài liệu\GitHub\QLHoSoUngTuyen_Project\Source\Project_QLHS_PTTK\DTO\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\phamt\OneDrive\Tài liệu\GitHub\QLHoSoUngTuyen_Project\Source\Project_QLHS_PTTK\DTO\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\phamt\OneDrive\Tài liệu\GitHub\QLHoSoUngTuyen_Project\Source\Project_QLHS_PTTK\DTO\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\phamt\OneDrive\Tài liệu\GitHub\QLHoSoUngTuyen_Project\Source\Project_QLHS_PTTK\DTO\bin\Debug\System.Text.Json.xml
+C:\Users\phamt\OneDrive\Tài liệu\GitHub\QLHoSoUngTuyen_Project\Source\Project_QLHS_PTTK\DTO\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\phamt\OneDrive\Tài liệu\GitHub\QLHoSoUngTuyen_Project\Source\Project_QLHS_PTTK\DTO\bin\Debug\System.ValueTuple.xml
+C:\Users\phamt\OneDrive\Tài liệu\GitHub\QLHoSoUngTuyen_Project\Source\Project_QLHS_PTTK\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+C:\Users\phamt\OneDrive\Tài liệu\GitHub\QLHoSoUngTuyen_Project\Source\Project_QLHS_PTTK\DTO\obj\Debug\Interop.ORAOLEDBLib.dll
+C:\Users\phamt\OneDrive\Tài liệu\GitHub\QLHoSoUngTuyen_Project\Source\Project_QLHS_PTTK\DTO\obj\Debug\DTO.csproj.ResolveComReference.cache
+C:\Users\phamt\OneDrive\Tài liệu\GitHub\QLHoSoUngTuyen_Project\Source\Project_QLHS_PTTK\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\phamt\OneDrive\Tài liệu\GitHub\QLHoSoUngTuyen_Project\Source\Project_QLHS_PTTK\DTO\obj\Debug\DTO.csproj.Up2Date
+C:\Users\phamt\OneDrive\Tài liệu\GitHub\QLHoSoUngTuyen_Project\Source\Project_QLHS_PTTK\DTO\obj\Debug\DTO.dll
+C:\Users\phamt\OneDrive\Tài liệu\GitHub\QLHoSoUngTuyen_Project\Source\Project_QLHS_PTTK\DTO\obj\Debug\DTO.pdb
