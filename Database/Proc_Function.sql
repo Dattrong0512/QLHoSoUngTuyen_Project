@@ -35,7 +35,7 @@ BEGIN
         FETCH CUR2 INTO USR, MK;
         EXIT WHEN CUR2%NOTFOUND;
                
-        STRSQL := 'CREATE USER ' || USR || ' IDENTIFIED ' || MK;
+        STRSQL := 'CREATE USER ' || USR || ' IDENTIFIED BY ' || MK;
         EXECUTE IMMEDIATE(STRSQL);
         
         STRSQL := 'GRANT CONNECT TO ' || USR;
