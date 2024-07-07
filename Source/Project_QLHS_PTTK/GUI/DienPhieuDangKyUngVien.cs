@@ -41,7 +41,7 @@ namespace GUI
                 string password = BLL.UngVien.GenerateRandomPassword();
 
                 // Thêm ứng viên vào database
-                OracleConnection conn = new OracleConnection("connection_string"); // Thay bằng connection string của bạn
+                OracleConnection conn = new OracleConnection("connection_string"); 
                 try
                 {
                     conn.Open();
