@@ -56,7 +56,7 @@ namespace GUI
             this.textĐC.Name = "textĐC";
             this.textĐC.Size = new System.Drawing.Size(440, 30);
             this.textĐC.TabIndex = 2;
-            this.textĐC.TextChanged += new System.EventHandler(this.textĐC_TextChanged);
+            
             // 
             // textsdt
             // 
@@ -65,7 +65,7 @@ namespace GUI
             this.textsdt.Name = "textsdt";
             this.textsdt.Size = new System.Drawing.Size(440, 30);
             this.textsdt.TabIndex = 3;
-            this.textsdt.TextChanged += new System.EventHandler(this.textsdt_TextChanged);
+            
             // 
             // labelhovaten
             // 
@@ -163,7 +163,7 @@ namespace GUI
             this.Controls.Add(this.textĐC);
             this.Controls.Add(this.textBoxhovaten);
             this.Name = "DienPhieuDangKyUngVien";
-            this.Load += new System.EventHandler(this.DienPhieuDangKyUngVien_Load_1);
+            
             this.ResumeLayout(false);
             this.PerformLayout();
 
