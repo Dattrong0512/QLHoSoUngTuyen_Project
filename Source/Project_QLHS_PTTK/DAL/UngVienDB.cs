@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using DTO;
@@ -63,32 +64,49 @@ namespace DAL
         }
 
         // Phương thức thêm ứng viên vào cơ sở dữ liệu
-        public static void AddCandidateDB(OracleConnection connection, string hovaten, string email, string diachi, string sodienthoai, string password)
+        public static bool AddCandidateDB(OracleConnection connection, string hovaten, string email, string diachi, string sodienthoai, string password)
         {
+            //if (!long.TryParse(sodienthoai, out long sdt))
+            //{
+            //    throw new Exception("Số điện thoại không hợp lệ");
+            //}
+           
             try
             {
                 connection.Open();
-                using (OracleCommand command = new OracleCommand("INSERT INTO UNGVIEN (HOTEN,SDT ,EMAIL, DIACHI, MATKHAU) VALUES (:HoVaTen, :SoDienThoai, :Email, :DiaChi, :MatKhau)", connection))
+                using (OracleCommand command = new OracleCommand("INSERT INTO UNGVIEN (HOTEN, SDT,EMAIL, DIACHI, MATKHAU) VALUES (:HoVaTen,:SoDienThoai, :Email, :DiaChi, :MatKhau)", connection))
                 {
+                    command.BindByName = true;
+                    double sdt = long.Parse(sodienthoai);
+                    command.Parameters.Add(new OracleParameter("SoDienThoai", sdt));
+                    //command.Parameters.Add(new OracleParameter("SoDienThoai", OracleDbType.Int64)).Value = sdt;
                     command.Parameters.Add(new OracleParameter("HoVaTen", hovaten));
-                    command.Parameters.Add(new OracleParameter("SoDienThoai", sodienthoai));
                     command.Parameters.Add(new OracleParameter("Email", email));
                     command.Parameters.Add(new OracleParameter("DiaChi", diachi));
                     command.Parameters.Add(new OracleParameter("MatKhau", password));
                     
                     command.ExecuteNonQuery();
+                    
                     connection.Close();
+                    return true;
                 }
             }
             catch (Exception ex)
             {
                 throw new Exception("Lỗi thêm ứng viên: " + ex.Message);
+                
             }
+            
         }
         public static bool KiemTraTaiKhoanTonTaiDB(OracleConnection connnv, string email)
         {
             try
             {
+                if (connnv.State != ConnectionState.Open)
+                {
+                    connnv.Open();
+                }
+                
                 string query = "SELECT COUNT(*) FROM ADMIN.UngVien WHERE EMAIL = :email";
 
                 using (OracleCommand cmd = new OracleCommand(query, connnv))
