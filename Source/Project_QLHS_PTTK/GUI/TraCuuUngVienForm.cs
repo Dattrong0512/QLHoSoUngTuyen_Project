@@ -22,6 +22,7 @@ namespace GUI
             cbbSearchFilterUV.DropDownStyle = ComboBoxStyle.DropDownList;
             gvDSUV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             cbbSearchFilterUV.SelectedIndex = 0;
+            lblNoData.Visible = false;
         }
 
         
