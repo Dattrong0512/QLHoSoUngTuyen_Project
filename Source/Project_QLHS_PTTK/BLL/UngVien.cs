@@ -64,9 +64,9 @@ namespace BLL
         }
 
         // Phương thức thêm ứng viên vào cơ sở dữ liệu
-        public static void AddCandidate(OracleConnection connection, string hovaten, string email, string diachi, string sodienthoai, string password)
+        public static bool AddCandidate(OracleConnection connection, string hovaten, string email, string diachi, string sodienthoai, string password)
         {
-            DAL.UngVienDB.AddCandidateDB(connection, hovaten, email, diachi, sodienthoai, password);
+            return DAL.UngVienDB.AddCandidateDB(connection, hovaten, email, diachi, sodienthoai, password);
         }
 
         // Phương thức tạo mật khẩu ngẫu nhiên
