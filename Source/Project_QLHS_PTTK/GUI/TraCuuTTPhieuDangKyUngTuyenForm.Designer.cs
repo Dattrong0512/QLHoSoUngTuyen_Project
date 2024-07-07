@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.TraCuuPUT = new System.Windows.Forms.DataGridView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.CBBFilter = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.buttonSearch = new System.Windows.Forms.Button();
+            this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.uvRefresh = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.TraCuuPUT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uvRefresh)).BeginInit();
@@ -49,18 +49,19 @@
             this.TraCuuPUT.Size = new System.Drawing.Size(822, 342);
             this.TraCuuPUT.TabIndex = 4;
             // 
-            // comboBox1
+            // CBBFilter
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.CBBFilter.BackColor = System.Drawing.Color.SkyBlue;
+            this.CBBFilter.FormattingEnabled = true;
+            this.CBBFilter.Items.AddRange(new object[] {
             "Mã phiếu ứng tuyển",
             "Vị trí ứng tuyển",
             "Tình trạng phiếu",
             "Mã ứng viên"});
-            this.comboBox1.Location = new System.Drawing.Point(78, 48);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(200, 24);
-            this.comboBox1.TabIndex = 15;
+            this.CBBFilter.Location = new System.Drawing.Point(78, 48);
+            this.CBBFilter.Name = "CBBFilter";
+            this.CBBFilter.Size = new System.Drawing.Size(200, 24);
+            this.CBBFilter.TabIndex = 15;
             // 
             // label3
             // 
@@ -72,22 +73,24 @@
             this.label3.Text = "Filter";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // button1
+            // buttonSearch
             // 
-            this.button1.Location = new System.Drawing.Point(499, 41);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(85, 37);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Tìm Kiếm";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonSearch.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.buttonSearch.Location = new System.Drawing.Point(684, 42);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(89, 40);
+            this.buttonSearch.TabIndex = 13;
+            this.buttonSearch.Text = "Tìm Kiếm";
+            this.buttonSearch.UseVisualStyleBackColor = false;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
-            // textBox1
+            // textBoxSearch
             // 
-            this.textBox1.Location = new System.Drawing.Point(284, 49);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(209, 22);
-            this.textBox1.TabIndex = 12;
+            this.textBoxSearch.BackColor = System.Drawing.Color.SkyBlue;
+            this.textBoxSearch.Location = new System.Drawing.Point(284, 49);
+            this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.Size = new System.Drawing.Size(375, 22);
+            this.textBoxSearch.TabIndex = 12;
             // 
             // uvRefresh
             // 
@@ -104,12 +107,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(902, 478);
             this.Controls.Add(this.uvRefresh);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.CBBFilter);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.buttonSearch);
+            this.Controls.Add(this.textBoxSearch);
             this.Controls.Add(this.TraCuuPUT);
             this.Name = "TraCuuTTPhieuDangKyUngTuyenForm";
             this.Text = "TraCuuTTPhieuDangKyUngTuyen";
@@ -123,10 +127,10 @@
 
         #endregion
         private System.Windows.Forms.DataGridView TraCuuPUT;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox CBBFilter;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button buttonSearch;
+        private System.Windows.Forms.TextBox textBoxSearch;
         private System.Windows.Forms.PictureBox uvRefresh;
     }
 }

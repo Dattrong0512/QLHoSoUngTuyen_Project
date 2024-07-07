@@ -24,15 +24,12 @@ namespace GUI
 
         private void initCombobox()
         {
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            CBBFilter.DropDownStyle = ComboBoxStyle.DropDownList;
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            TraCuuPUT.DataSource = BLL.PDKUT.traCuuPUT(connect,
-            comboBox1.SelectedItem == null ? "" : comboBox1.SelectedItem.ToString(), textBox1.Text);
-
 
         }
 
@@ -44,16 +41,22 @@ namespace GUI
         private void TraCuuTTPhieuDangKyUngTuyenForm_Load(object sender, EventArgs e)
         {
             TraCuuPUT.DataSource = BLL.PDKUT.traCuuPUT(connect,
-            comboBox1.SelectedItem == null ? "" : comboBox1.SelectedItem.ToString(), textBox1.Text);
+            CBBFilter.SelectedItem == null ? "" : CBBFilter.SelectedItem.ToString(), textBoxSearch.Text);
         }
 
         private void uvRefresh_Click(object sender, EventArgs e)
         {
-            comboBox1.SelectedItem = null;
-            textBox1.Text = "";
+            CBBFilter.SelectedItem = null;
+            textBoxSearch.Text = "";
 
             TraCuuPUT.DataSource = BLL.PDKUT.traCuuPUT(connect,
-            comboBox1.SelectedItem == null ? "" : comboBox1.SelectedItem.ToString(), textBox1.Text);
+            CBBFilter.SelectedItem == null ? "" : CBBFilter.SelectedItem.ToString(), textBoxSearch.Text);
+        }
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            TraCuuPUT.DataSource = BLL.PDKUT.traCuuPUT(connect,
+           CBBFilter.SelectedItem == null ? "" : CBBFilter.SelectedItem.ToString(), textBoxSearch.Text);
         }
     }
 }
