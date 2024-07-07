@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -42,7 +43,12 @@ namespace GUI
 
                     // Tạo mật khẩu ngẫu nhiên
                     string password = BLL.UngVien.GenerateRandomPassword();
-                    UngVien.AddCandidate(connect, hovaten, email, diachi, sodienthoai, password);
+                    bool success = UngVien.AddCandidate(connect, hovaten, email, diachi, sodienthoai, password);
+                    if(success)
+                    {
+                        MessageBox.Show("Đăng ký tài khoản ứng viên thành công");
+
+                    }
                 }
                 else
                 {
@@ -76,14 +82,20 @@ namespace GUI
                 return false;
             }
 
-            // Kiểm tra định dạng số điện thoại
-            string phonePattern = @"^[0-9]{10}$"; // Giả sử số điện thoại là 10 chữ số
-            if (!Regex.IsMatch(textBoxsodienthoai.Text, phonePattern))
+            
+            
+            if(textsdt.Text.Trim().Length != 10)
             {
+                MessageBox.Show("Số điện thoại phải là 10 số", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
             return true;
+        }
+
+        private void DienPhieuDangKyUngVien_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
