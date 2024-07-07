@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,6 +19,7 @@ namespace GUI
             connect = conn;
             cbbSearchFilterDN.DropDownStyle = ComboBoxStyle.DropDownList;
             cbbSearchFilterDN.SelectedIndex = 0;
+            buttonRefresh.ImageAlign = ContentAlignment.MiddleLeft; // Căn giữa hình ảnh
         }
 
         private void TraCuuDoanhNghiepForm_Load(object sender, EventArgs e)
@@ -46,9 +47,10 @@ namespace GUI
             gvDSDN.DataSource = BLL.DoanhNghiep.TraCuuDoanhNghiep(connect, cbbSearchFilterDN.Text, txtSearchDN.Text);
         }
 
-        private void pictureRefresh_Click(object sender, EventArgs e)
+        private void buttonRefesh_Click(object sender, EventArgs e)
         {
             gvDSDN.DataSource = BLL.DoanhNghiep.HienThiDoanhNghiep(connect);
         }
+
     }
 }
