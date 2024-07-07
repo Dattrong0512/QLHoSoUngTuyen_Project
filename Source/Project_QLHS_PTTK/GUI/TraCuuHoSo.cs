@@ -66,8 +66,17 @@ namespace GUI
                 return;
             }
 
-            dataGridView.DataSource = BLL.HoSoBLL.TraCuuHoSo(connect, maHoSo);
-            SetupDataGridView();
+            var data = BLL.HoSoBLL.TraCuuHoSo(connect, maHoSo);
+            if (data.Rows.Count == 0)
+            {
+                MessageBox.Show("Không tìm thấy hồ sơ.");
+                LoadData();
+            }
+            else
+            {
+                dataGridView.DataSource = data;
+                SetupDataGridView();
+            }
         }
 
         private void TroVe_button(object sender, EventArgs e)
