@@ -90,6 +90,13 @@ namespace GUI
             LabelTitle.Show();
         }
 
+        private void ButtonTraCuuHS_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new TraCuuHoSoForm(taikhoanNV.TKconn));
+            LabelTitle.Text = "Tra cứu hồ sơ";
+            LabelTitle.Show();
+        }
+
         private void ImageNV_Click(object sender, EventArgs e)
         {
             if(currentFormChild!=null)
