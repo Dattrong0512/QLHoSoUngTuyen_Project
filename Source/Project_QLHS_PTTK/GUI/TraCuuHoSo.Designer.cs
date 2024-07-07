@@ -34,60 +34,37 @@ namespace GUI
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.ThongTinHoSo_label = new System.Windows.Forms.Label();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
+            this.MaHoSo_label = new System.Windows.Forms.Label();
             this.Mahoso_textBox = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
+            this.Button_TraCuu = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.MediumOrchid;
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(-3, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(945, 48);
-            this.panel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(299, 7);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(356, 38);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Tra Cứu Hồ Sơ Ứng Tuyển";
-            // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.ThongTinHoSo_label);
             this.panel3.Controls.Add(this.dataGridView);
-            this.panel3.Location = new System.Drawing.Point(-3, 126);
+            this.panel3.Location = new System.Drawing.Point(-3, 80);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(945, 368);
+            this.panel3.Size = new System.Drawing.Size(906, 401);
             this.panel3.TabIndex = 2;
             // 
-            // label3
+            // ThongTinHoSo_label
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(15, 4);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(146, 25);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Thông tin hồ sơ";
+            this.ThongTinHoSo_label.AutoSize = true;
+            this.ThongTinHoSo_label.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ThongTinHoSo_label.Location = new System.Drawing.Point(15, 4);
+            this.ThongTinHoSo_label.Name = "ThongTinHoSo_label";
+            this.ThongTinHoSo_label.Size = new System.Drawing.Size(146, 25);
+            this.ThongTinHoSo_label.TabIndex = 1;
+            this.ThongTinHoSo_label.Text = "Thông tin hồ sơ";
             // 
             // dataGridView
             // 
@@ -95,7 +72,6 @@ namespace GUI
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -105,24 +81,24 @@ namespace GUI
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView.ColumnHeadersHeight = 29;
-            this.dataGridView.Location = new System.Drawing.Point(15, 30);
+            this.dataGridView.Location = new System.Drawing.Point(33, 30);
             this.dataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowHeadersVisible = false;
             this.dataGridView.RowHeadersWidth = 51;
-            this.dataGridView.Size = new System.Drawing.Size(918, 326);
+            this.dataGridView.Size = new System.Drawing.Size(843, 344);
             this.dataGridView.TabIndex = 0;
-            dataGridView.CellContentClick += dataGridView_CellClick;
+            this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
             // 
-            // label2
+            // MaHoSo_label
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(15, 24);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 25);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Mã hồ sơ";
+            this.MaHoSo_label.AutoSize = true;
+            this.MaHoSo_label.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MaHoSo_label.Location = new System.Drawing.Point(15, 24);
+            this.MaHoSo_label.Name = "MaHoSo_label";
+            this.MaHoSo_label.Size = new System.Drawing.Size(90, 25);
+            this.MaHoSo_label.TabIndex = 0;
+            this.MaHoSo_label.Text = "Mã hồ sơ";
             // 
             // Mahoso_textBox
             // 
@@ -136,48 +112,45 @@ namespace GUI
             this.Mahoso_textBox.Size = new System.Drawing.Size(190, 31);
             this.Mahoso_textBox.TabIndex = 1;
             this.Mahoso_textBox.Text = "Nhập mã hồ sơ";
-            this.Mahoso_textBox.Enter += Mahoso_textBox_Enter;
-            this.Mahoso_textBox.Leave += Mahoso_textBox_Leave;
+            this.Mahoso_textBox.Enter += new System.EventHandler(this.Mahoso_textBox_Enter);
+            this.Mahoso_textBox.Leave += new System.EventHandler(this.Mahoso_textBox_Leave);
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.Button_TraCuu);
             this.panel2.Controls.Add(this.Mahoso_textBox);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(-3, 49);
+            this.panel2.Controls.Add(this.MaHoSo_label);
+            this.panel2.Location = new System.Drawing.Point(-3, 1);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(945, 78);
+            this.panel2.Size = new System.Drawing.Size(906, 75);
             this.panel2.TabIndex = 1;
             // 
-            // button2
+            // Button_TraCuu
             // 
-            this.button2.BackColor = System.Drawing.Color.MediumOrchid;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.Control;
-            this.button2.Location = new System.Drawing.Point(326, 21);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 32);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Tra Cứu";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += TraCuu_button;
+            this.Button_TraCuu.BackColor = System.Drawing.Color.LightBlue;
+            this.Button_TraCuu.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button_TraCuu.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Button_TraCuu.Location = new System.Drawing.Point(337, 21);
+            this.Button_TraCuu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Button_TraCuu.Name = "Button_TraCuu";
+            this.Button_TraCuu.Size = new System.Drawing.Size(100, 32);
+            this.Button_TraCuu.TabIndex = 4;
+            this.Button_TraCuu.Text = "Tra Cứu";
+            this.Button_TraCuu.UseVisualStyleBackColor = false;
+            this.Button_TraCuu.Click += new System.EventHandler(this.TraCuu_button);
             // 
             // TraCuuHoSoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(942, 493);
+            this.ClientSize = new System.Drawing.Size(902, 478);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "TraCuuHoSoForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TraCuuHoSo";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
@@ -188,15 +161,12 @@ namespace GUI
         }
 
         #endregion
-
-        private Panel panel1;
-        private Label label1;
         private Panel panel3;
-        private Label label3;
+        private Label ThongTinHoSo_label;
         private DataGridView dataGridView;
-        private Label label2;
+        private Label MaHoSo_label;
         private TextBox Mahoso_textBox;
         private Panel panel2;
-        private Button button2;
+        private Button Button_TraCuu;
     }
 }

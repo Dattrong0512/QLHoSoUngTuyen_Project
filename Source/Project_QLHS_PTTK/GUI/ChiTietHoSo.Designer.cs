@@ -48,7 +48,7 @@ namespace GUI
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.MediumOrchid;
+            this.panel1.BackColor = System.Drawing.Color.LightBlue;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -75,7 +75,7 @@ namespace GUI
             this.panel2.Location = new System.Drawing.Point(0, 53);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(943, 443);
+            this.panel2.Size = new System.Drawing.Size(903, 425);
             this.panel2.TabIndex = 1;
             // 
             // dataGridView1
@@ -84,7 +84,6 @@ namespace GUI
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -94,39 +93,40 @@ namespace GUI
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 50);
+            this.dataGridView1.Location = new System.Drawing.Point(35, 50);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(918, 343);
+            this.dataGridView1.Size = new System.Drawing.Size(835, 316);
             this.dataGridView1.TabIndex = 20;
             // 
             // button
             // 
-            this.button.BackColor = System.Drawing.Color.MediumOrchid;
+            this.button.BackColor = System.Drawing.Color.LightBlue;
             this.button.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button.ForeColor = System.Drawing.SystemColors.Control;
-            this.button.Location = new System.Drawing.Point(830, 397);
+            this.button.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button.Location = new System.Drawing.Point(790, 382);
             this.button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button.Name = "button";
             this.button.Size = new System.Drawing.Size(100, 32);
             this.button.TabIndex = 19;
             this.button.Text = "Trở về";
             this.button.UseVisualStyleBackColor = false;
-            this.button.Click += TroVe_Click;
+            this.button.Click += new System.EventHandler(this.TroVe_Click);
             // 
             // MaHS_textBox
             // 
             this.MaHS_textBox.BackColor = System.Drawing.SystemColors.Control;
             this.MaHS_textBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.MaHS_textBox.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MaHS_textBox.Location = new System.Drawing.Point(118, 14);
+            this.MaHS_textBox.Location = new System.Drawing.Point(118, 15);
             this.MaHS_textBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaHS_textBox.Name = "MaHS_textBox";
             this.MaHS_textBox.ReadOnly = true;
             this.MaHS_textBox.Size = new System.Drawing.Size(89, 24);
             this.MaHS_textBox.TabIndex = 18;
+            this.MaHS_textBox.TextChanged += new System.EventHandler(this.MaHS_textBox_TextChanged);
             // 
             // MaHS
             // 
@@ -142,7 +142,7 @@ namespace GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(942, 493);
+            this.ClientSize = new System.Drawing.Size(902, 478);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

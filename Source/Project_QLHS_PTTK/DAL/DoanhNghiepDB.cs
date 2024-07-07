@@ -94,7 +94,8 @@ namespace DAL
                     cmd.Parameters.Add(new OracleParameter("matKhau", matkhau));
 
                     int rowsAffected = cmd.ExecuteNonQuery();
-                    return rowsAffected > 0;
+                    if (rowsAffected >= 0) { return true; }
+                    else { return false; }
                 }
             }
             finally

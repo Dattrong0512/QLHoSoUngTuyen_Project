@@ -17,13 +17,22 @@ namespace GUI
             connect = conn;
             MaHoSo = maHoSo;
 
+            MaHS_textBox.Text = MaHoSo; // Thiết lập giá trị cho MAHS_textBox
             LoadData();
         }
 
         private void LoadData()
         {
-            dataGridView1.DataSource = BLL.ChiTietHoSoBLL.TraCuuChiTietHoSo(connect, MaHoSo);
-            SetupDataGridView();
+            var data = BLL.ChiTietHoSoBLL.TraCuuChiTietHoSo(connect, MaHoSo);
+            if (data.Rows.Count == 0)
+            {
+                MessageBox.Show("Không tìm thấy chi tiết hồ sơ.");
+            }
+            else
+            {
+                dataGridView1.DataSource = data;
+                SetupDataGridView();
+            }
         }
 
         private void SetupDataGridView()
@@ -37,6 +46,10 @@ namespace GUI
         {
             this.Close();
         }
+
+        private void MaHS_textBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
-

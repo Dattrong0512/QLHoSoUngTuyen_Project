@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -15,11 +16,12 @@ namespace GUI
 {
     public partial class DienPhieuDangKyUngVien : Form
     {
-        public DienPhieuDangKyUngVien()
+        private OracleConnection connect { get; set; }
+        public DienPhieuDangKyUngVien(OracleConnection conn)
         {
             InitializeComponent();
-            buttonĐK.Click += new EventHandler(ButtonDangKy_Click);
-            buttonthoat.Click += new EventHandler(ButtonThoat_Click);
+            connect = conn;
+
         }
 
         private void ButtonThoat_Click(object sender, EventArgs e)
@@ -31,31 +33,26 @@ namespace GUI
         {
             if (ValidateForm())
             {
-                // Lấy thông tin từ các ô nhập liệu
-                string hovaten = textBoxhovaten.Text.Trim();
-                DateTime ngaysinh = dateTimeNS.Value;
-                string diachi = textĐC.Text.Trim();
-                string sodienthoai = textsdt.Text.Trim();
+                if (!UngVien.KiemTraTaiKhoanTonTai(connect, textEmail.Text.Trim())) {
 
-                // Tạo mật khẩu ngẫu nhiên
-                string password = BLL.UngVien.GenerateRandomPassword();
+                    // Lấy thông tin từ các ô nhập liệu
+                    string hovaten = textBoxhovaten.Text.Trim();
+                    string email = textEmail.Text.Trim();
+                    string diachi = textĐC.Text.Trim();
+                    string sodienthoai = textsdt.Text.Trim();
 
-                // Thêm ứng viên vào database
-                OracleConnection conn = new OracleConnection("connection_string"); 
-                try
-                {
-                    conn.Open();
-                    BLL.UngVien.AddCandidate(conn, hovaten, ngaysinh, diachi, sodienthoai, password);
-                    MessageBox.Show("Đăng ký thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // Tạo mật khẩu ngẫu nhiên
+                    string password = BLL.UngVien.GenerateRandomPassword();
+                    bool success = UngVien.AddCandidate(connect, hovaten, email, diachi, sodienthoai, password);
+                    if(success)
+                    {
+                        MessageBox.Show("Đăng ký tài khoản ứng viên thành công");
+
+                    }
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show("Đã xảy ra lỗi khi đăng ký: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                finally
-                {
-                    if (conn.State == ConnectionState.Open)
-                        conn.Close();
+                    MessageBox.Show("Tài Khoản đã tồn tại");
                 }
             }
         }
@@ -71,6 +68,13 @@ namespace GUI
                 return false;
             }
 
+            if (!Regex.IsMatch(textEmail.Text, @"^[\w-\.]+@gmail\.com$"))
+            {
+                MessageBox.Show("Email phải có đuôi @gmail.com", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+
             // Kiểm tra họ và tên phải viết hoa chữ cái đầu
             if (!Regex.IsMatch(textBoxhovaten.Text, @"^[A-Z][a-z]*"))
             {
@@ -78,14 +82,20 @@ namespace GUI
                 return false;
             }
 
-            // Kiểm tra định dạng số điện thoại
-                    string phonePattern = @"^[0-9]{10}$"; // Giả sử số điện thoại là 10 chữ số
-                if (!Regex.IsMatch(textBoxsodienthoai.Text, phonePattern))
-                    {
-                        return false;
-                    }
-                    
-                    return true;
+            
+            
+            if(textsdt.Text.Trim().Length != 10)
+            {
+                MessageBox.Show("Số điện thoại phải là 10 số", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            return true;
+        }
+
+        private void DienPhieuDangKyUngVien_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

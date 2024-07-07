@@ -79,6 +79,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChiTietHoSoDAL.cs" />
     <Compile Include="DataBaseAccess.cs" />
     <Compile Include="DoanhNghiepDB.cs" />
     <Compile Include="NhanVien.cs" />
@@ -90,6 +91,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="TraCuuHoSoDAL.cs" />
     <Compile Include="UngVienDB.cs" />
   </ItemGroup>
   <ItemGroup>
