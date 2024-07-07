@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
@@ -22,6 +23,8 @@ namespace GUI
             InitializeHeader();
             InitializeCustomComponents();
             connect = conn;
+            // Đảm bảo sự kiện chỉ được đăng ký một lần
+
         }
 
         private void InitializeHeader()
@@ -106,20 +109,20 @@ namespace GUI
             int buttonSpacing = 50;
             int buttonsY = startY + 5 * spacing + 10;
 
-            btnThoat.Width = buttonWidth;
-            btnThoat.Height = buttonHeight;
-            btnThoat.Location = new Point((this.ClientSize.Width - 2 * buttonWidth - buttonSpacing) / 2, buttonsY);
-            btnThoat.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            btnThoat.Click += new EventHandler(ButtonThoat_Click);
-            btnThoat.Font = new Font(btnThoat.Font.FontFamily, 15, FontStyle.Regular);
-
-
             btnDangKy.Width = buttonWidth;
             btnDangKy.Height = buttonHeight;
-            btnDangKy.Location = new Point(btnThoat.Location.X + buttonWidth + buttonSpacing, buttonsY);
+            btnDangKy.Location = new Point((this.ClientSize.Width - 2 * buttonWidth - buttonSpacing) / 2, buttonsY);
             btnDangKy.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            btnDangKy.Click += new EventHandler(ButtonDangKy_Click);
+            btnDangKy.Click += new EventHandler(ButtonThoat_Click);
             btnDangKy.Font = new Font(btnDangKy.Font.FontFamily, 15, FontStyle.Regular);
+
+
+            btnThoat.Width = buttonWidth;
+            btnThoat.Height = buttonHeight;
+            btnThoat.Location = new Point(btnDangKy.Location.X + buttonWidth + buttonSpacing, buttonsY);
+            btnThoat.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            //btnDangKy.Click += new EventHandler(ButtonDangKy_Click);
+            btnThoat.Font = new Font(btnThoat.Font.FontFamily, 15, FontStyle.Regular);
         }
 
         private void SetPlaceholder(TextBox textBox, string placeholder)
@@ -160,42 +163,79 @@ namespace GUI
         {
             this.Close();
         }
-
         private void ButtonDangKy_Click(object sender, EventArgs e)
         {
-            if (BLL.DoanhNghiep.ValidateInputs(tbTenCongTy.Text.Trim(), tbMaSoThue.Text.Trim(), tbNguoiDaiDien.Text.Trim(), tbDiaChi.Text.Trim(), tbEmail.Text.Trim(), connect))
+            this.ButtonDangKy();
+        }
+        private void ButtonDangKy()
+        {
+            int check = BLL.DoanhNghiep.ValidateInputs(tbTenCongTy.Text.Trim(), tbMaSoThue.Text.Trim(), tbNguoiDaiDien.Text.Trim(), tbDiaChi.Text.Trim(), tbEmail.Text.Trim(), connect);
+            if (check==1)
             {
-                bool exists = DoanhNghiep.KiemTraDoanhNghiepTonTai(connect, tbMaSoThue.Text.Trim());
-
-                if (exists)
+                    // Tạo mật khẩu ngẫu nhiên
+                string matKhau = BLL.DoanhNghiep.GenerateRandomString(20);                    
+                bool success = DoanhNghiep.ThemDoanhNghiep(connect, tbTenCongTy.Text.Trim(),
+                                                            tbMaSoThue.Text.Trim(),
+                                                            tbNguoiDaiDien.Text.Trim(),
+                                                            tbDiaChi.Text.Trim(),
+                                                            tbEmail.Text.Trim(),
+                                                            matKhau
+                                                            );
+                if (success)
                 {
-                    MessageBox.Show("Thông tin doanh nghiệp đã tồn tại.");
+                    MessageBox.Show($"Đăng ký thành công.\nMật khẩu tạm thời: {matKhau}");
+                    tbTenCongTy.Text = string.Empty;
+                    tbMaSoThue.Text = string.Empty;
+                    tbNguoiDaiDien.Text = string.Empty;
+                    tbDiaChi.Text = string.Empty;
+                    tbEmail.Text = string.Empty;
+                    SetPlaceholder(tbTenCongTy, "Tên công ty");
+                    SetPlaceholder(tbMaSoThue, "Mã số thuế");
+                    SetPlaceholder(tbNguoiDaiDien, "Người đại diện");
+                    SetPlaceholder(tbDiaChi, "Địa chỉ");
+                    SetPlaceholder(tbEmail, "Email");
+                    return;
                 }
                 else
                 {
-                    // Tạo mật khẩu ngẫu nhiên
-                    string matKhau = BLL.DoanhNghiep.GenerateRandomString(20);
-                    
-                    bool success = DoanhNghiep.ThemDoanhNghiep(connect, tbTenCongTy.Text.Trim(),
-                                                               tbMaSoThue.Text.Trim(),
-                                                               tbNguoiDaiDien.Text.Trim(),
-                                                               tbDiaChi.Text.Trim(),
-                                                               tbEmail.Text.Trim(),
-                                                               matKhau
-                                                             );
-                    if (success)
-                    {
-                        MessageBox.Show($"Đăng ký thành công.\nMật khẩu tạm thời: {matKhau}");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Đăng ký thất bại.");
-                    }
+                    MessageBox.Show("Đăng ký thất bại.");
+                    return;
                 }
-            }
+            }    
             else
             {
-                MessageBox.Show("Thông tin nhập không đầy đủ.");
+                switch(check)
+                { 
+                    case 0:
+                    {
+                        MessageBox.Show("Nhập thiếu, vui lòng nhập đầy đủ");
+                        break;
+                    }
+                    case 2:
+                    {
+                        tbMaSoThue.Text = string.Empty;
+                        break;
+                    }
+                    case 3:
+                    {
+                        tbEmail.Text = string.Empty;
+                        break;
+                    }
+                    case 4:
+                    {
+                        tbTenCongTy.Text = string.Empty;
+                        tbMaSoThue.Text = string.Empty;
+                        tbNguoiDaiDien.Text = string.Empty;
+                        tbDiaChi.Text = string.Empty;
+                        tbEmail.Text = string.Empty;
+                        SetPlaceholder(tbTenCongTy, "Tên công ty");
+                        SetPlaceholder(tbMaSoThue, "Mã số thuế");
+                        SetPlaceholder(tbNguoiDaiDien, "Người đại diện");
+                        SetPlaceholder(tbDiaChi, "Địa chỉ");
+                        SetPlaceholder(tbEmail, "Email");
+                        break;
+                    }
+                }
             }
         }
     }
