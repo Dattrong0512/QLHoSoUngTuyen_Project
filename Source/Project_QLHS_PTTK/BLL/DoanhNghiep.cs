@@ -60,7 +60,7 @@ namespace BLL
             return dt;
         }
 
-        public static bool ValidateInputs(string tenCongTy, string maSoThue, string nguoiDaiDien, string diaChi, string email, OracleConnection connect)
+        public static int ValidateInputs(string tenCongTy, string maSoThue, string nguoiDaiDien, string diaChi, string email, OracleConnection connect)
         {
             if (IsPlaceholderOrEmpty(tenCongTy, "Tên công ty") ||
                 IsPlaceholderOrEmpty(maSoThue, "Mã số thuế") ||
@@ -68,23 +68,30 @@ namespace BLL
                 IsPlaceholderOrEmpty(diaChi, "Địa chỉ") ||
                 IsPlaceholderOrEmpty(email, "Email"))
             {
-                return false;
+                return 0;
             }
 
             if (!IsValidTaxId(maSoThue))
             {
                 MessageBox.Show("Mã số thuế phải là chuỗi 10 ký tự số.");
-                return false;
+                return 2;
             }
 
             if (!IsValidEmail(email))
             {
                 MessageBox.Show("Email không hợp lệ.");
-                return false;
+                return 3;
             }
-
             bool exists = KiemTraDoanhNghiepTonTai(connect, maSoThue);
-            return !exists;
+
+            if (exists)
+            {
+                MessageBox.Show("Thông tin doanh nghiệp đã tồn tại.");
+                return 4;
+            }
+            //bool exists = KiemTraDoanhNghiepTonTai(connect, maSoThue);
+            //return !exists;
+            return 1;
         }
 
         private static bool IsValidTaxId(string taxId)
@@ -106,7 +113,9 @@ namespace BLL
 
         public static bool KiemTraDoanhNghiepTonTai(OracleConnection connect, string masothue)
         {
-            return DAL.DoanhNghiepDB.KiemTraDNTonTai(connect, masothue);
+            bool check = false;
+             check= DAL.DoanhNghiepDB.KiemTraDNTonTai(connect, masothue);
+            return check;
         }
 
         public static bool ThemDoanhNghiep(OracleConnection connect, string tenCongTy, string maSoThue, string nguoiDaiDien, string diaChi, string email, string matkhau)
