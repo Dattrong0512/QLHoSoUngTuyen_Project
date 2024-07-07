@@ -134,12 +134,12 @@ BEGIN
         statement_types => 'SELECT' );
 END;
 /
-BEGIN
-    DBMS_RLS.DROP_POLICY (
-        object_schema => 'ADMIN',
-        object_name   => 'NhanVien',
-        policy_name   => 'PLC_SELECT_NHANVIEN'
-    );
-END;
-/
+-- BEGIN
+--     DBMS_RLS.DROP_POLICY (
+--         object_schema => 'ADMIN',
+--         object_name   => 'NhanVien',
+--         policy_name   => 'PLC_SELECT_NHANVIEN'
+--     );
+-- END;
+
 
