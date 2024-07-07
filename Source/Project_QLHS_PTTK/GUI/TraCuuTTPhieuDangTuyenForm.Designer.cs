@@ -31,8 +31,8 @@
             this.uvRefresh = new System.Windows.Forms.PictureBox();
             this.filterCBB = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.buttonSearch = new System.Windows.Forms.Button();
+            this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.TraCuuPDT = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.uvRefresh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TraCuuPDT)).BeginInit();
@@ -51,6 +51,7 @@
             // 
             // filterCBB
             // 
+            this.filterCBB.BackColor = System.Drawing.Color.SkyBlue;
             this.filterCBB.FormattingEnabled = true;
             this.filterCBB.Items.AddRange(new object[] {
             "Mã phiếu đăng tuyển",
@@ -75,23 +76,25 @@
             this.label1.TabIndex = 20;
             this.label1.Text = "Filter";
             // 
-            // button2
+            // buttonSearch
             // 
-            this.button2.Location = new System.Drawing.Point(648, 39);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(85, 37);
-            this.button2.TabIndex = 19;
-            this.button2.Text = "Tìm Kiếm";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.buttonSearch.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.buttonSearch.Location = new System.Drawing.Point(686, 39);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(85, 37);
+            this.buttonSearch.TabIndex = 19;
+            this.buttonSearch.Text = "Tìm Kiếm";
+            this.buttonSearch.UseVisualStyleBackColor = false;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
-            // textBox2
+            // textBoxSearch
             // 
-            this.textBox2.Location = new System.Drawing.Point(307, 46);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(323, 22);
-            this.textBox2.TabIndex = 18;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.textBoxSearch.BackColor = System.Drawing.Color.SkyBlue;
+            this.textBoxSearch.Location = new System.Drawing.Point(307, 46);
+            this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.Size = new System.Drawing.Size(364, 22);
+            this.textBoxSearch.TabIndex = 18;
+            this.textBoxSearch.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // TraCuuPDT
             // 
@@ -108,12 +111,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(902, 478);
             this.Controls.Add(this.uvRefresh);
             this.Controls.Add(this.filterCBB);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.buttonSearch);
+            this.Controls.Add(this.textBoxSearch);
             this.Controls.Add(this.TraCuuPDT);
             this.Name = "TraCuuTTPhieuDangTuyenForm";
             this.Text = "TraCuuTTPhieuDangTuyen";
@@ -129,8 +133,8 @@
         private System.Windows.Forms.PictureBox uvRefresh;
         private System.Windows.Forms.ComboBox filterCBB;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button buttonSearch;
+        private System.Windows.Forms.TextBox textBoxSearch;
         private System.Windows.Forms.DataGridView TraCuuPDT;
     }
 }

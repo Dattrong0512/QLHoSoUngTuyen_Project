@@ -32,7 +32,7 @@ namespace GUI
         private void TraCuuTTPhieuDangTuyenForm_Load(object sender, EventArgs e)
         {
             TraCuuPDT.DataSource = BLL.PDT.traCuuPDT(connect,
-                filterCBB.SelectedItem == null ? "" : filterCBB.SelectedItem.ToString(), textBox2.Text);
+                filterCBB.SelectedItem == null ? "" : filterCBB.SelectedItem.ToString(), textBoxSearch.Text);
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -40,19 +40,20 @@ namespace GUI
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            TraCuuPDT.DataSource = BLL.PDT.traCuuPDT(connect,
-                filterCBB.SelectedItem == null ? "" : filterCBB.SelectedItem.ToString(), textBox2.Text);
-        }
 
         private void uvRefresh_Click(object sender, EventArgs e)
         {
             filterCBB.SelectedItem = null;
-            textBox2.Text = "";
+            textBoxSearch.Text = "";
 
             TraCuuPDT.DataSource = BLL.PDT.traCuuPDT(connect,
-                filterCBB.SelectedItem == null ? "" : filterCBB.SelectedItem.ToString(), textBox2.Text);
+                filterCBB.SelectedItem == null ? "" : filterCBB.SelectedItem.ToString(), textBoxSearch.Text);
+        }
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            TraCuuPDT.DataSource = BLL.PDT.traCuuPDT(connect,
+                filterCBB.SelectedItem == null ? "" : filterCBB.SelectedItem.ToString(), textBoxSearch.Text);
         }
     }
 }
