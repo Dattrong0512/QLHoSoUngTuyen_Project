@@ -52,24 +52,26 @@ namespace GUI
             // textĐC
             // 
             this.textĐC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textĐC.Location = new System.Drawing.Point(198, 244);
+            this.textĐC.Location = new System.Drawing.Point(198, 315);
             this.textĐC.Name = "textĐC";
             this.textĐC.Size = new System.Drawing.Size(440, 30);
             this.textĐC.TabIndex = 2;
+            this.textĐC.TextChanged += new System.EventHandler(this.textĐC_TextChanged);
             // 
             // textsdt
             // 
             this.textsdt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textsdt.Location = new System.Drawing.Point(198, 315);
+            this.textsdt.Location = new System.Drawing.Point(198, 244);
             this.textsdt.Name = "textsdt";
             this.textsdt.Size = new System.Drawing.Size(440, 30);
             this.textsdt.TabIndex = 3;
+            this.textsdt.TextChanged += new System.EventHandler(this.textsdt_TextChanged);
             // 
             // labelhovaten
             // 
             this.labelhovaten.AutoSize = true;
             this.labelhovaten.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelhovaten.Location = new System.Drawing.Point(215, 99);
+            this.labelhovaten.Location = new System.Drawing.Point(195, 97);
             this.labelhovaten.Name = "labelhovaten";
             this.labelhovaten.Size = new System.Drawing.Size(71, 18);
             this.labelhovaten.TabIndex = 4;
@@ -79,7 +81,7 @@ namespace GUI
             // 
             this.labelĐC.AutoSize = true;
             this.labelĐC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelĐC.Location = new System.Drawing.Point(215, 294);
+            this.labelĐC.Location = new System.Drawing.Point(195, 294);
             this.labelĐC.Name = "labelĐC";
             this.labelĐC.Size = new System.Drawing.Size(53, 18);
             this.labelĐC.TabIndex = 7;
@@ -89,7 +91,7 @@ namespace GUI
             // 
             this.labesdt.AutoSize = true;
             this.labesdt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labesdt.Location = new System.Drawing.Point(215, 223);
+            this.labesdt.Location = new System.Drawing.Point(195, 223);
             this.labesdt.Name = "labesdt";
             this.labesdt.Size = new System.Drawing.Size(94, 18);
             this.labesdt.TabIndex = 8;
@@ -139,7 +141,7 @@ namespace GUI
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(215, 158);
+            this.lblEmail.Location = new System.Drawing.Point(195, 158);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(45, 18);
             this.lblEmail.TabIndex = 13;
@@ -161,6 +163,7 @@ namespace GUI
             this.Controls.Add(this.textĐC);
             this.Controls.Add(this.textBoxhovaten);
             this.Name = "DienPhieuDangKyUngVien";
+            this.Load += new System.EventHandler(this.DienPhieuDangKyUngVien_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 
