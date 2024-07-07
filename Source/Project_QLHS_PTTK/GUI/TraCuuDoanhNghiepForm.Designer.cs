@@ -1,4 +1,4 @@
-﻿namespace GUI
+namespace GUI
 {
     partial class TraCuuDoanhNghiepForm
     {
@@ -32,9 +32,8 @@
             this.cbbSearchFilterDN = new System.Windows.Forms.ComboBox();
             this.gvDSDN = new System.Windows.Forms.DataGridView();
             this.txtSearchDN = new System.Windows.Forms.TextBox();
-            this.pictureRefresh = new System.Windows.Forms.PictureBox();
+            this.buttonRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gvDSDN)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureRefresh)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSearchDN
@@ -71,7 +70,7 @@
             // 
             this.gvDSDN.BackgroundColor = System.Drawing.SystemColors.Window;
             this.gvDSDN.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvDSDN.Location = new System.Drawing.Point(50, 89);
+            this.gvDSDN.Location = new System.Drawing.Point(48, 87);
             this.gvDSDN.Name = "gvDSDN";
             this.gvDSDN.RowHeadersWidth = 51;
             this.gvDSDN.RowTemplate.Height = 24;
@@ -88,17 +87,20 @@
             this.txtSearchDN.TabIndex = 4;
             this.txtSearchDN.TextChanged += new System.EventHandler(this.txtSearchDN_TextChanged);
             // 
-            // pictureRefresh
+            // buttonRefresh
             // 
-            this.pictureRefresh.BackColor = System.Drawing.Color.White;
-            this.pictureRefresh.Image = global::GUI.Properties.Resources.refresh;
-            this.pictureRefresh.Location = new System.Drawing.Point(50, 29);
-            this.pictureRefresh.Name = "pictureRefresh";
-            this.pictureRefresh.Size = new System.Drawing.Size(49, 34);
-            this.pictureRefresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureRefresh.TabIndex = 8;
-            this.pictureRefresh.TabStop = false;
-            this.pictureRefresh.Click += new System.EventHandler(this.pictureRefresh_Click);
+            this.buttonRefresh.BackgroundImage = global::GUI.Properties.Resources.refresh2;
+            this.buttonRefresh.FlatAppearance.BorderSize = 5;
+            this.buttonRefresh.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.buttonRefresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.buttonRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonRefresh.Location = new System.Drawing.Point(40, 28);
+            this.buttonRefresh.Name = "buttonRefresh";
+            this.buttonRefresh.Size = new System.Drawing.Size(58, 39);
+            this.buttonRefresh.TabIndex = 9;
+            this.buttonRefresh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonRefresh.UseVisualStyleBackColor = true;
+            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefesh_Click);
             // 
             // TraCuuDoanhNghiepForm
             // 
@@ -106,7 +108,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(930, 478);
-            this.Controls.Add(this.pictureRefresh);
+            this.Controls.Add(this.buttonRefresh);
             this.Controls.Add(this.btnSearchDN);
             this.Controls.Add(this.cbbSearchFilterDN);
             this.Controls.Add(this.gvDSDN);
@@ -115,7 +117,6 @@
             this.Text = "TraCuuDoanhNghiep";
             this.Load += new System.EventHandler(this.TraCuuDoanhNghiepForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvDSDN)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureRefresh)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -127,6 +128,6 @@
         private System.Windows.Forms.ComboBox cbbSearchFilterDN;
         private System.Windows.Forms.DataGridView gvDSDN;
         private System.Windows.Forms.TextBox txtSearchDN;
-        private System.Windows.Forms.PictureBox pictureRefresh;
+        private System.Windows.Forms.Button buttonRefresh;
     }
 }
