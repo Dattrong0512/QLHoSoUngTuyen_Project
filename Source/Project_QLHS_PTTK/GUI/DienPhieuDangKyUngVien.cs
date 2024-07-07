@@ -46,7 +46,7 @@ namespace GUI
                     bool success = UngVien.AddCandidate(connect, hovaten, email, diachi, sodienthoai, password);
                     if(success)
                     {
-                        MessageBox.Show("Đăng ký tài khoản ứng viên thành công");
+                        MessageBox.Show("Đăng ký tài khoản ứng viên thành công \n Mật khẩu: " + password);
 
                     }
                 }
