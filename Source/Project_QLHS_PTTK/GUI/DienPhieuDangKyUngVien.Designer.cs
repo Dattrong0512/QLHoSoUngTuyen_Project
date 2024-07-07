@@ -32,13 +32,13 @@ namespace GUI
             this.textĐC = new System.Windows.Forms.TextBox();
             this.textsdt = new System.Windows.Forms.TextBox();
             this.labelhovaten = new System.Windows.Forms.Label();
-            this.dateTimeNS = new System.Windows.Forms.DateTimePicker();
-            this.labelnamsinh = new System.Windows.Forms.Label();
             this.labelĐC = new System.Windows.Forms.Label();
             this.labesdt = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.buttonthoat = new System.Windows.Forms.Button();
             this.buttonĐK = new System.Windows.Forms.Button();
+            this.textEmail = new System.Windows.Forms.TextBox();
+            this.lblEmail = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBoxhovaten
@@ -74,25 +74,6 @@ namespace GUI
             this.labelhovaten.Size = new System.Drawing.Size(71, 18);
             this.labelhovaten.TabIndex = 4;
             this.labelhovaten.Text = "Họ và tên";
-            // 
-            // dateTimeNS
-            // 
-            this.dateTimeNS.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimeNS.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimeNS.Location = new System.Drawing.Point(198, 177);
-            this.dateTimeNS.Name = "dateTimeNS";
-            this.dateTimeNS.Size = new System.Drawing.Size(440, 30);
-            this.dateTimeNS.TabIndex = 5;
-            // 
-            // labelnamsinh
-            // 
-            this.labelnamsinh.AutoSize = true;
-            this.labelnamsinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelnamsinh.Location = new System.Drawing.Point(215, 158);
-            this.labelnamsinh.Name = "labelnamsinh";
-            this.labelnamsinh.Size = new System.Drawing.Size(73, 18);
-            this.labelnamsinh.TabIndex = 6;
-            this.labelnamsinh.Text = "Ngày sinh";
             // 
             // labelĐC
             // 
@@ -133,6 +114,7 @@ namespace GUI
             this.buttonthoat.TabIndex = 10;
             this.buttonthoat.Text = "Thoát";
             this.buttonthoat.UseVisualStyleBackColor = true;
+            this.buttonthoat.Click += new System.EventHandler(this.ButtonThoat_Click);
             // 
             // buttonĐK
             // 
@@ -143,18 +125,37 @@ namespace GUI
             this.buttonĐK.TabIndex = 11;
             this.buttonĐK.Text = "Đăng ký";
             this.buttonĐK.UseVisualStyleBackColor = true;
+            this.buttonĐK.Click += new System.EventHandler(this.ButtonDangKy_Click);
+            // 
+            // textEmail
+            // 
+            this.textEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textEmail.Location = new System.Drawing.Point(198, 179);
+            this.textEmail.Name = "textEmail";
+            this.textEmail.Size = new System.Drawing.Size(440, 30);
+            this.textEmail.TabIndex = 12;
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Location = new System.Drawing.Point(215, 158);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(45, 18);
+            this.lblEmail.TabIndex = 13;
+            this.lblEmail.Text = "Email";
             // 
             // DienPhieuDangKyUngVien
             // 
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(817, 506);
+            this.Controls.Add(this.lblEmail);
+            this.Controls.Add(this.textEmail);
             this.Controls.Add(this.buttonĐK);
             this.Controls.Add(this.buttonthoat);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.labesdt);
             this.Controls.Add(this.labelĐC);
-            this.Controls.Add(this.labelnamsinh);
-            this.Controls.Add(this.dateTimeNS);
             this.Controls.Add(this.labelhovaten);
             this.Controls.Add(this.textsdt);
             this.Controls.Add(this.textĐC);
@@ -182,12 +183,12 @@ namespace GUI
         private System.Windows.Forms.TextBox textĐC;
         private System.Windows.Forms.TextBox textsdt;
         private System.Windows.Forms.Label labelhovaten;
-        private System.Windows.Forms.DateTimePicker dateTimeNS;
-        private System.Windows.Forms.Label labelnamsinh;
         private System.Windows.Forms.Label labelĐC;
         private System.Windows.Forms.Label labesdt;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button buttonthoat;
         private System.Windows.Forms.Button buttonĐK;
+        private System.Windows.Forms.TextBox textEmail;
+        private System.Windows.Forms.Label lblEmail;
     }
 }
