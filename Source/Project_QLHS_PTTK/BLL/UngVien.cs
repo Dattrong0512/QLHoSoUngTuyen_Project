@@ -1,4 +1,4 @@
-﻿using Oracle.ManagedDataAccess.Client;
+using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -53,6 +53,27 @@ namespace BLL
                 DataTable = dt,
                 HasData = dt.Rows.Count > 0
             };
+        }
+
+
+        // Phương thức kiểm tra tài khoản đã tồn tại
+        public static bool IsAccountExists(OracleConnection connection, string hovaten)
+        {
+            return DAL.UngVienDB.IsAccountExists(connection, hovaten);
+        }
+
+        // Phương thức thêm ứng viên vào cơ sở dữ liệu
+        public static void AddCandidate(OracleConnection connection, string hovaten, DateTime ngaysinh, string diachi, string sodienthoai, string password)
+        {
+            DAL.UngVienDB.AddCandidate(connection, hovaten, ngaysinh, diachi, sodienthoai, password);
+        }
+
+        // Phương thức tạo mật khẩu ngẫu nhiên
+        public static string GenerateRandomPassword()
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            Random random = new Random();
+            return new string(Enumerable.Repeat(chars, 8).Select(s => s[random.Next(s.Length)]).ToArray());
         }
     }
 }
