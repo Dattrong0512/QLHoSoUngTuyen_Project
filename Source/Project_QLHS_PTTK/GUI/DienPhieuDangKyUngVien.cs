@@ -8,6 +8,8 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLL;
+using Oracle.ManagedDataAccess.Client;
 
 namespace GUI
 {
@@ -29,7 +31,32 @@ namespace GUI
         {
             if (ValidateForm())
             {
-                MessageBox.Show("Đăng ký thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Lấy thông tin từ các ô nhập liệu
+                string hovaten = textBoxhovaten.Text.Trim();
+                DateTime ngaysinh = dateTimeNS.Value;
+                string diachi = textĐC.Text.Trim();
+                string sodienthoai = textsdt.Text.Trim();
+
+                // Tạo mật khẩu ngẫu nhiên
+                string password = BLL.UngVien.GenerateRandomPassword();
+
+                // Thêm ứng viên vào database
+                OracleConnection conn = new OracleConnection("connection_string"); // Thay bằng connection string của bạn
+                try
+                {
+                    conn.Open();
+                    BLL.UngVien.AddCandidate(conn, hovaten, ngaysinh, diachi, sodienthoai, password);
+                    MessageBox.Show("Đăng ký thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Đã xảy ra lỗi khi đăng ký: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    if (conn.State == ConnectionState.Open)
+                        conn.Close();
+                }
             }
         }
 
@@ -43,7 +70,7 @@ namespace GUI
                 MessageBox.Show("Không được để trống bất kỳ ô nào", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            
+
             // Kiểm tra họ và tên phải viết hoa chữ cái đầu
             if (!Regex.IsMatch(textBoxhovaten.Text, @"^[A-Z][a-z]*"))
             {
@@ -51,8 +78,11 @@ namespace GUI
                 return false;
             }
 
-            // Kiểm tra số điện thoại phải là 10 chữ số
-            if (!Regex.IsMatch(textsdt.Text, @"^\d{10}$"))
+            // Kiểm tra số điện thoại
+            string sdt = textsdt.Text.Trim(); // Loại bỏ khoảng trắng ở đầu và cuối chuỗi
+
+            // Kiểm tra độ dài phải là 10 ký tự và toàn bộ là số
+            if (sdt.Length != 10 || !Regex.IsMatch(sdt, @"^\d{10}$"))
             {
                 MessageBox.Show("Số điện thoại phải là 10 chữ số", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
@@ -62,3 +92,4 @@ namespace GUI
         }
     }
 }
+
