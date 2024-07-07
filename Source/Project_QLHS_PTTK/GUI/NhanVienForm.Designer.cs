@@ -129,6 +129,7 @@
             this.buttonTraCuuHS.TabIndex = 2;
             this.buttonTraCuuHS.Text = "Tra cứu hồ sơ";
             this.buttonTraCuuHS.UseVisualStyleBackColor = false;
+            this.buttonTraCuuHS.Click += new System.EventHandler(this.ButtonTraCuuHS_Click);
             // 
             // ButtonTraCuuDN
             // 
