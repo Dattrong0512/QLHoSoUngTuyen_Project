@@ -84,6 +84,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChiTietHoSo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChiTietHoSo.Designer.cs">
+      <DependentUpon>ChiTietHoSo.cs</DependentUpon>
+    </Compile>
     <Compile Include="DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,12 @@
     <Compile Include="TraCuuDoanhNghiepForm.Designer.cs">
       <DependentUpon>TraCuuDoanhNghiepForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="TraCuuHoSo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TraCuuHoSo.Designer.cs">
+      <DependentUpon>TraCuuHoSo.cs</DependentUpon>
+    </Compile>
     <Compile Include="TraCuuTTPhieuDangKyUngTuyenForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +146,9 @@
     <Compile Include="TraCuuUngVienForm.Designer.cs">
       <DependentUpon>TraCuuUngVienForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ChiTietHoSo.resx">
+      <DependentUpon>ChiTietHoSo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -158,6 +173,9 @@
     </Compile>
     <EmbeddedResource Include="TraCuuDoanhNghiepForm.resx">
       <DependentUpon>TraCuuDoanhNghiepForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TraCuuHoSo.resx">
+      <DependentUpon>TraCuuHoSo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TraCuuTTPhieuDangKyUngTuyenForm.resx">
       <DependentUpon>TraCuuTTPhieuDangKyUngTuyenForm.cs</DependentUpon>
