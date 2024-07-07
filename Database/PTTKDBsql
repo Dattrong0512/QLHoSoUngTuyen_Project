@@ -244,7 +244,32 @@ BEGIN
   DBMS_OUTPUT.PUT_LINE('Result: ' || v_result);
 END;
 /
-
+CREATE SEQUENCE ct_sequence
+    START WITH 1
+    INCREMENT BY 1;
+/
+CREATE OR REPLACE TRIGGER trg_insert_ct_key
+BEFORE INSERT ON ADMIN.DoanhNghiep
+FOR EACH ROW
+BEGIN
+    SELECT 'CTY' || TO_CHAR(ct_sequence.NEXTVAL, 'FM000')
+    INTO :new.MaCongTy
+    FROM dual;
+END;
+/
+CREATE SEQUENCE uv_sequence
+    START WITH 1
+    INCREMENT BY 1;
+/
+CREATE OR REPLACE TRIGGER trg_insert_uv_key
+BEFORE INSERT ON ADMIN.UngVien
+FOR EACH ROW
+BEGIN
+    SELECT 'UV' || TO_CHAR(uv_sequence.NEXTVAL, 'FM000')
+    INTO :new.MaUngVien
+    FROM dual;
+END;
+/
 --Phân quyền đến nhân viên
 GRANT SELECT ON ADMIN.NhanVien to NHANVIEN;
 GRANT SELECT ON ADMIN.DoanhNghiep to NHANVIEN;
