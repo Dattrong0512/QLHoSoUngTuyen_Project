@@ -98,7 +98,8 @@ namespace GUI
 
         private void btnSignupUV_Click(object sender, EventArgs e)
         {
-
+            DienPhieuDangKyUngVien formDKDN = new DienPhieuDangKyUngVien(Account.ADconn);
+            formDKDN.ShowDialog();
         }
 
         private void bntSignupDN_Click(object sender, EventArgs e)

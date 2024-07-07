@@ -1,3 +1,4 @@
+using DAL;
 using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
@@ -63,9 +64,9 @@ namespace BLL
         }
 
         // Phương thức thêm ứng viên vào cơ sở dữ liệu
-        public static void AddCandidate(OracleConnection connection, string hovaten, DateTime ngaysinh, string diachi, string sodienthoai, string password)
+        public static void AddCandidate(OracleConnection connection, string hovaten, string email, string diachi, string sodienthoai, string password)
         {
-            DAL.UngVienDB.AddCandidate(connection, hovaten, ngaysinh, diachi, sodienthoai, password);
+            DAL.UngVienDB.AddCandidateDB(connection, hovaten, email, diachi, sodienthoai, password);
         }
 
         // Phương thức tạo mật khẩu ngẫu nhiên
@@ -74,6 +75,10 @@ namespace BLL
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
             Random random = new Random();
             return new string(Enumerable.Repeat(chars, 8).Select(s => s[random.Next(s.Length)]).ToArray());
+        }
+        public static bool KiemTraTaiKhoanTonTai(OracleConnection connect, string email)
+        {
+            return UngVienDB.KiemTraTaiKhoanTonTaiDB(connect, email);
         }
     }
 }
