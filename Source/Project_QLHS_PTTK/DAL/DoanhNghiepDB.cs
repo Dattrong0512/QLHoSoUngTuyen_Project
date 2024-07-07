@@ -56,7 +56,10 @@ namespace DAL
                 {
                     cmd.Parameters.Add(new OracleParameter("masothue", masothue));
 
-                    connnv.Open();
+                    if (connnv.State != ConnectionState.Open)
+                    {
+                        connnv.Open();
+                    }
                     int count = Convert.ToInt32(cmd.ExecuteScalar());
                     exists = (count > 0);
                 }
@@ -75,7 +78,10 @@ namespace DAL
         {
             try
             {
-                connnv.Open();
+                if (connnv.State != ConnectionState.Open)
+                {
+                    connnv.Open();
+                }
                 string query = "INSERT INTO ADMIN.DoanhNghiep (TENCONGTY, MASOTHUE, NGUOIDAIDIEN, DIACHI, EMAIL, MATKHAU) VALUES (:tenCongTy, :maSoThue, :nguoiDaiDien, :diaChi, :email, :matKhau)";
 
                 using (OracleCommand cmd = new OracleCommand(query, connnv))
