@@ -89,14 +89,13 @@ namespace GUI
             // 
             // buttonRefresh
             // 
-            this.buttonRefresh.BackgroundImage = global::GUI.Properties.Resources.refresh2;
             this.buttonRefresh.FlatAppearance.BorderSize = 5;
             this.buttonRefresh.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.buttonRefresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.buttonRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonRefresh.Location = new System.Drawing.Point(40, 28);
+            this.buttonRefresh.Image = global::GUI.Properties.Resources.refresh2;
+            this.buttonRefresh.Location = new System.Drawing.Point(25, 27);
             this.buttonRefresh.Name = "buttonRefresh";
-            this.buttonRefresh.Size = new System.Drawing.Size(58, 39);
+            this.buttonRefresh.Size = new System.Drawing.Size(72, 40);
             this.buttonRefresh.TabIndex = 9;
             this.buttonRefresh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonRefresh.UseVisualStyleBackColor = true;
